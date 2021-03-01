@@ -1,9 +1,9 @@
-<img src="images/" style="margin: 0;">
+<img src="images/theCocktailShakerLogo.jpg" style="margin: 0;">
 
 # the Cocktail Shaker
 
 >
-> Simple description of what the site it for.
+> The Cocktail Shaker website is designed to inspire cocktail choices whether someone has ingredients in their drinks cabinet or not.
 >
 
 The live site has been deployed via GitHub to https://paulwheatcroft.github.io/theCocktailShaker/
@@ -20,13 +20,40 @@ The live site has been deployed via GitHub to https://paulwheatcroft.github.io/t
 
 <img src="images/" style="margin: 0;">
 
+As someone who has some ingredients in their drinks cabinet I would like to:
+1. Find a cocktail I can make with the ingredients I have available
+- The result needs to let me know all the ingredients I need to use
+- The result need to show me how to make the cocktail
+- The result needs to show me a picture of the cocktail
+2. If I'm not inspired by the first choice I would like to find another option using the same ingredients
+3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
+4. If I don't find any drink that inspire me I would like to start again
+
 ### Someone who has an idea of what they would like in a cocktail
 
 <img src="images/" style="margin: 0;">
 
+As someone who would like to make a cocktail and has an idea of what i would like in the drink I would like to:
+1. Find a cocktails I can make with the the ingredients i'd like to use
+- The result needs to let me know all the ingredients I need to use
+- The result need to show me how to make the cocktail
+- The result needs to show me a picture of the cocktail
+2. If I'm not inspired by the first choice I would like to find another option using the same ingredient choices
+3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
+4. If I don't find any drink that inspire me I would like to start again
+
 ### Someone who just wants to be surprised and inspired to make a cocktail
 
 <img src="images/" style="margin: 0;">
+
+As someone who would like to be inspired by a cocktail choice without any prior preconceptions I would like to:
+1. Easily find a cocktail without having to make any choices
+- The result needs to let me know all the ingredients I need to use
+- The result need to show me how to make the cocktail
+- The result needs to show me a picture of the cocktail
+2. If I'm not inspired by the first choice I would like to find another option using the same ingredient choices
+3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
+4. If I don't find any drink that inspire me I would like to start again
 
 
 ### User Stories
