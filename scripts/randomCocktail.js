@@ -37,13 +37,17 @@ request.onload = function(){
         console.log(cocktailMeasurements);
 
         /* Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
-        /* ***FIX*** Not all ingredients have a measurement need to be able to exclude these as they output "undefined" */
+        /* handle measurements that are "undefined" due to fewer entries in array */
         let i = 0;
         let ingredientsHTML = '';
         for (i; i < cocktailIngredients.length; i++) {
+            if (cocktailMeasurements[i] === undefined && cocktailIngredients !== undefined) {
+                ingredientsHTML += `<li>${cocktailIngredients[i]}</li>`;
+            } else {
+            if (cocktailMeasurements[i] !== undefined && cocktailIngredients !== undefined);
             ingredientsHTML += `<li>${cocktailMeasurements[i]} ${cocktailIngredients[i]}</li>`;
+            }
         }
-            
         /* Get the instructions for making the cocktial */
         let cocktailInstructions = cocktailData.drinks[0]["strInstructions"];
 
