@@ -1,1 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
+body {
+    background-color: #2E2E2E;
+    color: #f9f9f9;
+}
+
+.drinks-image {
+    max-width: 50%;
+    height: auto;
+}

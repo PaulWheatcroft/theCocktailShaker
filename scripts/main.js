@@ -10,7 +10,14 @@ request.onload = function(){
 
         let drinkIndex = 0;
 
-        function loadNewCocktail() {           
+        function loadNewCocktail() {
+            
+            if (drinkIndex > 9) {
+                let noMoreHtml = `
+                <h1>There are no more drinks to show you</h1>
+                `;
+                document.getElementById("the-data").innerHTML = noMoreHtml;
+            }
                 
             /* Get the name and the image of the cocktail */
             let cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
@@ -37,19 +44,16 @@ request.onload = function(){
             }      
             }
 
-            console.log(cocktailIngredients);
-            console.log(cocktailMeasurements);
-
             /* Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
             /* handle measurements that are "undefined" due to fewer entries in array */
             let ingredientList = 0;
             let ingredientsHTML = '';
             for (ingredientList; ingredientList < cocktailIngredients.length; ingredientList++) {
                 if (cocktailMeasurements[ingredientList] === undefined && cocktailIngredients !== undefined) {
-                    ingredientsHTML += `<li class="list-group-item">${cocktailIngredients[ingredientList]}</li>`;
+                    ingredientsHTML += `<li>${cocktailIngredients[ingredientList]}</li>`;
                 } else {
                 if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
-                ingredientsHTML += `<li class="list-group-item">${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+                ingredientsHTML += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
                 }
             }
             /* Get the instructions for making the cocktial */
@@ -58,14 +62,13 @@ request.onload = function(){
             /* Construct the HTML to view in index.html */
             let cocktailHtml = `
             <h1 class="h1">${cocktailName}</h1>
-            <img src="${cocktailImage}" alt="${cocktailName}">
-            <ul class="list-group">${ingredientsHTML}</ul>
+            <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
+            <ul>${ingredientsHTML}</ul>
             <p>${cocktailInstructions}</p>
             `;
                 
-            /* Pass the HTML to the div the-data in  */
+            /* Pass the HTML to the div the-data and increment drinkIndex  */
             document.getElementById("the-data").innerHTML = cocktailHtml;
-
             drinkIndex = drinkIndex + 1;
                     
             }   
