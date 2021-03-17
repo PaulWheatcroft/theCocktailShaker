@@ -1,5 +1,7 @@
 let request = new XMLHttpRequest();
 
+
+
 /* Get a random cocktail */
 request.open('GET', 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php', true);
 
@@ -61,6 +63,7 @@ request.onload = function(){
 
             /* Construct the HTML to view in index.html */
             let cocktailHtml = `
+            <button id="clickNext">Next</button>
             <h1 class="h1">${cocktailName}</h1>
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
             <ul>${ingredientsHTML}</ul>
@@ -70,10 +73,13 @@ request.onload = function(){
             /* Pass the HTML to the div the-data and increment drinkIndex  */
             document.getElementById("the-data").innerHTML = cocktailHtml;
             drinkIndex = drinkIndex + 1;
+
+            let nextCocktail = document.getElementById('clickNext');
+            nextCocktail.addEventListener('click', loadNewCocktail)
                     
             }   
 
-        let nextCocktail = document.getElementById('clickNext');
+        let nextCocktail = document.getElementById('random-cocktails');
         nextCocktail.addEventListener('click', loadNewCocktail)
     }
 
