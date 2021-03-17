@@ -1,9 +1,19 @@
+let APIURL = '';
+
+function getIngredients() {
+    let firstIngredient = document.getElementById("first-selection").value;
+    let secondIngredient = document.getElementById("second-selection").value;
+    let thirdIngredient = document.getElementById("third-selection").value;
+    APIURL = `'https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient},${thirdIngredient}'`;
+    console.log(APIURL);
+}
+
+APIURL = 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php';
+
 let request = new XMLHttpRequest();
 
-
-
 /* Get a random cocktail */
-request.open('GET', 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php', true);
+request.open('GET', `${APIURL}`, true);
 
 request.onload = function(){
     if(this.status === 200){
@@ -79,8 +89,12 @@ request.onload = function(){
                     
             }   
 
-        let nextCocktail = document.getElementById('random-cocktails');
-        nextCocktail.addEventListener('click', loadNewCocktail)
+        let haveIngredientsCocktails = document.getElementById('have-ingreadients-cocktails');
+        haveIngredientsCocktails.addEventListener('click', getIngredients)
+        let knowStyleCocktails = document.getElementById('know-style-cocktails');
+        knowStyleCocktails.addEventListener('click', getIngredients)
+        let randomCocktails = document.getElementById('random-cocktails');
+        randomCocktails.addEventListener('click', loadNewCocktail)
     }
 
 };
