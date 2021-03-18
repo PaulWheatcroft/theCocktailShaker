@@ -71,7 +71,7 @@ request.onload = function(){
             /* Get the instructions for making the cocktial */
             let cocktailInstructions = cocktailData.drinks[drinkIndex]["strInstructions"];
 
-            /* Construct the HTML to view in index.html */
+            /* Construct the HTML to view output */
             let cocktailHtml = `
             <button id="clickNext">Next</button>
             <h1 class="h1">${cocktailName}</h1>
