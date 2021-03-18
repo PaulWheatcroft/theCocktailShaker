@@ -1,10 +1,10 @@
 
-let request = new XMLHttpRequest();
+let randomRequest = new XMLHttpRequest();
 
 /* Get a random cocktail */
-request.open('GET', 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php', true);
+randomRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php', true);
 
-request.onload = function(){
+randomRequest.onload = function(){
     if(this.status === 200){
         let cocktailData = JSON.parse(this.responseText);
         console.log(cocktailData);
@@ -83,4 +83,4 @@ loadNewCocktail();
 
 };
 
-request.send();
+randomRequest.send();
