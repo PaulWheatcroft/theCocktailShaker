@@ -20,6 +20,9 @@ body {
 #selected-cocktail {
     text-align: center;
 }
+#nav-buttons {
+    text-align: center;
+}
 .drinks-image {
     max-width: 75%;
     height: auto;
@@ -30,7 +33,7 @@ body {
     
 }
 .drinks-image-how {
-    max-width: 50%;
+    width: 50%;
     height: auto;
     border: 1px solid #05FF00;
     border-radius: 50%;
@@ -38,7 +41,6 @@ body {
     background-color: #05FF00;
     
 }
-
 .cocktail-title {
     font-family:"Marlowe Swirl W05 Regular"; 
     font-size: 250%;  

@@ -39,14 +39,16 @@ function showCocktail() {
 
     /* Construct the HTML to view output */
     cocktailHtml = `
-    <div id="select-cocktail">
+    <div id="select-cocktail" class="animate__animated animate__fadeIn">
     <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
     <h2 id="cocktail-id">${cocktailId}</h2>
     <h2 id="cocktail-position">${drinkIndex}</h2>
     <h1 class="h1 cocktail-title">${cocktailName}</h1>
+    </div>
+    <div id="nav-buttons">
     <button id="click-next" onclick="showCocktail()">Next</button>
     <button id="show-how">Show me how to make this</button>
-    </div>                      
+    </div>                 
     `;
         
     /* Pass the HTML to the div the-data and increment drinkIndex  */
@@ -112,7 +114,7 @@ function getHow() {
 
         /* Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
-            <div id="selected-cocktail">
+            <div id="selected-cocktail" class="animate__animated animate__fadeIn">
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
             <h1 class="h1">${cocktailName}</h1>
             <h1 class="h2">Cocktail ID = ${cocktailId}</h1>           
