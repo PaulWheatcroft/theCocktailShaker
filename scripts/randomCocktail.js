@@ -78,7 +78,7 @@ randomRequest.onload = function(){
                     
             }   
 
-loadNewCocktail();
+        loadNewCocktail();
     }
 
 };

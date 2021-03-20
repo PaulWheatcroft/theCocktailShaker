@@ -26,7 +26,7 @@ function callAPI(APIURL) {
         };    
     };
     request.send();
-    showCocktail();     
+    setTimeout(showCocktail, 3000)   
 }
 
 /* show the selection of cocktail */
@@ -100,13 +100,13 @@ function getHow() {
             /* Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
             /* handle measurements that are "undefined" due to fewer entries in array */
             let ingredientList = 0;
-            let ingredientsHowToHtml = '';
+            let ingredientsHtml = '';
             for (ingredientList; ingredientList < cocktailIngredients.length; ingredientList++) {
                 if (cocktailMeasurements[ingredientList] === undefined && cocktailIngredients !== undefined) {
-                    ingredientsHTML += `<li>${cocktailIngredients[ingredientList]}</li>`;
+                    ingredientsHtml += `<li>${cocktailIngredients[ingredientList]}</li>`;
                 } else {
                 if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
-                ingredientsHowToHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+                ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
                 };
             };
 
@@ -116,7 +116,7 @@ function getHow() {
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
             <h1 class="h1">${cocktailName}</h1>
             <h1 class="h2">Cocktail ID = ${cocktailId}</h1>           
-            <ul>${ingredientsHowToHtml}</ul>
+            <ul>${ingredientsHtml}</ul>
             <p>${cocktailInstructions}</p>
             <button id="go-back" onclick="showCocktail()">Go Back</button>
             </div>
@@ -124,6 +124,7 @@ function getHow() {
                 
             /* Pass the HTML to the div the-ingredient-data */
             document.getElementById("the-ingredient-data").innerHTML = cocktailToMakeHtml;
+            drinkIndex = drinkIndex - 1;
 
         };
     };
