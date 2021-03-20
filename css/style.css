@@ -31,4 +31,7 @@ body {
     font-family:"Marlowe Swirl W05 Regular"; 
     font-size: 250%;  
 }
+.cocktail-id {
+    display: none;
+}
 

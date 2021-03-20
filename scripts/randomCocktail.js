@@ -62,7 +62,7 @@ randomRequest.onload = function(){
 
             /* Construct the HTML to view in index.html */
             let cocktailHtml = `
-            <button id="clickNext">Next</button>
+            <button id="click-next">Next</button>
             <h1 class="h1">${cocktailName}</h1>
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
             <ul>${ingredientsHTML}</ul>
@@ -73,7 +73,7 @@ randomRequest.onload = function(){
             document.getElementById("the-data").innerHTML = cocktailHtml;
             drinkIndex = drinkIndex + 1;
 
-            let nextCocktail = document.getElementById('clickNext');
+            let nextCocktail = document.getElementById('click-next');
             nextCocktail.addEventListener('click', loadNewCocktail)
                     
             }   

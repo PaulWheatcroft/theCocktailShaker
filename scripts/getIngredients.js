@@ -1,9 +1,17 @@
-
-
 function getIngredientsURL() {
     let firstIngredient = document.getElementById("first-selection").value;
     let APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
     callAPI(APIURL);    
+}
+
+function getHow() {
+    let howRequest = new XMLHttpRequest();
+
+    console.log(cocktailId);
+
+    howRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailId}`, true);
+
+    howRequest.send();
 }
 
 function callAPI(APIURL) {
@@ -37,8 +45,10 @@ function callAPI(APIURL) {
             let cocktailHtml = `
             <div id="select-cocktail">
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
+            <h2 id="cocktail-id">${cocktailId}</h2>
             <h1 class="h1 cocktail-title">${cocktailName}</h1>
-            <button id="clickNext">Next</button>
+            <button id="click-next">Next</button>
+            <button id="show-how">Show me how to make this</button>
             </div>                      
             `;
                 
@@ -46,14 +56,13 @@ function callAPI(APIURL) {
             document.getElementById("the-data").innerHTML = cocktailHtml;
             drinkIndex = drinkIndex + 1;
 
-            let nextCocktail = document.getElementById('clickNext');
-            nextCocktail.addEventListener('click', showCocktail)
+            let nextCocktail = document.getElementById('click-next');
+            nextCocktail.addEventListener('click', showCocktail);
+            let showHowCocktails = document.getElementById('show-how');
+            showHowCocktails.addEventListener('click', getHow);
 
             }
-            showCocktail();
-
-
-            
+            showCocktail();            
         };    
     };
     request.send();
