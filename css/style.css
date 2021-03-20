@@ -10,17 +10,25 @@ body {
 }
 
 #the-Cocktail-Shaker-font {
-    font-family:"Marlowe Swirl W05 Regular";   
+    font-family:"Marlowe Swirl W05 Regular";
+    font-size: 250%;
+    text-align: center;  
 }
-
+#select-cocktail {
+    text-align: center;
+}
 .drinks-image {
-    max-width: 50%;
+    max-width: 75%;
     height: auto;
     border: 1px solid #05FF00;
     border-radius: 50%;
-    box-shadow: 0px 0px 5px 5px #05FF00;
+    box-shadow: 0px 0px 5px 1px #05FF00;
+    background-color: #05FF00;
+    
 }
 
 .cocktail-title {
-    font-family:"Marlowe Swirl W05 Regular";   
+    font-family:"Marlowe Swirl W05 Regular"; 
+    font-size: 250%;  
 }
+

@@ -34,10 +34,12 @@ function callAPI(APIURL) {
             let cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
             /* Construct the HTML to view output */
-            let cocktailHtml = `                        
+            let cocktailHtml = `
+            <div id="select-cocktail">
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
             <h1 class="h1 cocktail-title">${cocktailName}</h1>
             <button id="clickNext">Next</button>
+            </div>                      
             `;
                 
             /* Pass the HTML to the div the-data and increment drinkIndex  */
