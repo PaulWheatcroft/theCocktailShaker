@@ -27,7 +27,7 @@ ul {
 }
 
 .gradient-border {
-  --border-width: 1px;
+  --border-width: 2px;
   position: relative;
   justify-content: center;
   align-items: center;
