@@ -46,8 +46,9 @@ function showCocktail() {
     <h1 class="h1 cocktail-title">${cocktailName}</h1>
     </div>
     <div id="nav-buttons">
-    <button id="click-next" onclick="showCocktail()">Next</button>
+    <button id="click-next" onclick="showCocktail()">Previous</button>
     <button id="show-how">Show me how to make this</button>
+    <button id="click-next" onclick="showCocktail()">Next</button>
     </div>                 
     `;
         
@@ -114,12 +115,13 @@ function getHow() {
 
         /* Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
-            <div id="selected-cocktail" class="animate__animated animate__fadeIn">
+            <div id="select-cocktail"  class="animate__animated animate__fadeIn">
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
-            <h1 class="h1">${cocktailName}</h1>
-            <h1 class="h2">Cocktail ID = ${cocktailId}</h1>           
+            <h1 class="h1">${cocktailName}</h1>        
             <ul>${ingredientsHtml}</ul>
             <p>${cocktailInstructions}</p>
+            </div>
+            <div id="nav-buttons">
             <button id="go-back" onclick="showCocktail()">Go Back</button>
             </div>
             `;

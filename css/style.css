@@ -12,17 +12,25 @@ body {
     text-align: center;
 }
 main {
-    width: 90vw;
-    height: 87vh;
+    width: 90%;
+    height: 87%;
     margin: auto;
+}
+h1 {
+    font-family:"Marlowe Swirl W05 Regular";
+}
+ul {
+    list-style-type: none;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 .gradient-border {
-  --border-width: 3px;
+  --border-width: 1px;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 89vw;
+  width: 89%;
   background: #2E2E2E;
   border-radius: var(--border-width);
 }
@@ -36,26 +44,24 @@ main {
   height: calc(100% + var(--border-width) * 2);
   background: linear-gradient(60deg, #FF3093, #FFE500, #05FF00, #02F4F4);
   background-size: 300% 300%;
-  background-position: 0 50%;
+  background-position: 0% 100%;
   border-radius: calc(2 * var(--border-width));
-  animation: moveGradient 4s alternate infinite;
+  animation: moveGradient 10s alternate infinite;
 }
 
 @keyframes moveGradient {
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 0%;
   }
 }
 
 
 #the-Cocktail-Shaker-font {
-    font-family:"Marlowe Swirl W05 Regular";
     font-size: 250%;
-    text-align: center;  
 }
 
 .drinks-image {
-    max-width: 50%;
+    max-width: 75%;
     height: auto;
     border: 1px solid #05FF00;
     border-radius: 50%;
@@ -79,13 +85,21 @@ main {
 #cocktail-id {
     display: none;
 }
+#select-cocktail {
+    height: 70vh;
+    padding: 5vh;
+}
+
 @media all and (min-width: 992px) {
     .drinks-image {
     max-width: 25%;
     height: auto;
     }
+    #the-Cocktail-Shaker-font {
+    font-size: 500%;
 }
-/* #cocktail-position {
+}
+#cocktail-position {
     display: none;
 }
 
