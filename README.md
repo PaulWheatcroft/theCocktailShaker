@@ -164,5 +164,7 @@ The Project has been deployed via Github Pages. To do this:
 
 The project was started using the The Code Institute's [Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template).
 
+The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp
+
 ## Further Development Ideas
 
