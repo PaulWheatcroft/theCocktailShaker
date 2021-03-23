@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ body {
     min-height: -webkit-fill-available;
     align-items: center;
     text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 html {
     height: -webkit-fill-available;
@@ -109,12 +111,16 @@ ul {
 
 @media all and (min-width: 992px) {
     .drinks-image {
-    max-width: 25%;
+    max-width: 35%;
     height: auto;
+    }
+    .drinks-image-how {
+    width: 10%;
+    height: auto; 
     }
     #the-Cocktail-Shaker-font {
     font-size: 500%;
-}
+    }
 }
 #cocktail-position {
     display: none;
