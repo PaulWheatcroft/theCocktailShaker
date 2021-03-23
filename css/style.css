@@ -11,9 +11,14 @@ body {
     align-items: center;
     text-align: center;
 }
+header {
+    width: 90%;
+    height: 10%;
+    margin: auto;
+}
 main {
     width: 90%;
-    height: 87%;
+    height: 80%;
     margin: auto;
 }
 h1 {
