@@ -166,5 +166,7 @@ The project was started using the The Code Institute's [Gitpod Full Template](ht
 
 The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp
 
+The following link was used to "fix" 100vh on mobile https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/
+
 ## Further Development Ideas
 

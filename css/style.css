@@ -7,9 +7,13 @@
 body {
     background-color: #2E2E2E;
     color: #f9f9f9;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     align-items: center;
     text-align: center;
+}
+html {
+    height: -webkit-fill-available;
 }
 header {
     width: 90%;
