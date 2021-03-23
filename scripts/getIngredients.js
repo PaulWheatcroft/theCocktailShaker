@@ -53,7 +53,7 @@ function showCocktail() {
     `;
         
     /* Pass the HTML to the div the-data and increment drinkIndex  */
-    document.getElementById("the-ingredient-data").innerHTML = cocktailHtml;
+    document.getElementById("information-container").innerHTML = cocktailHtml;
     drinkIndex = drinkIndex + 1;
 
 
@@ -127,7 +127,7 @@ function getHow() {
             `;
                 
             /* Pass the HTML to the div the-ingredient-data */
-            document.getElementById("the-ingredient-data").innerHTML = cocktailToMakeHtml;
+            document.getElementById("information-container").innerHTML = cocktailToMakeHtml;
             drinkIndex = drinkIndex - 1;
 
         };

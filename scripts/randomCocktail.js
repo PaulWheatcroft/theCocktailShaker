@@ -70,7 +70,7 @@ randomRequest.onload = function(){
             `;
                 
             /* Pass the HTML to the div the-data and increment drinkIndex  */
-            document.getElementById("the-data").innerHTML = cocktailHtml;
+            document.getElementById("information-container").innerHTML = cocktailHtml;
             drinkIndex = drinkIndex + 1;
 
             let nextCocktail = document.getElementById('click-next');

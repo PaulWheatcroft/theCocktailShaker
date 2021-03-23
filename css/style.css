@@ -3,7 +3,6 @@
     padding: 0;
     border: 0;
 }
-
 body {
     background-color: #2E2E2E;
     color: #f9f9f9;
@@ -52,7 +51,7 @@ ul {
   z-index: -1;
   width: calc(100% + var(--border-width) * 2);
   height: calc(100% + var(--border-width) * 2);
-  background: linear-gradient(60deg, #FF3093, #FFE500, #05FF00, #02F4F4);
+  background: linear-gradient(60deg, #FF3093, #FF3093, #FFE500, #05FF00, #02F4F4, #02F4F4);
   background-size: 300% 300%;
   background-position: 0% 100%;
   border-radius: calc(2 * var(--border-width));
@@ -95,9 +94,17 @@ ul {
 #cocktail-id {
     display: none;
 }
-#select-cocktail {
+#information-container {
     height: 70vh;
     padding: 5vh;
+}
+
+#nav-buttons {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
 }
 
 @media all and (min-width: 992px) {
