@@ -46,9 +46,9 @@ function showCocktail() {
     <h1 class="h1 cocktail-title">${cocktailName}</h1>
     </div>
     <div id="nav-buttons">
-    <button id="click-next" onclick="showCocktail()">Previous</button>
-    <button id="show-how">Show me how to make this</button>
-    <button id="click-next" onclick="showCocktail()">Next</button>
+    <button id="click-back" class="pointer pointer-left" onclick="showCocktail()"><i class="fas fa-hand-point-left"></i></button>
+    <button id="show-how" class="pointer middle-button"><i class="fas fa-thumbs-up"></i></button>
+    <button id="click-next" class="pointer pointer-right" onclick="showCocktail()"><i class="fas fa-hand-point-right"></i></button>
     </div>                 
     `;
         
@@ -122,7 +122,8 @@ function getHow() {
             <p>${cocktailInstructions}</p>
             </div>
             <div id="nav-buttons">
-            <button id="go-back" onclick="showCocktail()">Go Back</button>
+            <button id="go-back" class="pointer pointer-left" onclick="showCocktail()"><i class="fas fa-hand-point-left"></i></button>
+            <button id="email-me" class="pointer pointer-right" onclick="showCocktail()"><i class="fas fa-envelope"></i></button>
             </div>
             `;
                 
