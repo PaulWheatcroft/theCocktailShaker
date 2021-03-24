@@ -119,7 +119,9 @@ function getHow() {
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
             <h1 class="h1">${cocktailName}</h1>        
             <ul>${ingredientsHtml}</ul>
+            <div id="instructions">
             <p>${cocktailInstructions}</p>
+            </div>
             </div>
             <div id="nav-buttons">
             <button id="go-back" class="pointer pointer-left" onclick="showCocktail()"><i class="fas fa-hand-point-left"></i></button>

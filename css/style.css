@@ -32,8 +32,11 @@ h1 {
 }
 ul {
     list-style-type: none;
-    margin-top: 5vh;
-    padding-bottom: 5vh;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+a {
+    color: #f9f9f9;
 }
 
 .gradient-border {
@@ -81,13 +84,13 @@ ul {
     margin-top: 10%;
 }
 .drinks-image-how {
-    width: 25%;
+    width: 35%;
     height: auto;
     border: 1px solid #05FF00;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 1px #05FF00;
     background-color: #05FF00;
-    
+    margin-top: 10%;
 }
 #information-container {
     height: 80vh;
@@ -95,10 +98,19 @@ ul {
 }
 
 #select-cocktail {
-    font-size: 14px;
+    font-size: 12px;
 }
-#select-cocktail p {
-    text-align: left;
+#select-cocktail h1 {
+    font-size: 250%;
+}
+#instructions {
+    height: 10%;
+    max-width: 50%;
+    overflow: scroll;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgb(36, 35, 35);
+    margin: auto;
 }
 .cocktail-title {
     font-family:"Marlowe Swirl W05 Regular"; 
@@ -132,11 +144,32 @@ ul {
     background-color: #05FF00;
 
 }
-@media all and (min-width: 992px) {
+
+@media all and (min-width: 769px) {
+    #select-cocktail {
+    font-size: 12px;
+    }
+    #select-cocktail h1 {
+    font-size: 300%;    
+    }  
     .drinks-image {
-    max-width: 35%;
+    max-width: 50%;
     height: auto;
-    margin-top: 10%;
+    margin-top: 1%;
+    }
+    .drinks-image-how {
+    width: 25%;
+    height: auto; 
+    margin-top: 10px;
+    }
+    #the-Cocktail-Shaker-font {
+    font-size: 500%;
+    }
+}
+@media all and (max-height: 450px) {
+    .drinks-image {
+    max-width: 20%;
+    margin-top: 1%;
     }
     .drinks-image-how {
     width: 10%;
