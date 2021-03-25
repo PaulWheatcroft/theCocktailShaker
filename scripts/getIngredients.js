@@ -153,8 +153,9 @@ function getHow() {
         /* Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
-            <button id="go-back" class="pointer pointer-left" onclick="nextCocktail()"><i class="fas fa-hand-point-left"></i></button>
-            <button id="email-me" class="pointer pointer-right" onclick="showCocktail()"><i class="fas fa-envelope"></i></button>
+            <button id="go-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
+            <button id="email-me" class="pointer middle-button" onclick="emailCocktail()"><i class="fas fa-envelope"></i></button>
+            <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
             </div>
             <div id="select-cocktail"  class="animate__animated animate__fadeIn">
             <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
