@@ -17,7 +17,8 @@ randomRequest.onload = function(){
                 let noMoreHtml = `
                 <h1>There are no more drinks to show you</h1>
                 `;
-                document.getElementById("the-data").innerHTML = noMoreHtml;
+                document.getElementById("information-container").innerHTML = noMoreHtml;
+                return;
             }
                 
             /* Get the name and the image of the cocktail */
@@ -48,13 +49,13 @@ randomRequest.onload = function(){
             /* Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
             /* handle measurements that are "undefined" due to fewer entries in array */
             let ingredientList = 0;
-            let ingredientsHTML = '';
+            let ingredientsHtml = '';
             for (ingredientList; ingredientList < cocktailIngredients.length; ingredientList++) {
                 if (cocktailMeasurements[ingredientList] === undefined && cocktailIngredients !== undefined) {
-                    ingredientsHTML += `<li>${cocktailIngredients[ingredientList]}</li>`;
+                    ingredientsHtml += `<li>${cocktailIngredients[ingredientList]}</li>`;
                 } else {
                 if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
-                ingredientsHTML += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+                ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
                 }
             }
             /* Get the instructions for making the cocktial */
@@ -62,11 +63,20 @@ randomRequest.onload = function(){
 
             /* Construct the HTML to view in index.html */
             let cocktailHtml = `
-            <button id="click-next">Next</button>
-            <h1 class="h1">${cocktailName}</h1>
-            <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
-            <ul>${ingredientsHTML}</ul>
-            <p>${cocktailInstructions}</p>
+            <div id="nav-buttons">
+            <button id="go-back" class="pointer pointer-left"><i class="fas fa-hand-point-left"></i></button>
+            <button id="email-me" class="pointer middle-button"><i class="fas fa-envelope"></i></button>
+            <button id="click-next" class="pointer pointer-right"><i class="fas fa-hand-point-right"></i></button>
+            </div>
+
+            <div id="select-cocktail"  class="animate__animated animate__fadeIn">
+                <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
+                <h1 class="h1">${cocktailName}</h1>        
+                <ul>${ingredientsHtml}</ul>
+                    <div id="instructions">
+                    <p>${cocktailInstructions}</p>
+                    </div>
+            </div>  
             `;
                 
             /* Pass the HTML to the div the-data and increment drinkIndex  */

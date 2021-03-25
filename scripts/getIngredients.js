@@ -157,13 +157,14 @@ function getHow() {
             <button id="email-me" class="pointer middle-button" onclick="emailCocktail()"><i class="fas fa-envelope"></i></button>
             <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
             </div>
+
             <div id="select-cocktail"  class="animate__animated animate__fadeIn">
-            <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
-            <h1 class="h1">${cocktailName}</h1>        
-            <ul>${ingredientsHtml}</ul>
-            <div id="instructions">
-            <p>${cocktailInstructions}</p>
-            </div>
+                <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
+                <h1 class="h1">${cocktailName}</h1>        
+                <ul>${ingredientsHtml}</ul>
+                    <div id="instructions">
+                    <p>${cocktailInstructions}</p>
+                    </div>
             </div>          
             `;
                 
