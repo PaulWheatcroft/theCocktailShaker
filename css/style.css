@@ -74,7 +74,7 @@ ul {
     padding: 20px 10px 10px 10px;
 }
 .welcome {
-    background-image: url("/images/welcome.png");
+    background-image: url("../images/welcome.png");
     background-size: 30%;
     background-repeat: no-repeat;
     background-position: bottom;
