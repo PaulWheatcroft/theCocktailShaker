@@ -32,9 +32,6 @@ ul {
     margin-top: 10px;
     padding-bottom: 10px;
 }
-a {
-    color: #f9f9f9;
-}
 
 /* The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp */
 
@@ -106,6 +103,27 @@ a {
 	margin-left: -31px;
 	margin-bottom: -31px;
 }
+#cocktail-selection-type {
+    max-width: 500px;
+    margin: auto;
+}
+#button-float-left {
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FF3093;
+    margin-top: 20px;
+    color: #2E2E2E;
+}
+#button-float-right {
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #02F4F4;
+    margin-top: 20px;
+    color: #2E2E2E;
+}
+
 
 #nav-buttons {
     width: 100%;
