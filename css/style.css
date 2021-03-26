@@ -76,6 +76,37 @@ a {
     min-height: 70vh;
     padding: 20px 10px 10px 10px;
 }
+.welcome {
+    background-image: url("/images/welcome.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.welcome p {
+    font-size: 12px;
+}
+/* speech bubble by https://projects.verou.me/bubbly/ */
+
+.speech-bubble {
+	position: relative;
+	background: rgb(36, 35, 35);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	border: 31px solid transparent;
+	border-top-color: rgb(36, 35, 35);
+	border-bottom: 0;
+	margin-left: -31px;
+	margin-bottom: -31px;
+}
+
 #nav-buttons {
     width: 100%;
 }
@@ -122,6 +153,7 @@ a {
 #select-cocktail {
     font-size: 14px;
 }
+
 #select-cocktail h1 {
     font-size: 250%;
 }
@@ -142,37 +174,40 @@ a {
 
 
 @media all and (min-width: 769px) {
+    .welcome {
+        background-size: 15%;
+    }
     #select-cocktail h1 {
-    font-size: 300%;    
+        font-size: 300%;    
     }  
     .drinks-image {
-    max-width: 50%;
-    height: auto;
-    margin-top: 10px;
+        max-width: 50%;
+        height: auto;
+        margin-top: 10px;
     }
     .drinks-image-how {
-    width: 25%;
-    height: auto; 
-    margin-top: 10px;
+        width: 25%;
+        height: auto; 
+        margin-top: 10px;
     }
     #the-Cocktail-Shaker-font {
-    font-size: 500%;
+        font-size: 500%;
     }
 }
 @media all and (max-height: 450px) {
     .drinks-image {
-    max-width: 20%;
-    margin-top: 10px;
+        max-width: 20%;
+        margin-top: 10px;
     }
     .drinks-image-how {
-    width: 10%;
-    height: auto; 
+        width: 10%;
+        height: auto; 
     }
     #the-Cocktail-Shaker-font {
-    font-size: 500%;
+        font-size: 500%;
     }
 }
 #cocktail-position {
-    display: none;
+        display: none;
 }
 
