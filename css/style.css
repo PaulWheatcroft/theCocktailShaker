@@ -71,7 +71,12 @@ ul {
 }
 #information-container {
     min-height: 70vh;
-    padding: 20px 10px 10px 10px;
+    padding: 20px;
+}
+#information-container a {
+    text-decoration: none;
+    color: #2E2E2E;
+    font-weight: 500;
 }
 .welcome {
     background-image: url("../images/welcome.png");
@@ -86,7 +91,7 @@ ul {
 
 .speech-bubble {
 	position: relative;
-	background: rgb(36, 35, 35);
+	background: #242424;
     border-radius: 10px;
     padding: 10px;
     max-width: 500px;
@@ -98,7 +103,7 @@ ul {
 	position: absolute;
 	left: 50%;
 	border: 31px solid transparent;
-	border-top-color: rgb(36, 35, 35);
+	border-top-color: #242424;
 	border-bottom: 0;
 	margin-left: -31px;
 	margin-bottom: -31px;
@@ -114,6 +119,7 @@ ul {
     background-color: #FF3093;
     margin-top: 20px;
     color: #2E2E2E;
+    width: 140px;
 }
 #button-float-right {
     float: right;
@@ -122,6 +128,7 @@ ul {
     background-color: #02F4F4;
     margin-top: 20px;
     color: #2E2E2E;
+    width: 140px;
 }
 
 
