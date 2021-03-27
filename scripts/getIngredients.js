@@ -1,20 +1,38 @@
-function selectFirstIngredient() {
-    var input, filter, ul, li, a, i, txtValue;
-    document.getElementById("first-selection").reset();
+function filterFirstIngredient() {
+    let input, filter, li, i, txtValue;
     input = document.getElementById("first-selection");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("ingredient-list");
-    li = ul.getElementsByTagName("li");
+    li = document.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
+        
+        txtValue = li[i].textContent || li[i].innerText;
+
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
+        };
+    };
+}
+
+let ingredientListItem;
+
+
+
+function listenIngredientList() {
+    ingredientListItem = document.getElementsByClassName('drinks-list');
+    for (let i = 0; i<ingredientListItem.length; i++) {
+        ingredientListItem[i].addEventListener("click", ingredientName);
+            function ingredientName() {
+            let theIngredient = ingredientListItem[i].innerText;
+            document.getElementById('first-selection').value = theIngredient;
         }
     }
+
 }
+listenIngredientList();
+
+
 
 let cocktailId = '';
 let cocktailName = '';

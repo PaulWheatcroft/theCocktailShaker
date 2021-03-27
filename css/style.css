@@ -245,6 +245,8 @@ ul {
 }
 
 #ingredient-list {
-    background-color: #f9f9f9;
+    border: #f9f9f9 solid 1px;
+    border-radius: 5px;;
     height: 65px;
+    overflow: hidden;
 }

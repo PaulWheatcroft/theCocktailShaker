@@ -21,19 +21,20 @@
     <main class="gradient-border">
         <div id="information-container">
 
-
-            <input type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onkeyup="selectFirstIngredient()" class="ingredient-input">
+            <form>
+            <button type="submit" id="show-me" onclick="getIngredientsURL()">Show me my cocktails</button>
+            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onkeyup="filterFirstIngredient()" class="ingredient-input">
 
             <ul id="ingredient-list">
-            <li><a href="#">Vodka</a></li>
-            <li><a href="#">Rum</a></li>
-            <li><a href="#">Gin</a></li>
-            <li><a href="#">Chocolate</a></li>
-            <li><a href="#">Absynthe</a></li>
-            <li><a href="#">Brandy</a></li>
+                <li class="drinks-list">Vodka</li>
+                <li class="drinks-list">Rum</li>
+                <li class="drinks-list">Gin</li>
+                <li class="drinks-list">Chocolate</li>
+                <li class="drinks-list">Absynthe</li>
+                <li class="drinks-list">Brandy</li>
             </ul>
-            
-            <button type="submit" id="show-me" onclick="getIngredientsURL()">Show me my cocktails</button>
+
+            </form>
         </div>
     </main>
 
