@@ -236,3 +236,19 @@ ul {
         display: none;
 }
 
+
+
+.ingredient-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+#ingredient-list {
+    border: #f9f9f9 solid 1px;
+    border-radius: 5px;;
+    height: 75px;
+    overflow: auto;
+    max-width: 600px;
+    margin: auto;
+}
