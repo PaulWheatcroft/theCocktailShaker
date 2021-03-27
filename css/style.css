@@ -236,3 +236,15 @@ ul {
         display: none;
 }
 
+
+
+.ingredient-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+#ingredient-list {
+    background-color: #f9f9f9;
+    height: 65px;
+}

@@ -22,11 +22,16 @@
         <div id="information-container">
 
 
-            <select name="ingredient-selection-one" id="first-selection">
-                <option value="Gin">Gin</option>
-                <option value="Vodka">Vodka</option>
-                <option value="Rum">Rum</option>
-            </select>
+            <input type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onkeyup="selectFirstIngredient()" class="ingredient-input">
+
+            <ul id="ingredient-list">
+            <li><a href="#">Vodka</a></li>
+            <li><a href="#">Rum</a></li>
+            <li><a href="#">Gin</a></li>
+            <li><a href="#">Chocolate</a></li>
+            <li><a href="#">Absynthe</a></li>
+            <li><a href="#">Brandy</a></li>
+            </ul>
             
             <button type="submit" id="show-me" onclick="getIngredientsURL()">Show me my cocktails</button>
         </div>
