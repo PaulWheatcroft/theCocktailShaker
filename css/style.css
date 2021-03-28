@@ -144,6 +144,9 @@ textarea:focus, input:focus{
 #nav-buttons {
     width: 100%;
 }
+#show-me {
+    margin-top: 20px;
+}
 .button {
     width: 140px;
     height: 50px;

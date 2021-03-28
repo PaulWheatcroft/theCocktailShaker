@@ -139,7 +139,7 @@ function nextCocktail() {
 /* ----------- show the previous of cocktail */
 function previousCocktail() {
 
-    if (drinkIndex === -1) {
+    if (drinkIndex === 0) {
         return;
     }
     drinkIndex = drinkIndex - 1;
