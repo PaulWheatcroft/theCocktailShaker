@@ -22,11 +22,10 @@
         <div id="information-container">
 
             <button type="submit" id="show-me" onclick="getIngredientsURL()">Show me my cocktails</button>
-
-            <form>
             
             <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onkeyup="filterFirstIngredient()" class="ingredient-input">
-
+            
+            <div id="first-ingredient-filter">
             <ul id="ingredient-list">
                 <li class="drinks-list">Vodka</li>
                 <li class="drinks-list">Rum</li>
@@ -41,11 +40,11 @@
                 <li class="drinks-list">Cider</li>
                 <li class="drinks-list">Grenadine</li>
             </ul>
+            </div>
 
-            </form>
         </div>
     </main>
-
+<script type="text/javascript" src="scripts/ingredientList.js"></script>
 <script type="text/javascript" src="scripts/getIngredients.js"></script>
 
 </body>

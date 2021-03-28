@@ -12,16 +12,6 @@ function filterFirstIngredient() {
         };
     };
 }
-function listenIngredientList() {
-    let ingredientListItem = document.getElementsByClassName('drinks-list');
-    for (let i = 0; i<ingredientListItem.length; i++) {
-        ingredientListItem[i].addEventListener("click", ingredientName);
-            function ingredientName() {
-            let theIngredient = ingredientListItem[i].innerText;
-            document.getElementById('first-selection').value = theIngredient;
-        }
-    }
-}
 
 
 listenIngredientList();
@@ -93,7 +83,7 @@ function nextCocktail() {
 /* show the previous of cocktail */
 function previousCocktail() {
 
-    if (drinkIndex === 1) {
+    if (drinkIndex === -1) {
         return;
     }
         
