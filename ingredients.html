@@ -21,7 +21,11 @@
     <main class="gradient-border">
         <div id="information-container">
 
-            <button type="submit" id="show-me" onclick="getIngredientsURL()">Show me my cocktails</button>
+            <button type="submit" id="show-me" onclick="getIngredientsURL()">Show me my cocktails</button><br>
+            
+            <button type="submit" id="filter-me"   onclick="listenIngredientList()">Listen Here</button><br>
+
+
             
             <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onkeyup="filterFirstIngredient()" class="ingredient-input">
             
@@ -44,7 +48,7 @@
 
         </div>
     </main>
-<script type="text/javascript" src="scripts/ingredientList.js"></script>
+<!-- <script type="text/javascript" src="scripts/ingredientList.js"></script> -->
 <script type="text/javascript" src="scripts/getIngredients.js"></script>
 
 </body>

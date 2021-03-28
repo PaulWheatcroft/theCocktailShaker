@@ -1,20 +1,76 @@
-function filterFirstIngredient() {
-    let input, filter, li, i, textValue;
-    input = document.getElementById("first-selection");
-    filter = input.value.toUpperCase();
-    li = document.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {        
-        textValue = li[i].innerText;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        };
-    };
+/* ----------------------------------------------------------- */
+
+let ingredientRequest = new XMLHttpRequest();
+
+ingredientRequest.open('GET', `https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`, true);
+
+/* Get cocktails with the selected ingredients */
+ingredientRequest.onload = function(){
+    if(this.status === 200){
+        ingredientList = JSON.parse(this.responseText);
+        console.log(ingredientList);                           
+    };    
+};
+ingredientRequest.send();
+
+function firstIngredientSelection(callback) {
+        /* Get the name of the ingredients */
+            let i = 0;
+            let ingredientListItem = document.getElementsByClassName('drinks-list');
+            let ingredientListItemsHtml = '';
+            for (i; i<ingredientList.drinks.length; i++) {
+                let ingredientName = ingredientList.drinks[i]["strIngredient1"];
+                ingredientListItemsHtml += `<li class="drinks-list">${ingredientName}</li>`;           
+            }
+            let ingredientListHtml = `<ul id="ingredient-list">
+            ${ingredientListItemsHtml}
+            </ul>
+            `
+            console.log(ingredientListHtml);
+
+            document.getElementById('first-ingredient-filter').innerHTML = ingredientListHtml;
+
+            listenIngredientList(callback);
 }
 
 
+
+let firstIngredientField = document.getElementById('first-selection');
+firstIngredientField.addEventListener('click', firstIngredientSelection);
+
+
+
+/* ----------------------------------------------------------- */
+
+
+
+function filterFirstIngredient() {
+    let input, filter, li, i, textValue;
+    input = document.getElementById('first-selection');
+    filter = input.value.toUpperCase();
+    li = document.getElementsByTagName('li');
+    for (i = 0; i < li.length; i++) {        
+        textValue = li[i].innerText;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+        } else {
+            li[i].style.display = 'none';
+        };
+    };
+}
+function listenIngredientList() {
+    let ingredientListItem = document.getElementsByClassName('drinks-list');
+    for (let i = 0; i<ingredientListItem.length; i++) {
+        ingredientListItem[i].addEventListener('click', ingredientName);
+            function ingredientName() {
+            let theIngredient = ingredientListItem[i].innerText;
+            document.getElementById('first-selection').value = theIngredient;
+        }
+    }
+}
+
 listenIngredientList();
+
 
 let cocktailId = '';
 let cocktailName = '';
