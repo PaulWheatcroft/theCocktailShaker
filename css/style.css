@@ -33,6 +33,11 @@ ul {
     padding-bottom: 10px;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+    background-color: #f9f9f9;
+}
+
 /* The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp */
 
 .gradient-border {
@@ -112,6 +117,10 @@ ul {
     max-width: 500px;
     margin: auto;
 }
+
+#nav-buttons {
+    width: 100%;
+}
 #button-float-left {
     float: left;
     padding: 10px;
@@ -135,6 +144,16 @@ ul {
 #nav-buttons {
     width: 100%;
 }
+.button {
+    width: 140px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #2E2E2E;
+    background-color: #FF3093;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .pointer {
     width: 50px;
     height: 50px;
@@ -150,9 +169,32 @@ ul {
 .pointer-right {
     background-color: #02F4F4;
 }
-.middle-button {
+.pointer-middle {
     background-color: #05FF00;
 
+}
+
+.ingredient-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px 5px 0 0;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: lightgray;
+}
+
+#ingredient-list {
+    border-radius: 0 0 5px 5px;
+    height: 90px;
+    overflow: auto;
+    max-width: 220px;
+    margin: auto;
+    background-color: #111111;
+}
+
+.drinks-list {
+    border-bottom: 1px #2E2E2E solid;
+    padding-bottom: 4px;    
 }
 
 .drinks-image {
@@ -238,17 +280,4 @@ ul {
 
 
 
-.ingredient-input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-}
 
-#ingredient-list {
-    border: #f9f9f9 solid 1px;
-    border-radius: 5px;;
-    height: 75px;
-    overflow: auto;
-    max-width: 600px;
-    margin: auto;
-}

@@ -16,7 +16,6 @@ ingredientRequest.send();
 function firstIngredientSelection(callback) {
         /* Get the name of the ingredients */
             let i = 0;
-            let ingredientListItem = document.getElementsByClassName('drinks-list');
             let ingredientListItemsHtml = '';
             for (i; i<ingredientList.drinks.length; i++) {
                 let ingredientName = ingredientList.drinks[i]["strIngredient1"];
@@ -115,7 +114,7 @@ function nextCocktail() {
     cocktailHtml = `
     <div id="nav-buttons">
     <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="show-how" class="pointer middle-button"><i class="fas fa-thumbs-up"></i></button>
+    <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
     <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
     </div>         
     <div id="select-cocktail" class="animate__animated animate__fadeIn">    
@@ -152,7 +151,7 @@ function previousCocktail() {
     cocktailHtml = `
     <div id="nav-buttons">
     <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="show-how" class="pointer middle-button"><i class="fas fa-thumbs-up"></i></button>
+    <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
     <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
     </div>         
     <div id="select-cocktail" class="animate__animated animate__fadeIn">    
@@ -228,7 +227,7 @@ function getHow() {
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
             <button id="go-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-            <button id="email-me" class="pointer middle-button" onclick="emailCocktail()"><i class="fas fa-envelope"></i></button>
+            <button id="email-me" class="pointer pointer-middle" onclick="emailCocktail()"><i class="fas fa-envelope"></i></button>
             <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
             </div>
 
