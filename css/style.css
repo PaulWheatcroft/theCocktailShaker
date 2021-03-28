@@ -171,7 +171,9 @@ textarea:focus, input:focus{
 }
 .pointer-middle {
     background-color: #05FF00;
-
+}
+.pointer-disabled {
+    background-color: #242424;
 }
 
 .ingredient-input {

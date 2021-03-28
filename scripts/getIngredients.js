@@ -1,4 +1,4 @@
-/* ----------------------------------------------------------- */
+/* ----------- Getting the JSON of ingredients from https://www.thecocktaildb.com/ */
 
 let ingredientRequest = new XMLHttpRequest();
 
@@ -13,8 +13,10 @@ ingredientRequest.onload = function(){
 };
 ingredientRequest.send();
 
+
+/* ----------- construct html of ingredients to li items */
+
 function firstIngredientSelection(callback) {
-        /* Get the name of the ingredients */
             let i = 0;
             let ingredientListItemsHtml = '';
             for (i; i<ingredientList.drinks.length; i++) {
@@ -33,15 +35,14 @@ function firstIngredientSelection(callback) {
 }
 
 
+/* ----------- Listen out for the first ingredient input to be clicked */
 
 let firstIngredientField = document.getElementById('first-selection');
 firstIngredientField.addEventListener('click', firstIngredientSelection);
 
 
 
-/* ----------------------------------------------------------- */
-
-
+/* ----------- Filter list as text is aded */
 
 function filterFirstIngredient() {
     let input, filter, li, i, textValue;
@@ -57,6 +58,8 @@ function filterFirstIngredient() {
         };
     };
 }
+/* ----------- When an ingredient in the list is clicked add it to the input */
+/* ----------- This function is called back by firstIngredientSelection(callback) */
 function listenIngredientList() {
     let ingredientListItem = document.getElementsByClassName('drinks-list');
     for (let i = 0; i<ingredientListItem.length; i++) {
@@ -68,14 +71,13 @@ function listenIngredientList() {
     }
 }
 
-listenIngredientList();
 
 
 let cocktailId = '';
 let cocktailName = '';
 let cocktailImage = '';
 let cocktailHtml = '';
-let drinkIndex = 0;
+let drinkIndex = -1;
 let cocktailInstructions = '';
 let cocktailData = '';
 
@@ -91,7 +93,7 @@ function callAPI(APIURL) {
 
     request.open('GET', `${APIURL}`, true);
 
-    /* Get cocktails with the selected ingredients */
+/* ----------- Get cocktails with the selected ingredients */
     request.onload = function(){
         if(this.status === 200){
             cocktailData = JSON.parse(this.responseText);
@@ -102,15 +104,16 @@ function callAPI(APIURL) {
     setTimeout(nextCocktail, 3000)   
 }
 
-/* show the selection of cocktail */
+/* ----------- show the selection of cocktail */
 function nextCocktail() {
+    drinkIndex = drinkIndex + 1;
         
-    /* Get the name and the image of the cocktail */
+/* ----------- Get the name and the image of the cocktail */
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
-    /* Construct the HTML to view output */
+/* ----------- Construct the HTML to view output */
     cocktailHtml = `
     <div id="nav-buttons">
     <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
@@ -125,29 +128,28 @@ function nextCocktail() {
     </div>        
     `;
         
-    /* Pass the HTML to the div the-data and increment drinkIndex  */
+/* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
     document.getElementById("information-container").innerHTML = cocktailHtml;
-    drinkIndex = drinkIndex + 1;
-
 
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
 
 };
 
-/* show the previous of cocktail */
+/* ----------- show the previous of cocktail */
 function previousCocktail() {
 
     if (drinkIndex === -1) {
         return;
     }
+    drinkIndex = drinkIndex - 1;
         
-    /* Get the name and the image of the cocktail */
+/* ----------- Get the name and the image of the cocktail */
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
-    /* Construct the HTML to view output */
+/* ----------- Construct the HTML to view output */
     cocktailHtml = `
     <div id="nav-buttons">
     <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
@@ -162,9 +164,9 @@ function previousCocktail() {
     </div>        
     `;
         
-    /* Pass the HTML to the div the-data and increment drinkIndex  */
+/* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
     document.getElementById("information-container").innerHTML = cocktailHtml;
-    drinkIndex = drinkIndex - 1;
+    
 
 
     let showHowCocktails = document.getElementById('show-how');
@@ -172,7 +174,7 @@ function previousCocktail() {
 
 };
 
-/* get how to make the cocktail */
+/* ----------- get how to make the cocktail */
 function getHow() {
     cocktailPositionInArray = document.getElementById('cocktail-position').textContent;
 
@@ -186,32 +188,32 @@ function getHow() {
             let cocktailHowToData = JSON.parse(this.responseText);
             console.log(cocktailHowToData);
         
-            /* Get the name and the image of the cocktail to make */
+/* ----------- Get the name and the image of the cocktail to make */
             cocktailInstructions = cocktailHowToData.drinks[0]["strInstructions"];
 
-            /* Set the arrays to contain the ingredients and measurements */
+/* ----------- Set the arrays to contain the ingredients and measurements */
             const cocktailIngredients = [];
             const cocktailMeasurements = [];
             let cocktailIndividualIngredient = '';
             let cocktailIngredientMeasure = '';
             
-            /* go through the properties of the object*/
+/* ----------- go through the properties of the object*/
             for (let property in cocktailHowToData.drinks[0]){
             
-            /* Select all properties that start with strIngredient and push in to cocktailIngredients array */
+/* ----------- Select all properties that start with strIngredient and push in to cocktailIngredients array */
             if(property.startsWith('strIngredient') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIndividualIngredient = cocktailHowToData.drinks[0][property]; 
                 cocktailIngredients.push(cocktailIndividualIngredient);
             }
-            /* Select all properties that start with strMeasure and push in to ocktailMeasurements array */
+/* ----------- Select all properties that start with strMeasure and push in to ocktailMeasurements array */
             if(property.startsWith('strMeasure') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIngredientMeasure = cocktailHowToData.drinks[0][property];
                 cocktailMeasurements.push(cocktailIngredientMeasure);
             };    
             };
 
-            /* Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
-            /* handle measurements that are "undefined" due to fewer entries in array */
+/* ----------- Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
+/* ----------- handle measurements that are "undefined" due to fewer entries in array */
             let ingredientList = 0;
             let ingredientsHtml = '';
             for (ingredientList; ingredientList < cocktailIngredients.length; ingredientList++) {
@@ -223,12 +225,12 @@ function getHow() {
                 };
             };
 
-        /* Construct the HTML to view how to make the cocktail */
+/* ----------- Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
             <button id="go-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-            <button id="email-me" class="pointer pointer-middle" onclick="emailCocktail()"><i class="fas fa-envelope"></i></button>
-            <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
+            <button id="email-me" class="pointer pointer-middle" onclick="emailCocktail()" disabled><i class="fas fa-envelope"></i></button>
+            <button id="click-next" class="pointer pointer-right pointer-disabled" disabled><i class="fas fa-hand-point-right"></i></button>
             </div>
 
             <div id="select-cocktail"  class="animate__animated animate__fadeIn">
@@ -241,9 +243,9 @@ function getHow() {
             </div>          
             `;
                 
-            /* Pass the HTML to the div the-ingredient-data */
+/* ----------- Pass the HTML to the div the-ingredient-data */
             document.getElementById("information-container").innerHTML = cocktailToMakeHtml;
-            drinkIndex = drinkIndex - 1;
+            drinkIndex = drinkIndex + 1;
 
         };
     };
