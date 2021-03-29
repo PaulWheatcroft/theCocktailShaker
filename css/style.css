@@ -11,9 +11,6 @@ body {
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
 }
-html {
-    height: -webkit-fill-available;
-}
 header {
     width: 100%;
     margin: auto;

@@ -77,7 +77,7 @@ let cocktailId = '';
 let cocktailName = '';
 let cocktailImage = '';
 let cocktailHtml = '';
-let drinkIndex = -1;
+let drinkIndex = 0;
 let cocktailInstructions = '';
 let cocktailData = '';
 
@@ -101,78 +101,52 @@ function callAPI(APIURL) {
         };    
     };
     request.send();
-    setTimeout(nextCocktail, 3000)   
+    setTimeout(loadCocktail, 3000)   
+}
+
+function previousCocktail(callback) {
+    drinkIndex = drinkIndex - 1;
+    loadCocktail(callback);
+}
+
+function nextCocktail(callback) {
+    drinkIndex = drinkIndex + 1;
+    loadCocktail(callback);
 }
 
 /* ----------- show the selection of cocktail */
-function nextCocktail() {
-    drinkIndex = drinkIndex + 1;
-        
-/* ----------- Get the name and the image of the cocktail */
-    cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
-    cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
-    cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
-
-/* ----------- Construct the HTML to view output */
-    cocktailHtml = `
-    <div id="nav-buttons">
-    <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
-    <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
-    </div>         
-    <div id="select-cocktail" class="animate__animated animate__fadeIn">    
-    <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
-    <h1 class="h1 cocktail-title">${cocktailName}</h1>
-    <h2 id="cocktail-id">${cocktailId}</h2>
-    <h2 id="cocktail-position">${drinkIndex}</h2>
-    </div>        
-    `;
-        
-/* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
-    document.getElementById("information-container").innerHTML = cocktailHtml;
-
-    let showHowCocktails = document.getElementById('show-how');
-    showHowCocktails.addEventListener('click', getHow);
-
-};
-
-/* ----------- show the previous of cocktail */
-function previousCocktail() {
-
-    if (drinkIndex === 0) {
-        return;
-    }
-    drinkIndex = drinkIndex - 1;
-        
-/* ----------- Get the name and the image of the cocktail */
-    cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
-    cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
-    cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
-
-/* ----------- Construct the HTML to view output */
-    cocktailHtml = `
-    <div id="nav-buttons">
-    <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
-    <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
-    </div>         
-    <div id="select-cocktail" class="animate__animated animate__fadeIn">    
-    <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
-    <h1 class="h1 cocktail-title">${cocktailName}</h1>
-    <h2 id="cocktail-id">${cocktailId}</h2>
-    <h2 id="cocktail-position">${drinkIndex}</h2>
-    </div>        
-    `;
-        
-/* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
-    document.getElementById("information-container").innerHTML = cocktailHtml;
+function loadCocktail() {
     
+        
+/* ----------- Get the name and the image of the cocktail */
+    cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
+    cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
+    cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
+/* ----------- Construct the HTML to view output */
+    cocktailHtml = `
+    <div id="nav-buttons">
+    <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
+    <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+    <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
+    </div>         
+    <div id="select-cocktail" class="animate__animated animate__fadeIn">    
+    <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
+    <h1 class="h1 cocktail-title">${cocktailName}</h1>
+    <h2 id="cocktail-id">${cocktailId}</h2>
+    <h2 id="cocktail-position">${drinkIndex}</h2>
+    </div>        
+    `;
+        
+/* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
+    document.getElementById("information-container").innerHTML = cocktailHtml;
 
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
 
 };
+
+
 
 /* ----------- get how to make the cocktail */
 function getHow() {
