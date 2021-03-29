@@ -78,7 +78,7 @@ function loadRandomCocktail() {
     let cocktailHtml = `
     <div id="nav-buttons">
     <button id="go-back" class="pointer pointer-left" onclick="previousRandomCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="email-me" class="pointer middle-button"><i class="fas fa-envelope"></i></button>
+    <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
     <button id="click-next" class="pointer pointer-right" onclick="nextRandomCocktail()"><i class="fas fa-hand-point-right"></i></button>
     </div>
 
