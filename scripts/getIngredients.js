@@ -23,7 +23,7 @@ function firstIngredientSelection(callback) {
                 let ingredientName = ingredientList.drinks[i]["strIngredient1"];
                 ingredientListItemsHtml += `<li class="drinks-list">${ingredientName}</li>`;           
             }
-            let ingredientListHtml = `<ul id="ingredient-list">
+            let ingredientListHtml = `<ul id="ingredient-list" class="ingredient-list">
             ${ingredientListItemsHtml}
             </ul>
             `
