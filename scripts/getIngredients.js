@@ -13,7 +13,7 @@ ingredientRequest.onload = function(){
 };
 ingredientRequest.send();
 
-
+/* ----------- capture which input field was clicked */
 let inputId = '';
 
 function firstFilter() {
@@ -23,14 +23,14 @@ function secondFilter() {
     inputId = 'second';
 }
 
-/* ----------- construct html of ingredients to li items */
+/*construct html of ingredients to li items */
 
 function ingredientSelection(callback) {
     let i = 0;
     let ingredientListItemsHtml = '';
     for (i; i<ingredientList.drinks.length; i++) {
         let ingredientName = ingredientList.drinks[i]["strIngredient1"];
-        ingredientListItemsHtml += `<li class="drinks-list">${ingredientName}</li>`;           
+        ingredientListItemsHtml += `<li class="drinks-list ${inputId}-list">${ingredientName}</li>`;           
     }
     let ingredientListHtml = `<ul id="${inputId}-ingredient-list" class="ingredient-list">
     ${ingredientListItemsHtml}
@@ -64,13 +64,12 @@ firstIngredientField.addEventListener('click', ingredientSelection);
 let secondIngredientField = document.getElementById('second-selection');
 secondIngredientField.addEventListener('click', ingredientSelection);
 
-/* 
 
-function filterFirstIngredient() {
+function filterIngredient() {
     let input, filter, li, i, textValue;
-    input = document.getElementById('first-selection');
+    input = document.getElementById(`${inputId}-selection`);
     filter = input.value.toUpperCase();
-    li = document.getElementsByTagName('li');
+    li = document.getElementsByClassName(`${inputId}-list`);
     for (i = 0; i < li.length; i++) {        
         textValue = li[i].innerText;
         if (textValue.toUpperCase().indexOf(filter) > -1) {
@@ -80,7 +79,7 @@ function filterFirstIngredient() {
         };
     };
 }
-*/
+
 
 let cocktailId = '';
 let cocktailName = '';

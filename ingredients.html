@@ -27,16 +27,16 @@
 
 
 
-            <h2>First Ingredient</h2>
-            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onclick="firstFilter()" class="ingredient-input">
+            <h3>First Ingredient</h3>
+            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onclick="firstFilter()" onkeyup="filterIngredient()" class="ingredient-input">
             
             <div id="first-ingredient-list-container">
                 <ul id="first-ingredient-list" class="ingredient-list">            
                 </ul>
             </div>
 
-            <h2>Second Ingredient (optional)</h2>
-            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-two" id="second-selection" onclick="secondFilter()" class="ingredient-input">
+            <h3>Second Ingredient (optional)</h3>
+            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-two" id="second-selection" onclick="secondFilter()" onkeyup="filterIngredient()" class="ingredient-input">
             
             <div id="second-ingredient-list-container">
                 <ul id="second-ingredient-list" class="ingredient-list">            

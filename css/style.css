@@ -191,7 +191,8 @@ textarea:focus, input:focus{
     overflow: auto;
     max-width: 220px;
     margin: auto;
-    background-color: #474747;;
+    background-color: #474747;
+    margin-bottom: 20px;
 }
 
 .drinks-list {
@@ -275,6 +276,8 @@ textarea:focus, input:focus{
     #the-Cocktail-Shaker-font {
         font-size: 500%;
     }
+
+/* to remove */
 }
 #cocktail-position {
         display: none;
