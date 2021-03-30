@@ -93,7 +93,7 @@ textarea:focus, input:focus{
 
 .speech-bubble {
 	position: relative;
-	background: #242424;
+	background: #474747;
     border-radius: 10px;
     padding: 10px;
     max-width: 500px;
@@ -105,7 +105,7 @@ textarea:focus, input:focus{
 	position: absolute;
 	left: 50%;
 	border: 31px solid transparent;
-	border-top-color: #242424;
+	border-top-color: #474747;
 	border-bottom: 0;
 	margin-left: -31px;
 	margin-bottom: -31px;
@@ -185,13 +185,13 @@ textarea:focus, input:focus{
     background-color: lightgray;
 }
 
-#ingredient-list {
+.ingredient-list {
     border-radius: 0 0 5px 5px;
     height: 90px;
     overflow: auto;
     max-width: 220px;
     margin: auto;
-    background-color: #111111;
+    background-color: #474747;;
 }
 
 .drinks-list {
