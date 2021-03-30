@@ -250,7 +250,7 @@ textarea:focus, input:focus{
         font-size: 300%;    
     }  
     .drinks-image {
-        max-width: 50%;
+        max-width: 45%;
         height: auto;
         margin-top: 10px;
     }

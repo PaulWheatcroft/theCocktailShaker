@@ -33,6 +33,18 @@ function firstIngredientSelection(callback) {
 
             listenIngredientList(callback);
 }
+/* ----------- When an ingredient in the list is clicked add it to the input */
+/* ----------- This function is called back by firstIngredientSelection(callback) */
+function listenIngredientList() {
+    let ingredientListItem = document.getElementsByClassName('drinks-list');
+    for (let i = 0; i<ingredientListItem.length; i++) {
+        ingredientListItem[i].addEventListener('click', ingredientName);
+            function ingredientName() {
+            let theIngredient = ingredientListItem[i].innerText;
+            document.getElementById('first-selection').value = theIngredient;
+        }
+    }
+}
 
 
 /* ----------- Listen out for the first ingredient input to be clicked */
@@ -41,8 +53,7 @@ let firstIngredientField = document.getElementById('first-selection');
 firstIngredientField.addEventListener('click', firstIngredientSelection);
 
 
-
-/* ----------- Filter list as text is aded */
+/* 
 
 function filterFirstIngredient() {
     let input, filter, li, i, textValue;
@@ -58,18 +69,10 @@ function filterFirstIngredient() {
         };
     };
 }
-/* ----------- When an ingredient in the list is clicked add it to the input */
-/* ----------- This function is called back by firstIngredientSelection(callback) */
-function listenIngredientList() {
-    let ingredientListItem = document.getElementsByClassName('drinks-list');
-    for (let i = 0; i<ingredientListItem.length; i++) {
-        ingredientListItem[i].addEventListener('click', ingredientName);
-            function ingredientName() {
-            let theIngredient = ingredientListItem[i].innerText;
-            document.getElementById('first-selection').value = theIngredient;
-        }
-    }
-}
+*/
+
+
+
 
 
 
