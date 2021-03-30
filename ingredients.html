@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://kit.fontawesome.com/e5878dac08.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#242424">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#242424">
     <style type="text/css">   
      @font-face{
         font-family:"Marlowe Swirl W05 Regular";
@@ -25,14 +27,20 @@
 
 
 
+            <h3>First Ingredient</h3>
+            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onclick="firstFilter()" onkeyup="filterIngredient()" class="ingredient-input">
             
-            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-one" id="first-selection" onkeyup="filterFirstIngredient()" class="ingredient-input">
-            
-            <div id="first-ingredient-filter">
-                <ul id="ingredient-list">            
+            <div id="first-ingredient-list-container">
+                <ul id="first-ingredient-list" class="ingredient-list">            
                 </ul>
+            </div>
 
-
+            <h3>Second Ingredient (optional)</h3>
+            <input autocomplete="off" type="text" placeholder="Search..." name="ingredient-selection-two" id="second-selection" onclick="secondFilter()" onkeyup="filterIngredient()" class="ingredient-input">
+            
+            <div id="second-ingredient-list-container">
+                <ul id="second-ingredient-list" class="ingredient-list">            
+                </ul>
             </div>
 
             <div id="nav-buttons">
