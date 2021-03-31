@@ -88,13 +88,25 @@ let cocktailHtml = '';
 let drinkIndex = 0;
 let cocktailInstructions = '';
 let cocktailData = '';
+let APIURL = '';
+
+
+
 
 function getIngredientsURL() {
-    let firstIngredient = document.getElementById("first-selection").value;
-    let secondIngredient = document.getElementById("second-selection").value;
-    let APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
+
+        let firstIngredient = document.getElementById("first-selection").value;
+        let secondIngredient = document.getElementById("second-selection").value;
+    
+        if (secondFilter === '') {
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
+        } else {
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
+        }
+    
     callAPI(APIURL);    
 }
+/* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
     console.log(APIURL);
 
@@ -102,12 +114,11 @@ function callAPI(APIURL) {
 
     request.open('GET', `${APIURL}`, true);
 
-/* ----------- Get cocktails with the selected ingredients */
+
     request.onload = function(){
         if(this.status === 200){
-            cocktailData = JSON.parse(this.responseText);
-            console.log(cocktailData);                   
-        };    
+            cocktailData = JSON.parse(this.responseText);                
+        };           
     };
     request.send();
     setTimeout(loadCocktail, 3000)   
