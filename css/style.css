@@ -15,6 +15,9 @@ header {
     width: 100%;
     margin: auto;
 }
+header a {
+    text-decoration: none;
+}
 main {
     width: 90%;
     height: 80%;
@@ -72,7 +75,7 @@ textarea:focus, input:focus{
     font-size: 250%;
 }
 #information-container {
-    min-height: 80vh;
+    min-height: 78vh;
     padding: 20px;
 }
 #information-container a {
@@ -82,7 +85,7 @@ textarea:focus, input:focus{
 }
 .welcome {
     background-image: url("../images/welcome.png");
-    background-size: 35%;
+    background-size: auto 65%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
@@ -173,7 +176,7 @@ textarea:focus, input:focus{
     background-color: #05FF00;
 }
 .pointer-disabled {
-    background-color: #242424;
+    background-color: #474747;
 }
 
 .ingredient-input {
@@ -230,7 +233,7 @@ textarea:focus, input:focus{
 #instructions {
     padding: 10px;
     border-radius: 4px;
-    background-color: rgb(36, 35, 35);
+    background-color: #474747;
     margin: auto;
     max-width: 600px;
 }
@@ -241,38 +244,13 @@ textarea:focus, input:focus{
 #cocktail-id {
     display: none;
 }
-@media all and (max-height: 500px) {
+
+@media all and (min-width: 767px) {
     #information-container {
         min-height: 75vh;
     }  
     .welcome {
-        background-size: 17%;
-    }
-    #select-cocktail h1 {
-        font-size: 300%;    
-    }  
-    .drinks-image {
-        max-width: 45%;
-        height: auto;
-        margin-top: 10px;
-    }
-    .drinks-image-how {
-        width: 25%;
-        height: auto; 
-        margin-top: 10px;
-    }
-    #the-Cocktail-Shaker-font {
-        font-size: 500%;
-    }
-}
-
-
-@media all and (min-width: 769px) {
-    #information-container {
-        min-height: 75vh;
-    }  
-    .welcome {
-        background-size: 17%;
+        background-size: auto 80%;
     }
     #select-cocktail h1 {
         font-size: 300%;    
