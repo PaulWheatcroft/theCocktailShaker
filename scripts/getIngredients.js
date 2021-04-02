@@ -89,11 +89,13 @@ let drinkIndex = 0;
 let cocktailInstructions = '';
 let cocktailData = '';
 let APIURL = '';
+let firstIngredient;
+let secondIngredient;
 
 function getIngredientsURL() {
 
-        let firstIngredient = document.getElementById("first-selection").value;
-        let secondIngredient = document.getElementById("second-selection").value;
+        firstIngredient = document.getElementById("first-selection").value;
+        secondIngredient = document.getElementById("second-selection").value;
     
         if (secondIngredient === '') {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
@@ -136,10 +138,28 @@ function nextCocktail() {
 
 function initiateCocktails() {
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
-        alert("watch the fuck out");
-        return;
+        noCocktailsHtml = `
+        <h1>I couldn't find anything with both choices</h1>
+        <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
+        <button id="first-search-again">Search with ${firstIngredient}</button>
+        <button id="second-search-again">Search with ${secondIngredient}</button>
+        `;
+        document.getElementById("information-container").innerHTML = noCocktailsHtml;
+
+        document.getElementById('first-search-again').onclick = function() {
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
+            callAPI(APIURL);
+        };
+        document.getElementById('second-search-again').onclick = function() {
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
+            callAPI(APIURL);
+        }; 
+
+    } else {
+        loadCocktail();
     }
-    loadCocktail();    
+
+
 }
 
 /* ----------- show the selection of cocktail */
