@@ -86,7 +86,6 @@ let cocktailName = '';
 let cocktailImage = '';
 let cocktailHtml = '';
 let drinkIndex = 0;
-let maxDrinkIndex = 0;
 let cocktailInstructions = '';
 let cocktailData = '';
 let APIURL = '';
@@ -115,23 +114,29 @@ function callAPI(APIURL) {
 
     request.onload = function(){
         if(this.status === 200){
-            cocktailData = JSON.parse(this.responseText);                
-        };           
+            cocktailData = JSON.parse(this.responseText);          
+        };
+        if (cocktailData.drinks = undefined) {
+            alert("this is undefined");
+            return;
+        }      
     };
     request.send();
-    setTimeout(loadCocktail, 3000)
-    console.log(cocktailData);
-    cocktailData.length = maxDrinkIndex;
+    setTimeout(initiateCocktails, 3000)    
 }
 
-function previousCocktail(callback) {
+
+function previousCocktail() {
     drinkIndex = drinkIndex - 1;
-    loadCocktail(callback);
+    loadCocktail();
 }
 
-function nextCocktail(callback) {
+function nextCocktail() {
     drinkIndex = drinkIndex + 1;
-    loadCocktail(callback);
+    loadCocktail();
+}
+function initiateCocktails() {
+    loadCocktail();    
 }
 
 /* ----------- show the selection of cocktail */
@@ -150,7 +155,7 @@ function loadCocktail() {
         <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
-    } else if (drinkIndex > maxDrinkIndex) {
+    } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
         <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
