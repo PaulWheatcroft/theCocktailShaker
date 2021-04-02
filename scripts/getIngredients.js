@@ -86,19 +86,17 @@ let cocktailName = '';
 let cocktailImage = '';
 let cocktailHtml = '';
 let drinkIndex = 0;
+let maxDrinkIndex = 0;
 let cocktailInstructions = '';
 let cocktailData = '';
 let APIURL = '';
-
-
-
 
 function getIngredientsURL() {
 
         let firstIngredient = document.getElementById("first-selection").value;
         let secondIngredient = document.getElementById("second-selection").value;
     
-        if (secondFilter === '') {
+        if (secondIngredient === '') {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
@@ -121,7 +119,9 @@ function callAPI(APIURL) {
         };           
     };
     request.send();
-    setTimeout(loadCocktail, 3000)   
+    setTimeout(loadCocktail, 3000)
+    console.log(cocktailData);
+    cocktailData.length = maxDrinkIndex;
 }
 
 function previousCocktail(callback) {
@@ -143,12 +143,32 @@ function loadCocktail() {
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
+/* ----------- Set the navigation buttons to disabled if applicable */
+    if (drinkIndex === 0) {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
+        `
+    } else if (drinkIndex > maxDrinkIndex) {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
+        `
+    } else {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
+        `
+    }
+
+
 /* ----------- Construct the HTML to view output */
     cocktailHtml = `
     <div id="nav-buttons">
-    <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
-    <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
+    ${cocktailNavButtons}
     </div>         
     <div id="select-cocktail" class="animate__animated animate__fadeIn">    
     <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
