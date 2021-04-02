@@ -72,7 +72,7 @@ textarea:focus, input:focus{
     font-size: 250%;
 }
 #information-container {
-    min-height: 70vh;
+    min-height: 80vh;
     padding: 20px;
 }
 #information-container a {
@@ -82,7 +82,7 @@ textarea:focus, input:focus{
 }
 .welcome {
     background-image: url("../images/welcome.png");
-    background-size: 30%;
+    background-size: 35%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
@@ -145,7 +145,7 @@ textarea:focus, input:focus{
     margin-top: 20px;
 }
 .button {
-    width: 140px;
+    width: 130px;
     height: 50px;
     border-radius: 5px;
     font-size: 18px;
@@ -241,11 +241,12 @@ textarea:focus, input:focus{
 #cocktail-id {
     display: none;
 }
-
-
-@media all and (min-width: 769px) {
+@media all and (max-height: 500px) {
+    #information-container {
+        min-height: 75vh;
+    }  
     .welcome {
-        background-size: 15%;
+        background-size: 17%;
     }
     #select-cocktail h1 {
         font-size: 300%;    
@@ -264,21 +265,36 @@ textarea:focus, input:focus{
         font-size: 500%;
     }
 }
-@media all and (max-height: 450px) {
+
+
+@media all and (min-width: 769px) {
+    #information-container {
+        min-height: 75vh;
+    }  
+    .welcome {
+        background-size: 17%;
+    }
+    #select-cocktail h1 {
+        font-size: 300%;    
+    }  
     .drinks-image {
-        max-width: 20%;
+        max-width: 45%;
+        height: auto;
         margin-top: 10px;
     }
     .drinks-image-how {
-        width: 10%;
+        width: 25%;
         height: auto; 
+        margin-top: 10px;
     }
     #the-Cocktail-Shaker-font {
         font-size: 500%;
     }
+}
+
 
 /* to remove */
-}
+
 #cocktail-position {
         display: none;
 }
