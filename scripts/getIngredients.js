@@ -116,12 +116,9 @@ function callAPI(APIURL) {
         if(this.status === 200){
             cocktailData = JSON.parse(this.responseText);          
         };
-        if (cocktailData.drinks = undefined) {
-            alert("this is undefined");
-            return;
-        }      
     };
     request.send();
+
     setTimeout(initiateCocktails, 3000)    
 }
 
@@ -135,7 +132,13 @@ function nextCocktail() {
     drinkIndex = drinkIndex + 1;
     loadCocktail();
 }
+
+
 function initiateCocktails() {
+    if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
+        alert("watch the fuck out");
+        return;
+    }
     loadCocktail();    
 }
 
@@ -182,6 +185,8 @@ function loadCocktail() {
     <h2 id="cocktail-position">${drinkIndex}</h2>
     </div>        
     `;
+
+
         
 /* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
     document.getElementById("information-container").innerHTML = cocktailHtml;
