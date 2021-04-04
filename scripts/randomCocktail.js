@@ -14,24 +14,51 @@ function callRandomAPI() {
 
 let drinkIndex = 0;
 
-function previousRandomCocktail(callback) {
+function previousRandomCocktail() {
     drinkIndex = drinkIndex - 1;
-    loadRandomCocktail(callback);
+    loadRandomCocktail();
 }
 
-function nextRandomCocktail(callback) {
+function nextRandomCocktail() {
     drinkIndex = drinkIndex + 1;
-    loadRandomCocktail(callback);
+    loadRandomCocktail();
 }
 
 function loadRandomCocktail() {
     
-    if (drinkIndex < 0 || drinkIndex > 9 ) {
-        let noMoreHtml = `
-        <h1>There are no more drinks to show you</h1>
+    if (drinkIndex > 9 ) {
+        document.getElementById("information-container").className = 'random-no-more';
+        let noMoreHtml = `  
+        <h1>We've got to the end of that little selection</h1>
+        <p>Didn't anything tickly your fancy? How about I show you some more? Perhaps you;ve got something in mind now?</p>
+        <div class="button-container">
+        <button class="buttons blue-button"><a href="random.html">Show me some more <i class="fas fa-recycle"></i></a></button>
+        <button class="buttons green-button"><a href="ingredients.html">Let me choose ingredients <i class="fas fa-mouse-pointer"></i></a></button>
+        </div>
         `;
         document.getElementById("information-container").innerHTML = noMoreHtml;
         return;
+    }
+
+    /* ----------- Set the navigation buttons to disabled if applicable */
+    if (drinkIndex === 0) {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousRandomCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
+        <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
+        <button id="click-next" class="pointer pointer-right" onclick="nextRandomCocktail()"><i class="fas fa-hand-point-right"></i></button>
+        `
+    } else if (drinkIndex === 0 && drinkIndex === (Object.keys(randomCocktailData.drinks).length - 1)) {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousRandomCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
+        <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
+        <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextRandomCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
+        `
+    } else {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left" onclick="previousRandomCocktail()"><i class="fas fa-hand-point-left"></i></button>
+        <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
+        <button id="click-next" class="pointer pointer-right" onclick="nextRandomCocktail()"><i class="fas fa-hand-point-right"></i></button>
+        `
     }
         
     /* Get the name and the image of the cocktail */
@@ -77,11 +104,8 @@ function loadRandomCocktail() {
     /* Construct the HTML to view in index.html */
     let cocktailHtml = `
     <div id="nav-buttons">
-    <button id="go-back" class="pointer pointer-left" onclick="previousRandomCocktail()"><i class="fas fa-hand-point-left"></i></button>
-    <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
-    <button id="click-next" class="pointer pointer-right" onclick="nextRandomCocktail()"><i class="fas fa-hand-point-right"></i></button>
+    ${cocktailNavButtons}
     </div>
-
     <div id="select-cocktail"  class="animate__animated animate__fadeIn">
         <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
         <h1 class="h1">${cocktailName}</h1>        

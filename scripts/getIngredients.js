@@ -138,11 +138,12 @@ function nextCocktail() {
 
 function initiateCocktails() {
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
+        document.getElementById("information-container").className = 'did-not-find';
         noCocktailsHtml = `
-        <h1>I couldn't find anything with both choices</h1>
+        <h1 class"no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
-        <button id="first-search-again">Search with ${firstIngredient}</button>
-        <button id="second-search-again">Search with ${secondIngredient}</button>
+        <button id="first-search-again" class="buttons blue-button">Search with <br> ${firstIngredient}</button>
+        <button id="second-search-again" class="buttons green-button">Search with <br> ${secondIngredient}</button>
         `;
         document.getElementById("information-container").innerHTML = noCocktailsHtml;
 
@@ -215,6 +216,7 @@ function loadCocktail() {
 
         
 /* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
+    document.getElementById("information-container").className = '';    
     document.getElementById("information-container").innerHTML = cocktailHtml;
 
     let showHowCocktails = document.getElementById('show-how');
