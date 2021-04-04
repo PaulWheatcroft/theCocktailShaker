@@ -89,16 +89,16 @@ textarea:focus, input:focus{
     background-position: bottom;
 }
 .did-not-find {
-    background-image: url("../images/welcome.png");
+    background-image: url("../images/no-drinks.png");
     background-size: auto 65%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
 .random-no-more {
-    background-image: url("../images/welcome.png");
+    background-image: url("../images/random.png");
     background-size: auto 65%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: bottom left;
 }
 .welcome p {
     font-size: 14px;
@@ -272,6 +272,14 @@ textarea:focus, input:focus{
     }  
     .welcome {
         background-size: auto 80%;
+    }
+    .did-not-find {
+        background-size: auto 75%;
+        background-position: bottom center;
+    }
+    .random-no-more {
+        background-size: auto 75%;
+        background-position: bottom center;
     }
     #select-cocktail h1 {
         font-size: 300%;    

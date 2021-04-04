@@ -27,11 +27,14 @@ function nextRandomCocktail() {
 function loadRandomCocktail() {
     
     if (drinkIndex > 9 ) {
+        document.getElementById("information-container").className = 'random-no-more';
         let noMoreHtml = `  
-        <h1>There are no more drinks to show you</h1>
+        <h1>We've got to the end of that little selection</h1>
+        <p>Didn't anything tickly your fancy? How about I show you some more? Perhaps you;ve got something in mind now?</p>
+        <div class="button-container">
         <button class="buttons blue-button"><a href="random.html">Show me some more <i class="fas fa-recycle"></i></a></button>
         <button class="buttons green-button"><a href="ingredients.html">Let me choose ingredients <i class="fas fa-mouse-pointer"></i></a></button>
-
+        </div>
         `;
         document.getElementById("information-container").innerHTML = noMoreHtml;
         return;
