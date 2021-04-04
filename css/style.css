@@ -88,8 +88,20 @@ textarea:focus, input:focus{
     background-repeat: no-repeat;
     background-position: bottom;
 }
+.did-not-find {
+    background-image: url("../images/welcome.png");
+    background-size: auto 65%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.random-no-more {
+    background-image: url("../images/welcome.png");
+    background-size: auto 65%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
 .welcome p {
-    font-size: 12px;
+    font-size: 14px;
 }
 /* speech bubble by https://projects.verou.me/bubbly/ */
 
@@ -120,6 +132,11 @@ textarea:focus, input:focus{
 #nav-buttons {
     width: 100%;
 }
+.welcome-buttons {
+    width: 130px;
+    font-size: 14px;
+    color: #2E2E2E;
+}
 #button-float-left {
     float: left;
     padding: 10px;
@@ -127,7 +144,6 @@ textarea:focus, input:focus{
     background-color: #FF3093;
     margin-top: 20px;
     color: #2E2E2E;
-    width: 140px;
 }
 #button-float-right {
     float: right;
@@ -136,25 +152,28 @@ textarea:focus, input:focus{
     background-color: #02F4F4;
     margin-top: 20px;
     color: #2E2E2E;
-    width: 140px;
-}
-
-
-#nav-buttons {
-    width: 100%;
 }
 #show-me {
     margin-top: 20px;
 }
-.button {
-    width: 130px;
+.buttons {
+    width: 160px;
     height: 50px;
     border-radius: 5px;
     font-size: 18px;
     color: #2E2E2E;
-    background-color: #FF3093;
+    margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
+}
+.blue-button {
+    background-color: #02F4F4;
+}
+.green-button {
+    background-color: #05FF00;
+}
+.pink-button {
+    background-color: #FF3093;
 }
 .pointer {
     width: 50px;
@@ -176,6 +195,9 @@ textarea:focus, input:focus{
 }
 .pointer-disabled {
     background-color: #474747;
+}
+.no-more {
+    padding-bottom: 20px;
 }
 
 .ingredient-input {
