@@ -90,15 +90,15 @@ textarea:focus, input:focus{
 }
 .did-not-find {
     background-image: url("../images/no-drinks.png");
-    background-size: auto 65%;
+    background-size: auto 45%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
 .random-no-more {
     background-image: url("../images/random.png");
-    background-size: auto 65%;
+    background-size: auto 45%;
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: bottom;
 }
 .welcome p {
     font-size: 14px;

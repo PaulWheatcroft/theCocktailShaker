@@ -1,15 +1,16 @@
-function callRandomAPI() {
+function callRandomAPI(callback) {
     let randomRequest = new XMLHttpRequest();
     randomRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php`, true);
 
     randomRequest.onload = function(){
         if(this.status === 200){
             randomCocktailData = JSON.parse(this.responseText);
-            console.log(randomCocktailData);                   
+            console.log(randomCocktailData);
+            callback();                  
         };    
     };
     randomRequest.send();
-    setTimeout(loadRandomCocktail, 3000)   
+    
 }
 
 let drinkIndex = 0;
@@ -30,7 +31,7 @@ function loadRandomCocktail() {
         document.getElementById("information-container").className = 'random-no-more';
         let noMoreHtml = `  
         <h1>We've got to the end of that little selection</h1>
-        <p>Didn't anything tickly your fancy? How about I show you some more? Perhaps you;ve got something in mind now?</p>
+        <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
         <div class="button-container">
         <button class="buttons blue-button"><a href="random.html">Show me some more <i class="fas fa-recycle"></i></a></button>
         <button class="buttons green-button"><a href="ingredients.html">Let me choose ingredients <i class="fas fa-mouse-pointer"></i></a></button>
@@ -121,7 +122,8 @@ function loadRandomCocktail() {
     
             
     }
-callRandomAPI();
+
+callRandomAPI(loadRandomCocktail);
 
 
 
