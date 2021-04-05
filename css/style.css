@@ -31,7 +31,14 @@ ul {
     margin-top: 10px;
     padding-bottom: 10px;
 }
-
+.input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #f9f9f9;
+}
 textarea:focus, input:focus{
     outline: none;
     background-color: #f9f9f9;

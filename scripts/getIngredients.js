@@ -96,8 +96,11 @@ function getIngredientsURL() {
 
         firstIngredient = document.getElementById("first-selection").value;
         secondIngredient = document.getElementById("second-selection").value;
-    
-        if (secondIngredient === '') {
+
+        if (firstIngredient === '' && secondIngredient === '') {
+            return;
+        } 
+        else if (secondIngredient === '') {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
@@ -213,12 +216,10 @@ function loadCocktail() {
     </div>        
     `;
 
-
         
 /* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
-    document.getElementById("information-container").className = '';    
+    document.getElementById("information-container").className = ''; 
     document.getElementById("information-container").innerHTML = cocktailHtml;
-
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
 
@@ -268,12 +269,15 @@ function getHow() {
 /* ----------- handle measurements that are "undefined" due to fewer entries in array */
             let ingredientList = 0;
             let ingredientsHtml = '';
+            let ingredientsText = '';
             for (ingredientList; ingredientList < cocktailIngredients.length; ingredientList++) {
                 if (cocktailMeasurements[ingredientList] === undefined && cocktailIngredients !== undefined) {
                     ingredientsHtml += `<li>${cocktailIngredients[ingredientList]}</li>`;
+                    ingredientsText += cocktailIngredients[ingredientList] + '\n';
                 } else {
                 if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
-                ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+                    ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+                    ingredientsText += cocktailMeasurements[ingredientList] + '' + cocktailIngredients[ingredientList] + '\n';
                 };
             };
 
@@ -281,7 +285,7 @@ function getHow() {
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
             <button id="go-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-            <button id="email-me" class="pointer pointer-middle" onclick="emailCocktail()" disabled><i class="fas fa-envelope"></i></button>
+            <button id="email-me" class="pointer pointer-middle"><a href="email.html"><i class="fas fa-envelope"></i></a></button>
             <button id="click-next" class="pointer pointer-right pointer-disabled" disabled><i class="fas fa-hand-point-right"></i></button>
             </div>
 
@@ -296,6 +300,9 @@ function getHow() {
             `;
                 
 /* ----------- Pass the HTML to the div the-ingredient-data */
+            localStorage.setItem('cocktailName', cocktailName);
+            localStorage.setItem('cocktailIngredients', ingredientsText);
+            localStorage.setItem('cocktailInstructions', cocktailInstructions);
             document.getElementById("information-container").innerHTML = cocktailToMakeHtml;
             drinkIndex = drinkIndex + 1;
         };
