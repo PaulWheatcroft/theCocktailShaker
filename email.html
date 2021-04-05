@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let the Cocktail Shaker Send you your Cocktail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/e5878dac08.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#242424">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#242424">
+    <style type="text/css">   
+     @font-face{
+        font-family:"Marlowe Swirl W05 Regular";
+        src:url("fonts/5184329/8ebbef9b-71d3-45a9-9845-fd02f7a89365.woff2") format("woff2"),url("fonts/5184329/3c228295-821a-4edf-9cc3-71f29bfcbb98.woff") format("woff");
+        }        
+    </style> 
+    
+</head>
+<body>
+    <header>
+        <a href="index.html"><h1 id="the-Cocktail-Shaker-font"><span style="color: #05FF00;">the</span> <span style="color: #FFE500;">Cocktail</span> <span style="color: #02F4F4;">Shaker</span> </h1></a>
+    </header>
+    <main id="" class="gradient-border">
+        <div id="information-container" class="welcome">
+
+            <form id="email-form" class="email-send-form">
+                <label for="email">Email Address: </label><br>
+                <input id="email" name="email" type="email" class="input" placeholder="Type your email address..."><br>
+                <label for="text-name" hidden>Cocktail Name</label>
+                <textarea id="text-name" name="name" hidden></textarea>
+                <label for="text-ingredients" hidden>Cocktail Ingredients</label>
+                <textarea id="text-ingredients" name="ingredients" hidden></textarea>
+                <label for="text-instructions" hidden>Cocktail Instructions</label>
+                <textarea id="text-instructions" name="instructions" hidden></textarea>
+                <button id="send-instructions" class="buttons pink-button">Send</button>
+            </form>
+
+        </div>
+    </main>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript" src="scripts/email.js"></script>
+</body>
+</html>
+
+

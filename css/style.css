@@ -31,7 +31,14 @@ ul {
     margin-top: 10px;
     padding-bottom: 10px;
 }
-
+.input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #f9f9f9;
+}
 textarea:focus, input:focus{
     outline: none;
     background-color: #f9f9f9;
@@ -90,15 +97,15 @@ textarea:focus, input:focus{
 }
 .did-not-find {
     background-image: url("../images/no-drinks.png");
-    background-size: auto 65%;
+    background-size: auto 45%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
 .random-no-more {
     background-image: url("../images/random.png");
-    background-size: auto 65%;
+    background-size: auto 45%;
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: bottom;
 }
 .welcome p {
     font-size: 14px;

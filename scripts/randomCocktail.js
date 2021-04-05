@@ -1,15 +1,16 @@
-function callRandomAPI() {
+function callRandomAPI(callback) {
     let randomRequest = new XMLHttpRequest();
     randomRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php`, true);
 
     randomRequest.onload = function(){
         if(this.status === 200){
             randomCocktailData = JSON.parse(this.responseText);
-            console.log(randomCocktailData);                   
+            console.log(randomCocktailData);
+            callback();                  
         };    
     };
     randomRequest.send();
-    setTimeout(loadRandomCocktail, 3000)   
+    
 }
 
 let drinkIndex = 0;
@@ -30,7 +31,7 @@ function loadRandomCocktail() {
         document.getElementById("information-container").className = 'random-no-more';
         let noMoreHtml = `  
         <h1>We've got to the end of that little selection</h1>
-        <p>Didn't anything tickly your fancy? How about I show you some more? Perhaps you;ve got something in mind now?</p>
+        <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
         <div class="button-container">
         <button class="buttons blue-button"><a href="random.html">Show me some more <i class="fas fa-recycle"></i></a></button>
         <button class="buttons green-button"><a href="ingredients.html">Let me choose ingredients <i class="fas fa-mouse-pointer"></i></a></button>
@@ -44,19 +45,19 @@ function loadRandomCocktail() {
     if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousRandomCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
+        <button id="email-me" class="pointer pointer-middle"><a href="email.html"><i class="fas fa-envelope"></i></a></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextRandomCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === 0 && drinkIndex === (Object.keys(randomCocktailData.drinks).length - 1)) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousRandomCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
+        <<button id="email-me" class="pointer pointer-middle"><a href="email.html"><i class="fas fa-envelope"></i></a></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextRandomCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         `
     } else {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousRandomCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="email-me" class="pointer pointer-middle"><i class="fas fa-envelope"></i></button>
+        <button id="email-me" class="pointer pointer-middle"><a href="email.html"><i class="fas fa-envelope"></i></a></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextRandomCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     }
@@ -90,19 +91,22 @@ function loadRandomCocktail() {
     /* handle measurements that are "undefined" due to fewer entries in array */
     let ingredientList = 0;
     let ingredientsHtml = '';
+    let ingredientsText = '';
     for (ingredientList; ingredientList < cocktailIngredients.length; ingredientList++) {
         if (cocktailMeasurements[ingredientList] === undefined && cocktailIngredients !== undefined) {
             ingredientsHtml += `<li>${cocktailIngredients[ingredientList]}</li>`;
+            ingredientsText += cocktailIngredients[ingredientList] + '\n';
         } else {
-        if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
-        ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+            if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
+            ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
+            ingredientsText += cocktailMeasurements[ingredientList] + '' + cocktailIngredients[ingredientList] + '\n';
         }
     }
     /* Get the instructions for making the cocktial */
     let cocktailInstructions = randomCocktailData.drinks[drinkIndex]["strInstructions"];
 
     /* Construct the HTML to view in index.html */
-    let cocktailHtml = `
+    let randomCocktailToMakeHtml = `
     <div id="nav-buttons">
     ${cocktailNavButtons}
     </div>
@@ -110,18 +114,21 @@ function loadRandomCocktail() {
         <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
         <h1 class="h1">${cocktailName}</h1>        
         <ul>${ingredientsHtml}</ul>
-            <div id="instructions">
+        <div id="instructions">
             <p>${cocktailInstructions}</p>
-            </div>
+        </div>
     </div>  
     `;
         
     /* Pass the HTML to the div the-data and increment drinkIndex  */
-    document.getElementById("information-container").innerHTML = cocktailHtml;
-    
+    localStorage.setItem('cocktailName', cocktailName);
+    localStorage.setItem('cocktailIngredients', ingredientsText);
+    localStorage.setItem('cocktailInstructions', cocktailInstructions);
+    document.getElementById("information-container").innerHTML = randomCocktailToMakeHtml;   
             
     }
-callRandomAPI();
+
+callRandomAPI(loadRandomCocktail);
 
 
 
