@@ -173,17 +173,17 @@ function loadCocktail() {
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
 /* ----------- Set the navigation buttons to disabled if applicable */
-    if (drinkIndex === 0) {
-        cocktailNavButtons = `
-        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
-        <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
-        `
-    } else if (drinkIndex === 0 && drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
+    if (Object.keys(cocktailData.drinks).length === 1) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
         <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
+        `
+    } else if (drinkIndex === 0) {
+        cocktailNavButtons = `
+        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
         cocktailNavButtons = `
