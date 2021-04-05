@@ -15,6 +15,7 @@
         src:url("fonts/5184329/8ebbef9b-71d3-45a9-9845-fd02f7a89365.woff2") format("woff2"),url("fonts/5184329/3c228295-821a-4edf-9cc3-71f29bfcbb98.woff") format("woff");
         }        
     </style> 
+    
 </head>
 <body>
     <header>
@@ -23,17 +24,21 @@
     <main id="" class="gradient-border">
         <div id="information-container" class="welcome">
 
-            <form>
+            <form id="email_form" class="email-send-form">
                 <label for="email">Email Address</label>
                 <input id="email" type="email" class="input" placeholder="Type your email address...">
-                <textarea id="text-name" hidden></textarea>
+                <label for="text-name">Cocktail Name</label>
+                <textarea id="text-name"></textarea>
+                <label for="text-ingredients">Cocktail Ingredients</label>
                 <textarea id="text-ingredients" hidden></textarea>
+                <label for="text-instructions">Cocktail Instructions</label>
                 <textarea id="text-instructions" hidden></textarea>
-                <input type="submit" value="Send" class="buttons pink-button">
+                <input id="send-instructions" type="submit" value="Send" class="buttons pink-button">
             </form>
 
         </div>
     </main>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 <script type="text/javascript" src="scripts/email.js"></script>
 </body>
 </html>
