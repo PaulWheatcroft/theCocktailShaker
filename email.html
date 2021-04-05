@@ -24,16 +24,16 @@
     <main id="" class="gradient-border">
         <div id="information-container" class="welcome">
 
-            <form id="email_form" class="email-send-form">
-                <label for="email">Email Address</label>
-                <input id="email" type="email" class="input" placeholder="Type your email address...">
-                <label for="text-name">Cocktail Name</label>
-                <textarea id="text-name"></textarea>
-                <label for="text-ingredients">Cocktail Ingredients</label>
-                <textarea id="text-ingredients" hidden></textarea>
-                <label for="text-instructions">Cocktail Instructions</label>
-                <textarea id="text-instructions" hidden></textarea>
-                <input id="send-instructions" type="submit" value="Send" class="buttons pink-button">
+            <form id="email-form" class="email-send-form">
+                <label for="email">Email Address: </label><br>
+                <input id="email" name="email" type="email" class="input" placeholder="Type your email address..."><br>
+                <label for="text-name" hidden>Cocktail Name</label>
+                <textarea id="text-name" name="name" hidden></textarea>
+                <label for="text-ingredients" hidden>Cocktail Ingredients</label>
+                <textarea id="text-ingredients" name="ingredients" hidden></textarea>
+                <label for="text-instructions" hidden>Cocktail Instructions</label>
+                <textarea id="text-instructions" name="instructions" hidden></textarea>
+                <button id="send-instructions" class="buttons pink-button">Send</button>
             </form>
 
         </div>
