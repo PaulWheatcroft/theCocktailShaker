@@ -95,6 +95,12 @@ textarea:focus, input:focus{
     background-repeat: no-repeat;
     background-position: bottom;
 }
+.send-email {
+    background-image: url("../images/welcome.png");
+    background-size: auto 45%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
 .did-not-find {
     background-image: url("../images/no-drinks.png");
     background-size: auto 45%;
@@ -106,6 +112,12 @@ textarea:focus, input:focus{
     background-size: auto 45%;
     background-repeat: no-repeat;
     background-position: bottom left;
+}
+.enjoy {
+    background-image: url("../images/enjoy.png");
+    background-size: auto 45%;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 .welcome p {
     font-size: 14px;
@@ -313,6 +325,14 @@ textarea:focus, input:focus{
         background-size: auto 75%;
         background-position: bottom center;
     }
+    .send-email {
+        background-size: auto 75%;
+        background-position: bottom right;
+    }
+    .enjoy {
+        background-size: auto 75%;
+        background-position: bottom;
+}
     #select-cocktail h1 {
         font-size: 300%;    
     }  
