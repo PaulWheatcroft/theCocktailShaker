@@ -1,6 +1,6 @@
 function callRandomAPI(callback) {
     let searchingHtml = `
-    <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">We Are Shaking It!!</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__fadeIn animate__headShake animate__repeat-3 3">We Are Shaking It!!</h1>
     `;
     document.getElementById("information-container").innerHTML = searchingHtml;
     let randomRequest = new XMLHttpRequest();

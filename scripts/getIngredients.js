@@ -111,13 +111,22 @@ function getIngredientsURL() {
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
     console.log(APIURL);
-    let searchingHtml = `
+    let searchingHtml1 = `
+    <h1 class="we-are-shaking-it animate__animated animate__fadeIn">We</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__fadeIn">Are</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__fadeIn">Shaking</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__fadeIn">It!!</h1>
+    `;
+    document.getElementById("information-container").innerHTML = searchingHtml1;
+    let searchingHtml2 = `
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">We</h1>
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">Are</h1>
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">Shaking</h1>
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">It!!</h1>
     `;
-    document.getElementById("information-container").innerHTML = searchingHtml;
+    setTimeout(function(){
+        document.getElementById("information-container").innerHTML = searchingHtml2;
+        }, 500);
 
     let request = new XMLHttpRequest();
 
