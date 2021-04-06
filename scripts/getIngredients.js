@@ -111,6 +111,13 @@ function getIngredientsURL() {
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
     console.log(APIURL);
+    let searchingHtml = `
+    <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">We</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">Are</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">Shaking</h1>
+    <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">It!!</h1>
+    `;
+    document.getElementById("information-container").innerHTML = searchingHtml;
 
     let request = new XMLHttpRequest();
 
@@ -140,6 +147,7 @@ function nextCocktail() {
 
 
 function initiateCocktails() {
+    
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
         document.getElementById("information-container").className = 'did-not-find';
         noCocktailsHtml = `

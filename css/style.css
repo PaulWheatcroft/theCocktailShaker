@@ -267,6 +267,11 @@ textarea:focus, input:focus{
     border-bottom: 1px #2E2E2E solid;
     padding-bottom: 4px;    
 }
+.we-are-shaking-it {
+    color: #FFE500;
+    text-shadow: 0 0 30px #FFE500;
+    font-size: 500%;
+}
 
 .drinks-image {
     max-width: 85%;
