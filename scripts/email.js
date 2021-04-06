@@ -17,11 +17,12 @@ console.log(cocktailInstructions);
 
 function formSubmit() {
     event.preventDefault();
+    let sentHtml = '';
     emailjs.sendForm("service_r1s6k5e", "template_464i5ds", "#email-form", "user_xuHqhg0d940gXwsJXVA5A")
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
        document.getElementById("information-container").className = 'enjoy';
-       let sentHtml = `
+       sentHtml = `
        <h1>Enjoy!</h1>
        <p>That has been sent to you. I do hope you enjoy making it. And I do hope you enjoy drinking it twice as much!</p>
        <p>Bottoms up. xx</p>
@@ -30,6 +31,8 @@ function formSubmit() {
         document.getElementById("information-container").innerHTML = sentHtml;
     }, function(error) {
        console.log('FAILED...', error);
+       alert("Please enter a valid email address")
+       return;
     });
 }
 
