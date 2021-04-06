@@ -81,7 +81,7 @@ textarea:focus, input:focus{
     font-size: 250%;
 }
 #information-container {
-    min-height: 78vh;
+    min-height: 70vh;
     padding: 20px;
 }
 #information-container a {
@@ -91,18 +91,30 @@ textarea:focus, input:focus{
 }
 .welcome {
     background-image: url("../images/welcome.png");
-    background-size: auto 65%;
+    background-size: auto 55%;
     background-repeat: no-repeat;
     background-position: bottom;
+}
+.send-email {
+    background-image: url("../images/welcome.png");
+    background-size: auto 45%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 .did-not-find {
     background-image: url("../images/no-drinks.png");
     background-size: auto 45%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: bottom left;
 }
 .random-no-more {
     background-image: url("../images/random.png");
+    background-size: auto 45%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+.enjoy {
+    background-image: url("../images/enjoy.png");
     background-size: auto 45%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -152,6 +164,9 @@ textarea:focus, input:focus{
     margin-top: 20px;
     color: #2E2E2E;
 }
+#button-float-left:hover {
+    box-shadow: 0px 0px 10px #FF3093;
+}
 #button-float-right {
     float: right;
     padding: 10px;
@@ -160,6 +175,9 @@ textarea:focus, input:focus{
     margin-top: 20px;
     color: #2E2E2E;
 }
+#button-float-right:hover {
+    box-shadow: 0px 0px 10px #02F4F4;
+}
 #show-me {
     margin-top: 20px;
 }
@@ -167,7 +185,7 @@ textarea:focus, input:focus{
     width: 160px;
     height: 50px;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     color: #2E2E2E;
     margin-top: 20px;
     margin-left: 10px;
@@ -176,11 +194,20 @@ textarea:focus, input:focus{
 .blue-button {
     background-color: #02F4F4;
 }
+.blue-button:hover {
+    box-shadow: 0px 0px 10px #02F4F4;
+}
 .green-button {
     background-color: #05FF00;
 }
+.green-button:hover {
+    box-shadow: 0px 0px 10px #05FF00;
+}
 .pink-button {
     background-color: #FF3093;
+}
+.pink-button:hover {
+    box-shadow: 0px 0px 10px #FF3093;
 }
 .pointer {
     width: 50px;
@@ -194,11 +221,20 @@ textarea:focus, input:focus{
 .pointer-left {
     background-color: #FF3093;
 }
+.pointer-left:hover {
+    box-shadow: 0px 0px 10px #FF3093;
+}
 .pointer-right {
     background-color: #02F4F4;
 }
+.pointer-right:hover {
+    box-shadow: 0px 0px 10px #02F4F4;
+}
 .pointer-middle {
     background-color: #05FF00;
+}
+.pointer-middle:hover {
+    box-shadow: 0px 0px 10px #05FF00;
 }
 .pointer-disabled {
     background-color: #474747;
@@ -208,6 +244,7 @@ textarea:focus, input:focus{
 }
 
 .ingredient-input {
+    font-size: 16px;
     padding: 10px;
     width: 200px;
     border-radius: 5px 5px 0 0;
@@ -229,6 +266,11 @@ textarea:focus, input:focus{
 .drinks-list {
     border-bottom: 1px #2E2E2E solid;
     padding-bottom: 4px;    
+}
+.we-are-shaking-it {
+    color: #FFE500;
+    text-shadow: 0 0 30px #FFE500;
+    font-size: 500%;
 }
 
 .drinks-image {
@@ -275,7 +317,7 @@ textarea:focus, input:focus{
 
 @media all and (min-width: 767px) {
     #information-container {
-        min-height: 75vh;
+        min-height: 70vh;
     }  
     .welcome {
         background-size: auto 80%;
@@ -288,18 +330,24 @@ textarea:focus, input:focus{
         background-size: auto 75%;
         background-position: bottom center;
     }
+    .send-email {
+        background-size: auto 75%;
+        background-position: bottom right;
+    }
+    .enjoy {
+        background-size: auto 75%;
+        background-position: bottom;
+}
     #select-cocktail h1 {
         font-size: 300%;    
     }  
     .drinks-image {
-        max-width: 45%;
+        max-width: 40%;
         height: auto;
-        margin-top: 10px;
     }
     .drinks-image-how {
         width: 25%;
         height: auto; 
-        margin-top: 10px;
     }
     #the-Cocktail-Shaker-font {
         font-size: 500%;
