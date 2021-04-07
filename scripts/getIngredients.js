@@ -164,7 +164,7 @@ function previousCocktail() {
 }
 
 function nextCocktail() {
-    drinkIndex = drinkIndex + 1;
+    drinkIndex = drinkIndex + 1;    
     loadCocktail();
 }
 
@@ -199,7 +199,6 @@ function initiateCocktails() {
 
 /* ----------- show the selection of cocktail */
 function loadCocktail() {
-    
         
 /* ----------- Get the name and the image of the cocktail */
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
@@ -256,10 +255,9 @@ function loadCocktail() {
     <h2 id="cocktail-position">${drinkIndex}</h2>
     </div>        
     `;
-
         
 /* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
-    document.getElementById("information-container").className = ''; 
+    /*document.getElementById("information-container").className = ''; */
     document.getElementById("information-container").innerHTML = cocktailHtml;
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
