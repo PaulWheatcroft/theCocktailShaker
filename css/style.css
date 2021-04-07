@@ -182,10 +182,10 @@ textarea:focus, input:focus{
     margin-top: 20px;
 }
 .buttons {
-    width: 160px;
+    width: 130px;
     height: 50px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     color: #2E2E2E;
     margin-top: 20px;
     margin-left: 10px;
@@ -268,8 +268,8 @@ textarea:focus, input:focus{
     padding-bottom: 4px;    
 }
 .we-are-shaking-it {
-    color: #FFE500;
-    text-shadow: 0 0 30px #FFE500;
+    color: #FF3093;
+    text-shadow: 0 0 30px #FF3093;
     font-size: 500%;
 }
 
@@ -308,7 +308,7 @@ textarea:focus, input:focus{
     max-width: 600px;
 }
 .cocktail-title {
-    font-family:"Marlowe Swirl W05 Regular"; 
+    font-family: "Marlowe Swirl W05 Regular"; 
     font-size: 250%;  
 }
 #cocktail-id {
@@ -327,7 +327,7 @@ textarea:focus, input:focus{
         background-position: bottom center;
     }
     .random-no-more {
-        background-size: auto 75%;
+        background-size: auto 65%;
         background-position: bottom center;
     }
     .send-email {
