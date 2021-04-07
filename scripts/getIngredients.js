@@ -26,6 +26,9 @@ function secondFilter() {
 /*construct html of ingredients to li items */
 
 function ingredientSelection(callback) {
+
+
+
     let i = 0;
     let ingredientListItemsHtml = '';
     for (i; i<ingredientList.drinks.length; i++) {
@@ -45,6 +48,9 @@ function ingredientSelection(callback) {
 /* ----------- When an ingredient in the list is clicked add it to the input */
 /* ----------- This function is called back by firstIngredientSelection(callback) */
 function listenIngredientList() {
+
+/* ----------- Listen out for the first ingredient input to be clicked */
+
     let ingredientListItem = document.getElementsByClassName('drinks-list');
     for (let i = 0; i<ingredientListItem.length; i++) {
         ingredientListItem[i].addEventListener('click', ingredientName);
@@ -55,15 +61,17 @@ function listenIngredientList() {
     }
 }
 
+if (document.title === 'the Cocktail Shaker') {
+    listenForIngredients()
+}
 
-/* ----------- Listen out for the first ingredient input to be clicked */
+function listenForIngredients() {
+    let firstIngredientField = document.getElementById('first-selection');
+    firstIngredientField.addEventListener('click', ingredientSelection);
 
-let firstIngredientField = document.getElementById('first-selection');
-firstIngredientField.addEventListener('click', ingredientSelection);
-
-let secondIngredientField = document.getElementById('second-selection');
-secondIngredientField.addEventListener('click', ingredientSelection);
-
+    let secondIngredientField = document.getElementById('second-selection');
+    secondIngredientField.addEventListener('click', ingredientSelection);
+}
 
 function filterIngredient() {
     let input, filter, li, i, textValue;
@@ -108,6 +116,12 @@ function getIngredientsURL() {
     
     callAPI(APIURL);    
 }
+
+function getRandomeURL() {
+    APIURL = 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php';
+    callAPI(APIURL); 
+}
+
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
     console.log(APIURL);
@@ -158,7 +172,7 @@ function nextCocktail() {
 function initiateCocktails() {
     
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
-        document.getElementById("information-container").className = 'did-not-find';
+        document.getElementById("information-container").className = 'did-not-find animate__animated animate__fadeIn';
         noCocktailsHtml = `
         <h1 class"no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
@@ -193,28 +207,38 @@ function loadCocktail() {
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 
 /* ----------- Set the navigation buttons to disabled if applicable */
+
     if (Object.keys(cocktailData.drinks).length === 1) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-question"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-question"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
+        document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="show-how" class="pointer pointer-middle pointer-disabled" disabled><i class="fas fa-question"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
-        `
+        <h1>We've got to the end of that little selection</h1>
+        <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
+        <div class="button-container">
+        <button class="buttons blue-button"><a href="random.html">Show me a random selection</a></button>
+        <button class="buttons green-button"><a href="ingredients.html">Let me choose ingredients</a></button>
+        </div>
+        `;
+        document.getElementById("information-container").innerHTML = cocktailNavButtons;
+        return;
     } else {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-thumbs-up"></i></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-question"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     }
@@ -326,5 +350,9 @@ function getHow() {
     };
     howToRequest.send();
 };
+
+if (document.title === 'Random Cocktails - the Cocktail Shaker') {
+    getRandomeURL()
+}
 
 
