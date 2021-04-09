@@ -24,7 +24,7 @@ function formSubmit() {
        document.getElementById("information-container").className = 'enjoy animate__animated animate__fadeIn';
        sentHtml = `
        <h1>Enjoy!</h1>
-       <p>That has been sent to you. I do hope you enjoy making it. And I do hope you enjoy drinking it twice as much!</p>
+       <p>That has been sent to you, you may need to check your junk folder. I hope you enjoy making it. And I do hope you enjoy drinking it twice as much!</p>
        <p>Bottoms up. xx</p>
        <button id="choose-again" class="buttons pink-button" ><a href="index.html">I fancy another go</a></button>
        `;

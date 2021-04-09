@@ -267,6 +267,9 @@ textarea:focus, input:focus{
     border-bottom: 1px #2E2E2E solid;
     padding-bottom: 4px;    
 }
+.drinks-list:hover {
+    cursor: pointer;
+}
 .we-are-shaking-it {
     color: #FF3093;
     text-shadow: 0 0 30px #FF3093;
