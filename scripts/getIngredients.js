@@ -209,14 +209,14 @@ function loadCocktail() {
     if (Object.keys(cocktailData.drinks).length === 1) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
@@ -224,7 +224,7 @@ function loadCocktail() {
         document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information pointer-disabled" disabled><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         <h1>We've got to the end of that little selection</h1>
@@ -239,7 +239,7 @@ function loadCocktail() {
     } else {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
@@ -327,7 +327,8 @@ function getHow() {
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
             <button id="go-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-            <button id="email-me" class="pointer pointer-middle"><a href="email.html"><i class="fas fa-envelope"></i></a></button>
+            <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
+            <button id="email-me" class="pointer pointer-information"><a href="email.html"><i class="fas fa-envelope"></i></a></button>
             <button id="click-next" class="pointer pointer-right pointer-disabled" disabled><i class="fas fa-hand-point-right"></i></button>
             </div>
 
