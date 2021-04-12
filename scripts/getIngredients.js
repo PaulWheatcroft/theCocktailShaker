@@ -193,12 +193,11 @@ function initiateCocktails() {
     } else {
         loadCocktail();
     }
-
-
 }
 
 /* ----------- show the selection of cocktail */
 function loadCocktail() {
+    document.getElementById("information-container").className = '';
         
 /* ----------- Get the name and the image of the cocktail */
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
@@ -210,20 +209,23 @@ function loadCocktail() {
     if (Object.keys(cocktailData.drinks).length === 1) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-question"></i></button>
+        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-question"></i></button>
+        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
         document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle pointer-disabled" disabled><i class="fas fa-question"></i></button>
+        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <button id="show-how" class="pointer pointer-middle pointer-disabled" disabled><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         <h1>We've got to the end of that little selection</h1>
         <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
@@ -237,7 +239,8 @@ function loadCocktail() {
     } else {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
-        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-question"></i></button>
+        <button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></a></button>
+        <button id="show-how" class="pointer pointer-middle"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     }

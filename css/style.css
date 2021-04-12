@@ -230,6 +230,12 @@ textarea:focus, input:focus{
 .pointer-right:hover {
     box-shadow: 0px 0px 10px #02F4F4;
 }
+.pointer-home {
+    background-color: #FFE500;
+}
+.pointer-home:hover {
+    box-shadow: 0px 0px 10px #FFE500;
+}
 .pointer-middle {
     background-color: #05FF00;
 }
@@ -323,7 +329,7 @@ textarea:focus, input:focus{
         min-height: 70vh;
     }  
     .welcome {
-        background-size: auto 80%;
+        background-size: auto 75%;
     }
     .did-not-find {
         background-size: auto 75%;
@@ -345,11 +351,11 @@ textarea:focus, input:focus{
         font-size: 300%;    
     }  
     .drinks-image {
-        max-width: 40%;
+        max-width: 30%;
         height: auto;
     }
     .drinks-image-how {
-        width: 25%;
+        width: 20%;
         height: auto; 
     }
     #the-Cocktail-Shaker-font {
