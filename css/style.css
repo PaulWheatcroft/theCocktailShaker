@@ -236,10 +236,10 @@ textarea:focus, input:focus{
 .pointer-home:hover {
     box-shadow: 0px 0px 10px #FFE500;
 }
-.pointer-middle {
+.pointer-information {
     background-color: #05FF00;
 }
-.pointer-middle:hover {
+.pointer-information:hover {
     box-shadow: 0px 0px 10px #05FF00;
 }
 .pointer-disabled {
