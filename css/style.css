@@ -323,7 +323,7 @@ textarea:focus, input:focus{
         min-height: 70vh;
     }  
     .welcome {
-        background-size: auto 80%;
+        background-size: auto 75%;
     }
     .did-not-find {
         background-size: auto 75%;
