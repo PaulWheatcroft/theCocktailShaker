@@ -47,27 +47,27 @@ textarea:focus, input:focus{
 /* The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp */
 
 .gradient-border {
-  --border-width: 2px;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  background: #2E2E2E;
-  border-radius: var(--border-width);
+    --border-width: 2px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    background: #2E2E2E;
+    border-radius: var(--border-width);
 }
 .gradient-border::after {
-  position: absolute;
-  content: "";
-  top: calc(-1 * var(--border-width));
-  left: calc(-1 * var(--border-width));
-  z-index: -1;
-  width: calc(100% + var(--border-width) * 2);
-  height: calc(100% + var(--border-width) * 2);
-  background: linear-gradient(60deg, #FF3093, #FF3093, #FFE500, #05FF00, #02F4F4, #02F4F4);
-  background-size: 300% 300%;
-  background-position: 0% 100%;
-  border-radius: calc(2 * var(--border-width));
-  animation: moveGradient 10s alternate infinite;
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #FF3093, #FF3093, #FFE500, #05FF00, #02F4F4, #02F4F4);
+    background-size: 300% 300%;
+    background-position: 0% 100%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 10s alternate infinite;
 }
 
 @keyframes moveGradient {
@@ -154,11 +154,12 @@ textarea:focus, input:focus{
 .welcome-buttons {
     width: 130px;
     font-size: 14px;
+    padding: 5px 0 5px 0;
     color: #2E2E2E;
 }
 #button-float-left {
     float: left;
-    padding: 10px;
+
     border-radius: 10px;
     background-color: #FF3093;
     margin-top: 20px;
@@ -169,7 +170,7 @@ textarea:focus, input:focus{
 }
 #button-float-right {
     float: right;
-    padding: 10px;
+
     border-radius: 10px;
     background-color: #02F4F4;
     margin-top: 20px;
@@ -288,7 +289,7 @@ textarea:focus, input:focus{
     border: 1px solid #05FF00;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 1px #05FF00;
-    background-color: #05FF00;
+    background-color: #f9f9f9;
     margin-top: 20px;
 }
 .drinks-image-how {
@@ -297,7 +298,7 @@ textarea:focus, input:focus{
     border: 1px solid #05FF00;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 1px #05FF00;
-    background-color: #05FF00;
+    background-color: #f9f9f9;
     margin-top: 20px;
 }
 
@@ -329,10 +330,10 @@ textarea:focus, input:focus{
         min-height: 70vh;
     }  
     .welcome {
-        background-size: auto 75%;
+        background-size: auto 70%;
     }
     .did-not-find {
-        background-size: auto 75%;
+        background-size: auto 70%;
         background-position: bottom center;
     }
     .random-no-more {
@@ -340,11 +341,11 @@ textarea:focus, input:focus{
         background-position: bottom center;
     }
     .send-email {
-        background-size: auto 75%;
+        background-size: auto 70%;
         background-position: bottom right;
     }
     .enjoy {
-        background-size: auto 75%;
+        background-size: auto 70%;
         background-position: bottom;
 }
     #select-cocktail h1 {
