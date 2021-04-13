@@ -210,14 +210,14 @@ function loadCocktail() {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
-        <button id="show-how" class="pointer pointer-information"><i class="fas fa-info"></i></button>
+        <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
-        <button id="show-how" class="pointer pointer-information"><i class="fas fa-info"></i></button>
+        <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
@@ -240,7 +240,7 @@ function loadCocktail() {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()"><i class="fas fa-hand-point-left"></i></button>
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
-        <button id="show-how" class="pointer pointer-information"><i class="fas fa-info"></i></button>
+        <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `
     }
