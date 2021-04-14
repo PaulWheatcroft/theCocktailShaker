@@ -23,12 +23,9 @@ function secondFilter() {
     inputId = 'second';
 }
 
-/*construct html of ingredients to li items */
+/* ----------- construct html of ingredients to li items */
 
 function ingredientSelection(callback) {
-
-
-
     let i = 0;
     let ingredientListItemsHtml = '';
     for (i; i<ingredientList.drinks.length; i++) {
@@ -40,16 +37,14 @@ function ingredientSelection(callback) {
     </ul>
     `
     console.log(ingredientListHtml);
-
     document.getElementById(`${inputId}-ingredient-list-container`).innerHTML = ingredientListHtml;
-
     listenIngredientList(callback);
 }
 /* ----------- When an ingredient in the list is clicked add it to the input */
 /* ----------- This function is called back by firstIngredientSelection(callback) */
 function listenIngredientList() {
 
-/* ----------- Listen out for the first ingredient input to be clicked */
+/* ----------- Listen out for the ingredient input to be clicked */
 
     let ingredientListItem = document.getElementsByClassName('drinks-list');
     for (let i = 0; i<ingredientListItem.length; i++) {
@@ -72,7 +67,7 @@ function listenForIngredients() {
     let secondIngredientField = document.getElementById('second-selection');
     secondIngredientField.addEventListener('click', ingredientSelection);
 }
-
+/* ----------- This function filters the list as text is entered */
 function filterIngredient() {
     let input, filter, li, i, textValue;
     input = document.getElementById(`${inputId}-selection`);
@@ -100,6 +95,8 @@ let APIURL = '';
 let firstIngredient;
 let secondIngredient;
 
+/* ----------- Set the API URL */
+
 function getIngredientsURL() {
 
         firstIngredient = document.getElementById("first-selection").value;
@@ -107,9 +104,10 @@ function getIngredientsURL() {
 
         if (firstIngredient === '' && secondIngredient === '') {
             return;
-        } 
-        else if (secondIngredient === '') {
+        } else if (secondIngredient === '') {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
+        } else if (firstIngredient === '' && secondIngredient !== '') {
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
         }
