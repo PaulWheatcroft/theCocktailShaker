@@ -136,39 +136,25 @@ function callAPI(APIURL) {
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">Shaking</h1>
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">It!!</h1>
     `;
+/* ----------- This timeout has been set as the results are returned too soon before the animation has completed */
     setTimeout(function(){
         document.getElementById("information-container").innerHTML = searchingHtml2;
         }, 500);
-
+ /* ----------- now get all the cocktails in the selection */       
     let request = new XMLHttpRequest();
-
     request.open('GET', `${APIURL}`, true);
-
-
     request.onload = function(){
         if(this.status === 200){
             cocktailData = JSON.parse(this.responseText);          
         };
     };
     request.send();
-
     setTimeout(initiateCocktails, 3000)    
 }
 
-
-function previousCocktail() {
-    drinkIndex = drinkIndex - 1;
-    loadCocktail();
-}
-
-function nextCocktail() {
-    drinkIndex = drinkIndex + 1;    
-    loadCocktail();
-}
-
-
-function initiateCocktails() {
-    
+/* ----------- function to handle the initial display of cocktails */
+/* ----------- Also handles if nothing was returned */  
+function initiateCocktails() {    
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
         document.getElementById("information-container").className = 'did-not-find animate__animated animate__fadeIn';
         noCocktailsHtml = `
@@ -192,12 +178,20 @@ function initiateCocktails() {
         loadCocktail();
     }
 }
-
+/* ----------- For navigating through the cocktails */  
+function previousCocktail() {
+    drinkIndex = drinkIndex - 1;
+    loadCocktail();
+}
+function nextCocktail() {
+    drinkIndex = drinkIndex + 1;    
+    loadCocktail();
+}
 /* ----------- show the selection of cocktail */
 function loadCocktail() {
     document.getElementById("information-container").className = '';
         
-/* ----------- Get the name and the image of the cocktail */
+/* ----------- Get the ID, name and the image of the cocktail */
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
@@ -257,12 +251,11 @@ function loadCocktail() {
     </div>        
     `;
         
-/* ----------- Pass the HTML to the div the-data and increment drinkIndex  */
+/* ----------- Pass the HTML to the div information-container  */
     /*document.getElementById("information-container").className = ''; */
     document.getElementById("information-container").innerHTML = cocktailHtml;
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
-
 };
 
 
@@ -270,39 +263,30 @@ function loadCocktail() {
 /* ----------- get how to make the cocktail */
 function getHow() {
     cocktailPositionInArray = document.getElementById('cocktail-position').textContent;
-
-
     let howToRequest = new XMLHttpRequest();
-
     howToRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailId}`, true);
-
     howToRequest.onload = function(){
         if(this.status === 200){
             let cocktailHowToData = JSON.parse(this.responseText);
-            console.log(cocktailHowToData);
-        
+            console.log(cocktailHowToData);        
 /* ----------- Get the name and the image of the cocktail to make */
             cocktailInstructions = cocktailHowToData.drinks[0]["strInstructions"];
-
 /* ----------- Set the arrays to contain the ingredients and measurements */
             const cocktailIngredients = [];
             const cocktailMeasurements = [];
             let cocktailIndividualIngredient = '';
-            let cocktailIngredientMeasure = '';
-            
+            let cocktailIngredientMeasure = '';            
 /* ----------- go through the properties of the object*/
-            for (let property in cocktailHowToData.drinks[0]){
-            
+            for (let property in cocktailHowToData.drinks[0]){            
 /* ----------- Select all properties that start with strIngredient and push in to cocktailIngredients array */
             if(property.startsWith('strIngredient') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIndividualIngredient = cocktailHowToData.drinks[0][property]; 
-                cocktailIngredients.push(cocktailIndividualIngredient);
-            }
+                cocktailIngredients.push(cocktailIndividualIngredient);            }
 /* ----------- Select all properties that start with strMeasure and push in to ocktailMeasurements array */
             if(property.startsWith('strMeasure') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIngredientMeasure = cocktailHowToData.drinks[0][property];
                 cocktailMeasurements.push(cocktailIngredientMeasure);
-            };    
+                };    
             };
 
 /* ----------- Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
