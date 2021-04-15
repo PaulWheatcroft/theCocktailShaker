@@ -1,4 +1,4 @@
-<img src="images/theCocktailShakerLogo.jpg" style="margin: 0;">
+<img src="images/enjoy.png" style="margin: 0;">
 
 # the Cocktail Shaker
 
