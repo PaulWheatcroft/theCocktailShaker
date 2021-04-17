@@ -1,7 +1,7 @@
 /* ----------- Getting the JSON of ingredients from https://www.thecocktaildb.com/ */
 
 let ingredientRequest = new XMLHttpRequest();
-
+let ingredientList;
 ingredientRequest.open('GET', `https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`, true);
 
 /* Get cocktails with the selected ingredients */
@@ -151,7 +151,7 @@ function callAPI(APIURL) {
 function initiateCocktails() {    
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
         document.getElementById("information-container").className = 'did-not-find animate__animated animate__fadeIn';
-        noCocktailsHtml = `
+        let noCocktailsHtml = `
         <h1 class"no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
         <button id="first-search-again" class="buttons blue-button">Search with <br> ${firstIngredient}</button>
@@ -184,7 +184,7 @@ function nextCocktail() {
 /* ----------- show the selection of cocktail */
 function loadCocktail() {
     document.getElementById("information-container").className = '';
-        
+    let cocktailNavButtons = ''; 
 /* ----------- Get the ID, name and the image of the cocktail */
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
@@ -256,7 +256,7 @@ function loadCocktail() {
 
 /* ----------- get how to make the cocktail */
 function getHow() {
-    cocktailPositionInArray = document.getElementById('cocktail-position').textContent;
+    let cocktailPositionInArray = document.getElementById('cocktail-position').textContent;
     let howToRequest = new XMLHttpRequest();
     howToRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailId}`, true);
     howToRequest.onload = function(){
