@@ -1,4 +1,4 @@
-<img src="images/enjoy.png" style="margin: 0;">
+<img src="images/readme-enjoy.png" style="margin: 0;">
 
 # the Cocktail Shaker
 
@@ -10,15 +10,14 @@ The live site has been deployed via GitHub to https://paulwheatcroft.github.io/t
 
 ## User Experience (UX)
 
-3 sets of target personas have been identified:
+2 sets of target personas have been identified:
 
 - Someone has some ingredients and wants to be inspired to make a cocktail
-- Someone doesn't have ingredients but does have an idea of the ingredients they would like to use
 - Someone just wants to be inspired by a cocktail choice
 
 ### Someone who has some ingredients
 
-<img src="images/" style="margin: 0;">
+<img src="images/readme-1.png" style="margin: 0;">
 
 As someone who has some ingredients in their drinks cabinet I would like to:
 1. Find a cocktail I can make with the ingredients I have available
@@ -29,22 +28,10 @@ As someone who has some ingredients in their drinks cabinet I would like to:
 3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
 4. If I don't find any drink that inspire me I would like to start again
 
-### Someone who has an idea of what they would like in a cocktail
-
-<img src="images/" style="margin: 0;">
-
-As someone who would like to make a cocktail and has an idea of what i would like in the drink I would like to:
-1. Find a cocktails I can make with the the ingredients i'd like to use
-- The result needs to let me know all the ingredients I need to use
-- The result need to show me how to make the cocktail
-- The result needs to show me a picture of the cocktail
-2. If I'm not inspired by the first choice I would like to find another option using the same ingredient choices
-3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
-4. If I don't find any drink that inspire me I would like to start again
 
 ### Someone who just wants to be surprised and inspired to make a cocktail
 
-<img src="images/" style="margin: 0;">
+<img src="images/readme-2.png" style="margin: 0;">
 
 As someone who would like to be inspired by a cocktail choice without any prior preconceptions I would like to:
 1. Easily find a cocktail without having to make any choices
@@ -60,20 +47,49 @@ As someone who would like to be inspired by a cocktail choice without any prior 
 
 Using the targeted personas, the following list of user stories have been identified to fulfil their needs.
 
+- As a person with some ingredients in my drinks cabinet i can search for a cocktail to make based on a specific search using one or two ingredients
+- As a person with some ingredients in my drinks cabinet if i don't want to make the cocktail I see i would like to find another using the same criteria
+- As a person with some ingredients in my drinks cabinet if I find a drink I like I would like to find out how to make the cocktail
+- As a person with some ingredients in my drinks cabinet if I find a drink I really like I would like to email the instructions to myself
+- As a person with some ingredients in my drinks cabinet if i don't find anything I would like to refine my choice and search again
+- Someone who just wants to be surprised and inspired to make a cocktail I would like to have a selection of cocktails to look at
+- Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I like I would like to find out how to make the cocktail
+- Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I really like I would like to email the instructions to myself
+- Someone who just wants to be surprised and inspired to make a cocktail if I don't find something that entices me I would like to look at another selection of cocktails
+
+
 ## Design Choices
 
+The website needs to be a fun and engaging mobile first site with a striking colour pallet. And the overal feel was based on a hybrid on the 1920s and the 1980s.
 
 | Description | Hex Colour Value |
 | --- | ----------- |
-| Dark grey which can be used extensively | #1a1a1a |
-| Off white which can be used extensively | #f9f9f9 |
-| Light yellow to be used as a primary colour | #ffdd55 |
-| Darker yellow to be used as a secondary supportive colour | #d4aa00 |
-| Sky blue to be used as a main highlight colour | #80ffe6 |
-| Complimentary supporting  pink highlight colour | #ffaeae |
-| Complimentary supporting  green highlight colour | #b7ffa5 |
+| Dark grey used as primary background colour | #1A1A1A |
+| Lighter grey used as secondary background colour | #474747 |
+| Off white used for text | #f9f9f9 |
+| Pink | #FF3093 |
+| Yellow | #FFE500 |
+| Green | #05FF00 |
+| Blue | #02F4F4 |
+
+There we no suitable fonts for the main logo available on Google Fonts. Marlowe Swirl W05 Regular was purchased through Fonts.com and installed locally. This font was also used for primary headings.
+
+Google Font Noto Sans GP was used as the standard text throught the website.
 
 ## Structure
+
+The site was constructed primarily using vanilla JavaScript with a view to using template literals for updating a page as to not require HTML page refreshing when updating content.
+
+Whilst the focus is on a mobile first design the website needs to provide an optimal experience across all screen types.
+
+The site consists of the following HTML pages
+
+1. index.html
+2. ingredients.html
+3. random.html
+4. email.html
+
+The email functionality was achieved by integrating Emailjs to the email.html file
 
 ## Wireframing
 
@@ -97,11 +113,11 @@ A Figma wireframe for each page can be found in the links Below.
 
 ### Frameworks, Libraries & Programs Used
 
-- [Bootstrap](https://getbootstrap.com/) 4.4.1: Bootstrap was used to assist with the framework build and responsiveness of the website
+- [JavaScript](https://www.javascript.com/): Vanilla JavaScript was used throughout the website to provide the interactivity of the site
 - [Google Fonts](https://fonts.google.com/): Google fonts were used to import the 'Noto Sans', 'Noto Sans TC' and 'Monoton' font into the style.css file which is used on all pages throughout the project
 - [Font Awesome](https://fontawesome.com/): Font Awesome was used on all pages throughout the website for social media icons
-- [jQuery](https://jquery.com/): jQuery came with Bootstrap to make the navbar responsive
-- [JavaScript](https://www.javascript.com/): A small JavaScript program was used to facility the artist galleries
+- [Emailjs](https://https://www.emailjs.com//): Emailjs provided the functionality to send emails
+- [Animate.css](https://animate.style/): Animate.css provide a quick solution for the simple animation that is used on the website
 - [Git](https://git-scm.com/): Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub
 - [Gitpod](https://www.gitpod.io/): Gitpod was used as the development environment
 - [GitHub](https://github.com/): GitHub is used to store the projects code after being pushed from Git
@@ -113,11 +129,10 @@ A Figma wireframe for each page can be found in the links Below.
 
 ### Testing User Stories from User Experience (UX) Section
 
-####	Music Enthusiast Visitor Goals 
+####	Someone who has some ingredients Visitor Goals 
 
-####	Musician Visitor Goals
+####	Someone who just wants to be surprised and inspired to make a cocktail Visitor Goals
 
-####	Live Music Promoter Visitor Goals
 
 Both HTML and CSS have been validated via
 
@@ -125,7 +140,7 @@ Both HTML and CSS have been validated via
 
 Accessibility was checked at [www.webaccessibility.com]
 
-Responsiveness was checked thought using the Google dev tools and [www.responsinator.com](
+Responsiveness was checked throughout using the Google dev tools and [www.responsinator.com]
 
 A code review was posted in the Code Institute peer-code-review channel.
 
