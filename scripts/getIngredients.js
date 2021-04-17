@@ -9,7 +9,7 @@ ingredientRequest.onload = function(){
     if(this.status === 200){
         ingredientList = JSON.parse(this.responseText);
         console.log(ingredientList);                           
-    };    
+    }    
 };
 ingredientRequest.send();
 
@@ -37,7 +37,7 @@ function ingredientSelection(callback) {
     let ingredientListHtml = `<ul id="${inputId}-ingredient-list" class="ingredient-list">
     ${ingredientListItemsHtml}
     </ul>
-    `
+    `;
     console.log(ingredientListHtml);
     document.getElementById(`${inputId}-ingredient-list-container`).innerHTML = ingredientListHtml;
     listenIngredientList(callback);
@@ -72,8 +72,8 @@ function filterIngredient() {
             li[i].style.display = '';
         } else {
             li[i].style.display = 'none';
-        };
-    };
+        }
+    }
 }
 
 
@@ -140,10 +140,10 @@ function callAPI(APIURL) {
     request.onload = function(){
         if(this.status === 200){
             cocktailData = JSON.parse(this.responseText);          
-        };
+        }
     };
     request.send();
-    setTimeout(initiateCocktails, 3000)    
+    setTimeout(initiateCocktails, 3000);  
 }
 
 /* ----------- function to handle the initial display of cocktails */
@@ -198,14 +198,14 @@ function loadCocktail() {
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" disabled><i class="fas fa-hand-point-right"></i></button>
-        `
+        `;
     } else if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
-        `
+        `;
     } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
         document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
@@ -228,7 +228,7 @@ function loadCocktail() {
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html"><i class="fas fa-home"></i></button></a>
         <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3"><i class="fas fa-info"></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
-        `
+        `;
     }
 
 
@@ -250,7 +250,7 @@ function loadCocktail() {
     document.getElementById("information-container").innerHTML = cocktailHtml;
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
-};
+}
 
 
 
@@ -280,8 +280,8 @@ function getHow() {
             if(property.startsWith('strMeasure') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIngredientMeasure = cocktailHowToData.drinks[0][property];
                 cocktailMeasurements.push(cocktailIngredientMeasure);
-                };    
-            };
+                }   
+            }
 
 /* ----------- Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
 /* ----------- handle measurements that are "undefined" due to fewer entries in array */
@@ -296,8 +296,8 @@ function getHow() {
                 if (cocktailMeasurements[ingredientList] !== undefined && cocktailIngredients !== undefined);
                     ingredientsHtml += `<li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>`;
                     ingredientsText += cocktailMeasurements[ingredientList] + '' + cocktailIngredients[ingredientList] + '\n';
-                };
-            };
+                }
+            }
 
 /* ----------- Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
@@ -324,13 +324,13 @@ function getHow() {
             localStorage.setItem('cocktailInstructions', cocktailInstructions);
             document.getElementById("information-container").innerHTML = cocktailToMakeHtml;
             drinkIndex = drinkIndex + 1;
-        };
+        }
     };
     howToRequest.send();
-};
+}
 
 if (document.title === 'Random Cocktails - the Cocktail Shaker') {
-    getRandomeURL()
+    getRandomeURL();
 }
 
 
