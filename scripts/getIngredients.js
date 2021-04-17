@@ -41,13 +41,13 @@ function ingredientSelection() {
 /* ----------- This function is called back by firstIngredientSelection(callback) */
 function listenIngredientList() {
     let ingredientListItem = document.getElementsByClassName(`${inputId}-list`);
-    let theIngredient = '';
-    function ingredientName() {  
-        theIngredient = this.innerText;                     
-        document.getElementById(`${inputId}-selection`).value = theIngredient;
-    }
+    let theIngredient = '';    
     for (let i = 0; i<ingredientListItem.length; i++) {
         ingredientListItem[i].addEventListener('click', ingredientName);       
+    }
+    function ingredientName() {
+            theIngredient = this.innerText;                   
+            document.getElementById(`${inputId}-selection`).value = theIngredient;
     }
 }
 /* ----------- This function filters the list as text is entered */
@@ -261,13 +261,14 @@ function getHow() {
 /* ----------- Select all properties that start with strIngredient and push in to cocktailIngredients array */
             if(property.startsWith('strIngredient') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIndividualIngredient = cocktailHowToData.drinks[0][property]; 
-                cocktailIngredients.push(cocktailIndividualIngredient);            }
-/* ----------- Select all properties that start with strMeasure and push in to ocktailMeasurements array */
-            if(property.startsWith('strMeasure') && cocktailHowToData.drinks[0][property] !== null){
+                cocktailIngredients.push(cocktailIndividualIngredient);
+            }
+/* ----------- Select all properties that start with strMeasure and push in to cocktailMeasurements array */
+            else if(property.startsWith('strMeasure') && cocktailHowToData.drinks[0][property] !== null){
                 cocktailIngredientMeasure = cocktailHowToData.drinks[0][property];
                 cocktailMeasurements.push(cocktailIngredientMeasure);
-                }   
-            }
+            }   
+        }
 
 /* ----------- Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
 /* ----------- handle measurements that are "undefined" due to fewer entries in array */
@@ -314,7 +315,6 @@ function getHow() {
     };
     howToRequest.send();
 }
-
 if (document.title === 'Random Cocktails - the Cocktail Shaker') {
     getRandomeURL();
 }

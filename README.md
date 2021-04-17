@@ -164,6 +164,8 @@ I used a wide group of friends and family to test the user stories across the fo
 Functional testing was carried out against every element to ensure everything worked and was linked as expected before user tested was started. This was recorded in [functional-testing.xlsx](functional-testing.xlsx). Another tab was added after user testing to regression test functionality following changes through the user testing feedback.
 
 ## Bugs and issues
+The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
+The getHow function in getIngredients.js, , whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development.
 
 ## Deployment
 
