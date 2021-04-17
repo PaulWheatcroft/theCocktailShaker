@@ -103,6 +103,8 @@ A Figma wireframe for each page can be found in the links Below.
 
 ## Design Choices During Development
 
+The navigational elements have evolved through user testing. This included changing icons used
+
 ## Technologies
 
 ### Languages Used
@@ -182,6 +184,8 @@ The Project has been deployed via Github Pages. To do this:
 The project was started using the The Code Institute's [Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template).
 
 The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp
+
+I used this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient.
 
 The following link was used to "fix" 100vh on mobile https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/
 

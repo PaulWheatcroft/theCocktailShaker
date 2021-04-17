@@ -38,7 +38,6 @@ function ingredientSelection() {
     listenIngredientList();
 }
 /* ----------- When an ingredient in the list is clicked add it to the input */
-/* ----------- This function is called back by firstIngredientSelection(callback) */
 function listenIngredientList() {
     let ingredientListItem = document.getElementsByClassName(`${inputId}-list`);
     let theIngredient = '';    
@@ -75,11 +74,8 @@ let cocktailData = '';
 let APIURL = '';
 let firstIngredient;
 let secondIngredient;
-
 /* ----------- Set the API URL */
-
 function getIngredientsURL() {
-
         firstIngredient = document.getElementById("first-selection").value;
         secondIngredient = document.getElementById("second-selection").value;
 
@@ -91,16 +87,13 @@ function getIngredientsURL() {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
-        }
-    
+        }    
     callAPI(APIURL);    
 }
-
 function getRandomeURL() {
     APIURL = 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php';
     callAPI(APIURL); 
 }
-
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
     document.getElementById("information-container").className = '';
@@ -132,7 +125,6 @@ function callAPI(APIURL) {
     request.send();
     setTimeout(initiateCocktails, 3000);  
 }
-
 /* ----------- function to handle the initial display of cocktails */
 /* ----------- Also handles if nothing was returned */  
 function initiateCocktails() {    
@@ -154,7 +146,6 @@ function initiateCocktails() {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
             callAPI(APIURL);
         }; 
-
     } else {
         loadCocktail();
     }
@@ -176,9 +167,7 @@ function loadCocktail() {
     cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
-
 /* ----------- Set the navigation buttons to disabled if applicable */
-
     if (Object.keys(cocktailData.drinks).length === 1) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" disabled><i class="fas fa-hand-point-left"></i></button>
@@ -217,8 +206,6 @@ function loadCocktail() {
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()"><i class="fas fa-hand-point-right"></i></button>
         `;
     }
-
-
 /* ----------- Construct the HTML to view output */
     cocktailHtml = `
     <div id="nav-buttons">
@@ -230,17 +217,13 @@ function loadCocktail() {
     <h2 id="cocktail-id">${cocktailId}</h2>
     <h2 id="cocktail-position">${drinkIndex}</h2>
     </div>        
-    `;
-        
+    `;        
 /* ----------- Pass the HTML to the div information-container  */
     /*document.getElementById("information-container").className = ''; */
     document.getElementById("information-container").innerHTML = cocktailHtml;
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
 }
-
-
-
 /* ----------- get how to make the cocktail */
 function getHow() {
     let cocktailPositionInArray = document.getElementById('cocktail-position').textContent;
@@ -269,7 +252,6 @@ function getHow() {
                 cocktailMeasurements.push(cocktailIngredientMeasure);
             }   
         }
-
 /* ----------- Loop through the cocktail ingredients and created list items that includes the corresponding measurement */
 /* ----------- handle measurements that are "undefined" due to fewer entries in array */
             let ingredientList = 0;
@@ -285,7 +267,6 @@ function getHow() {
                     ingredientsText += cocktailMeasurements[ingredientList] + '' + cocktailIngredients[ingredientList] + '\n';
                 }
             }
-
 /* ----------- Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
@@ -303,8 +284,7 @@ function getHow() {
                     <p>${cocktailInstructions}</p>
                     </div>
             </div>          
-            `;
-                
+            `;                
 /* ----------- Pass the HTML to the div the-ingredient-data */
             localStorage.setItem('cocktailName', cocktailName);
             localStorage.setItem('cocktailIngredients', ingredientsText);
