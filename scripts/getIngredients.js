@@ -7,15 +7,13 @@ ingredientRequest.open('GET', `https://www.thecocktaildb.com/api/json/v1/1/list.
 /* Get cocktails with the selected ingredients */
 ingredientRequest.onload = function(){
     if(this.status === 200){
-        ingredientList = JSON.parse(this.responseText);
-        console.log(ingredientList);                           
+        ingredientList = JSON.parse(this.responseText);                         
     }    
 };
 ingredientRequest.send();
 
 /* ----------- capture which input field was clicked */
 let inputId = '';
-
 function firstFilter() {
     inputId = 'first';
     ingredientSelection();
@@ -24,10 +22,8 @@ function secondFilter() {
     inputId = 'second';
     ingredientSelection();
 }
-
 /* ----------- construct html of ingredients to li items */
-
-function ingredientSelection(callback) {
+function ingredientSelection() {
     let i = 0;
     let ingredientListItemsHtml = '';
     for (i; i<ingredientList.drinks.length; i++) {
@@ -38,28 +34,22 @@ function ingredientSelection(callback) {
     ${ingredientListItemsHtml}
     </ul>
     `;
-    console.log(ingredientListHtml);
     document.getElementById(`${inputId}-ingredient-list-container`).innerHTML = ingredientListHtml;
-    listenIngredientList(callback);
+    listenIngredientList();
 }
 /* ----------- When an ingredient in the list is clicked add it to the input */
 /* ----------- This function is called back by firstIngredientSelection(callback) */
-/* ----------- Listen out for the ingredient input to be clicked */
 function listenIngredientList() {
-
-
-    let ingredientListItem = document.getElementsByClassName('drinks-list');
+    let ingredientListItem = document.getElementsByClassName(`${inputId}-list`);
+    let theIngredient = '';
+    function ingredientName() {  
+        theIngredient = this.innerText;                     
+        document.getElementById(`${inputId}-selection`).value = theIngredient;
+    }
     for (let i = 0; i<ingredientListItem.length; i++) {
-        ingredientListItem[i].addEventListener('click', ingredientName);
-        function ingredientName() {
-            let theIngredient = ingredientListItem[i].innerText;
-            document.getElementById(`${inputId}-selection`).value = theIngredient;
-        }
+        ingredientListItem[i].addEventListener('click', ingredientName);       
     }
 }
-
-
-
 /* ----------- This function filters the list as text is entered */
 function filterIngredient() {
     let input, filter, li, i, textValue;
@@ -75,8 +65,6 @@ function filterIngredient() {
         }
     }
 }
-
-
 let cocktailId = '';
 let cocktailName = '';
 let cocktailImage = '';
@@ -115,7 +103,6 @@ function getRandomeURL() {
 
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
-    console.log(APIURL);
     document.getElementById("information-container").className = '';
     let searchingHtml1 = `
     <h1 class="we-are-shaking-it animate__animated animate__fadeIn">We</h1>
@@ -261,8 +248,7 @@ function getHow() {
     howToRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailId}`, true);
     howToRequest.onload = function(){
         if(this.status === 200){
-            let cocktailHowToData = JSON.parse(this.responseText);
-            console.log(cocktailHowToData);        
+            let cocktailHowToData = JSON.parse(this.responseText);       
 /* ----------- Get the name and the image of the cocktail to make */
             cocktailInstructions = cocktailHowToData.drinks[0]["strInstructions"];
 /* ----------- Set the arrays to contain the ingredients and measurements */
