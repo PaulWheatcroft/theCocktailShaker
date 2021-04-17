@@ -142,13 +142,13 @@ Both HTML and CSS have been validated via
 
 - W3C [Validation](https://validator.w3.org/nu/)
 
-Accessibility was checked at [www.webaccessibility.com]
+Accessibility was checked at [www.webaccessibility.com] with 0 violations identified.
 
 Responsiveness was checked throughout using the Google dev tools and [www.responsinator.com]
 
-A code review was posted in the Code Institute peer-code-review channel.
+A code review was posted in the Code Institute peer-code-review channel. Feedback helped shape the UX.
 
-I used a wide group of friends and family to test the user stories across the following operating systems and browsers.
+I used a wide group of friends and family to test the user stories across the following operating systems and browsers. The feedback from this group helped shape both the UI and UX.
 
 - Windows (multiple computers)
     - Internet Explorer 11
