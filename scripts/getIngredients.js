@@ -18,9 +18,11 @@ let inputId = '';
 
 function firstFilter() {
     inputId = 'first';
+    ingredientSelection();
 }
 function secondFilter() {
     inputId = 'second';
+    ingredientSelection();
 }
 
 /* ----------- construct html of ingredients to li items */
@@ -42,31 +44,22 @@ function ingredientSelection(callback) {
 }
 /* ----------- When an ingredient in the list is clicked add it to the input */
 /* ----------- This function is called back by firstIngredientSelection(callback) */
+/* ----------- Listen out for the ingredient input to be clicked */
 function listenIngredientList() {
 
-/* ----------- Listen out for the ingredient input to be clicked */
 
     let ingredientListItem = document.getElementsByClassName('drinks-list');
     for (let i = 0; i<ingredientListItem.length; i++) {
         ingredientListItem[i].addEventListener('click', ingredientName);
-            function ingredientName() {
+        function ingredientName() {
             let theIngredient = ingredientListItem[i].innerText;
             document.getElementById(`${inputId}-selection`).value = theIngredient;
         }
     }
 }
 
-if (document.title === 'the Cocktail Shaker') {
-    listenForIngredients()
-}
 
-function listenForIngredients() {
-    let firstIngredientField = document.getElementById('first-selection');
-    firstIngredientField.addEventListener('click', ingredientSelection);
 
-    let secondIngredientField = document.getElementById('second-selection');
-    secondIngredientField.addEventListener('click', ingredientSelection);
-}
 /* ----------- This function filters the list as text is entered */
 function filterIngredient() {
     let input, filter, li, i, textValue;
@@ -123,6 +116,7 @@ function getRandomeURL() {
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
     console.log(APIURL);
+    document.getElementById("information-container").className = '';
     let searchingHtml1 = `
     <h1 class="we-are-shaking-it animate__animated animate__fadeIn">We</h1>
     <h1 class="we-are-shaking-it animate__animated animate__fadeIn">Are</h1>
