@@ -93,15 +93,19 @@ The email functionality was achieved by integrating Emailjs to the email.html fi
 
 ## Wireframing
 
-<img src="images/" style="margin: 0;">
+<img src="images/readme-mockup.png" style="margin: 0;">
 
-Mocking up of the site was initially done on pen and paper and then brought to life using Figma.
+Mocking up of the site was initially done on pen and paper and then brought to life using Figma. Figma wireframes for the site can be found here https://www.figma.com/file/K1AR2OIITD70scuCkTtzkj/the-Cocktail-Shaker?node-id=0%3A1
 
-A Figma wireframe for each page can be found in the links Below.
+During the wireframing process a third persona was removed. This persona didn't have any ingredients but did know which ingredients they wanted to use. The persona had too much crossover with the "Someone who has some ingredients" persona and including it caused the narrative of the appication to become confusing. Therefore the decision was taken to remove the persona. 
 
 [Releases - index.html]
 
 ## Design Choices During Development
+
+The navigational elements have evolved through user testing. This included changing icons used and adding a home button.
+
+The wireframe show 3 available inputs for ingredients the persona may have. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
 
 ## Technologies
 
@@ -161,9 +165,11 @@ I used a wide group of friends and family to test the user stories across the fo
 - iOS (iPhone 7, iPhoneX, iPhone SE)
     - Safari
 
-Functional testing was carried out against every element to ensure everything worked and was linked as expected before user tested was started. This was recorded in [functional-testing.xlsx](functional-testing.xlsx). Another tab was added after user testing to regression test functionality following changes through the user testing feedback.
+Functional testing was carried out against every element to ensure everything worked and was linked as expected before user tested was started. This was recorded in [functional-testing.xlsx](functional-testing.xlsx). 
 
 ## Bugs and issues
+The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
+The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development.
 
 ## Deployment
 
@@ -180,6 +186,8 @@ The Project has been deployed via Github Pages. To do this:
 The project was started using the The Code Institute's [Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template).
 
 The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp
+
+I used this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient.
 
 The following link was used to "fix" 100vh on mobile https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/
 
