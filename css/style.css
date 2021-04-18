@@ -247,6 +247,9 @@ textarea:focus, input:focus{
 .pointer-disabled {
     background-color: #474747;
 }
+.pointer-disabled:hover {
+    box-shadow: 0px 0px 10px #474747;
+}
 .no-more {
     padding-bottom: 20px;
 }

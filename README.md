@@ -215,6 +215,7 @@ Functional testing was carried out against every element to ensure everything wo
 ## Bugs and issues
 - The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
 - Mistyped ingredients will still be searched for. This needs checking against the array list.
+- Some ingredients don't return any cocktails such as Coconut Cream
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
 
 ## Deployment
@@ -243,7 +244,7 @@ The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lif
 
 ## Further Development Ideas
 - Social media sharing of cocktail instructions
-- The reporting of missing ingredients
+- Ability show non-alcoholic ingredients and cocktails
 - Ability to tick all the ingredients you have in the instruction and then create a shopping list for the ingredients you don't
 - Hook up ingredients to a shopping API
 - User account environment that allowed for sharing ratings on the cocktails

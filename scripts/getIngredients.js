@@ -131,6 +131,10 @@ function initiateCocktails() {
     if (cocktailData.drinks[drinkIndex]["strDrink"] === undefined) {
         document.getElementById("information-container").className = 'did-not-find animate__animated animate__fadeIn';
         let noCocktailsHtml = `
+        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></button>
+        <a href="index.html"><button id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></button></a>
+        <button id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients" disabled><i class="fas fa-info"></i></button>
+        <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail" disabled><i class="fas fa-hand-point-right"></i></button>
         <h1 class"no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
         <button id="first-search-again" class="buttons blue-button">Search with <br> ${firstIngredient}</button>
@@ -168,12 +172,13 @@ function loadCocktail() {
     cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
     cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
 /* ----------- Set the navigation buttons to disabled if applicable */
+
     if (Object.keys(cocktailData.drinks).length === 1) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></button>
         <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html" aria-label="Home"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></button></a>
         <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3" aria-label="Show Ingredients"><i class="fas fa-info tooltip"><span class="tooltiptext">Show Ingredients</span></i></button>
-        <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail" disabled><i class="fas fa-hand-point-right"></i></button>
+        <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></button>
         `;
     } else if (drinkIndex === 0) {
         cocktailNavButtons = `
@@ -182,7 +187,7 @@ function loadCocktail() {
         <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3" aria-label="Show Ingredients"><i class="fas fa-info tooltip"><span class="tooltiptext">Show Ingredients</span></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()" aria-label="Next Cocktail"><i class="fas fa-hand-point-right tooltip"><span class="tooltiptext">Next Cocktail</span></i></button>
         `;
-    } else if (drinkIndex === (Object.keys(cocktailData.drinks).length - 1)) {
+    } else if (drinkIndex === (Object.keys(cocktailData.drinks).length) - 1) {
         document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></button>
