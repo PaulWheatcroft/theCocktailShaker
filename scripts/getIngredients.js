@@ -166,28 +166,27 @@ function nextCocktail() {
 /* ----------- show the selection of cocktail */
 function loadCocktail() {
     document.getElementById("information-container").className = '';
-    let cocktailNavButtons = ''; 
+    let cocktailNavButtons = '';
+
 /* ----------- Get the ID, name and the image of the cocktail */
-    cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
-    cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
-    cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
+    if (drinkIndex < Object.keys(cocktailData.drinks).length) {
+        cocktailId = cocktailData.drinks[drinkIndex]["idDrink"];
+        cocktailName = cocktailData.drinks[drinkIndex]["strDrink"];
+        cocktailImage = cocktailData.drinks[drinkIndex]["strDrinkThumb"];
+    }
+        
+
+    
 /* ----------- Set the navigation buttons to disabled if applicable */
 
-    if (Object.keys(cocktailData.drinks).length === 1) {
-        cocktailNavButtons = `
-        <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></button>
-        <a href="index.html"><button id="home" class="pointer pointer-home"><a href="index.html" aria-label="Home"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></button></a>
-        <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3" aria-label="Show Ingredients"><i class="fas fa-info tooltip"><span class="tooltiptext">Show Ingredients</span></i></button>
-        <button id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></button>
-        `;
-    } else if (drinkIndex === 0) {
+    if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></button>
         <a href="index.html"><button id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></button></a>
         <button id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3" aria-label="Show Ingredients"><i class="fas fa-info tooltip"><span class="tooltiptext">Show Ingredients</span></i></button>
         <button id="click-next" class="pointer pointer-right" onclick="nextCocktail()" aria-label="Next Cocktail"><i class="fas fa-hand-point-right tooltip"><span class="tooltiptext">Next Cocktail</span></i></button>
         `;
-    } else if (drinkIndex === (Object.keys(cocktailData.drinks).length) - 1) {
+    } else if (drinkIndex === Object.keys(cocktailData.drinks).length) {
         document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></button>
