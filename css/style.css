@@ -217,6 +217,9 @@ textarea:focus, input:focus{
     margin-left: 5px;
     margin-right: 5px;
 }
+.pointer:hover {
+    cursor: pointer
+}
 .pointer-left {
     background-color: #FF3093;
 }
@@ -329,8 +332,8 @@ textarea:focus, input:focus{
     position: relative;
     display: inline-block;
   }  
-  /* Tooltip text */
-  .tooltip .tooltiptext {
+/* Tooltip text */
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 100px;
     background-color: #f9f9f9;
@@ -345,12 +348,12 @@ textarea:focus, input:focus{
     font-family: 'Noto Sans JP', sans-serif;
     opacity: 0;
     transition: opacity 1s;
-   
-    /* Position the tooltip text - see examples below! */
+
+/* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
-  }
-  .tooltip .tooltiptext::after {
+}
+.tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
     top: 100%; /* At the bottom of the tooltip */
@@ -359,12 +362,12 @@ textarea:focus, input:focus{
     border-width: 5px;
     border-style: solid;
     border-color: #f9f9f9 transparent transparent transparent;
-  }  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip:hover .tooltiptext {
+}  
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-  }
+}
 
 @media all and (min-width: 767px) and (max-width: 1024px) {
     .drinks-image {

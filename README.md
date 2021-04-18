@@ -137,6 +137,10 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 > Someone with some ingredients Visitor Goals
 >
 
+
+<img src="images/user1.png" style="margin: 0;">
+
+
 - As a person with some ingredients in my drinks cabinet i can search for a cocktail to make based on a specific search using one or two ingredients.
     1. Upon loading the website the user is greeted by a fun an minimal interface. The itentions of the site are explained. Users are also presented with two options. One of which is "I've got some ingredients".
     2. After clicking this button the user is presented with the option to enter one ot two ingredients and search for cocktails containing these ingredients using the "Shake it for me" button.
@@ -152,6 +156,8 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
     1. If the user really likes likes their selected cocktail following looking at the instructions they can use the "email" button to initialte sending the instructions to their email address.
     2. The user is then presented with an input box to enter their email address. They can then click on the send button to send the instruction to their email address.
 
+<img src="images/email.png" style="margin: 0;">
+
 - As a person with some ingredients in my drinks cabinet if i don't find anything I would like to refine my choice and search again.
     1. If the user doesn't find anything with their search criteria they will reach the end of the selection and then be presented with the option to either search again with a different selection of ingredients or to search for a random selection of cocktail.
     2. At any time the user can click on the "home" button in the navigation section to take them back to the start point of the website.
@@ -163,6 +169,8 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 - Someone who just wants to be surprised and inspired to make a cocktail I would like to have a selection of cocktails to look at.
     1. Upon loading the website the user is greeted by a fun an minimal interface. The itentions of the site are explained. Users are also presented with two options. One of which is "surprise me with something".
     2. Once the search is complete the user is presented with a random selection of 10 cocktails to navigate through using the "next cocktail" and "previous cocktail" buttons.
+
+<img src="images/tooltip.png" style="margin: 0;">
 
 - Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I like I would like to find out how to make the cocktail.
     1. If the user see a drink they like whilst navigating through the returned selection they can click on the "instructions" button that contains the the tooltip "Show Instructions" in the top navigation section to view the cocktail's instructions.
