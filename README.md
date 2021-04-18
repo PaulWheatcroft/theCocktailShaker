@@ -189,5 +189,7 @@ The code for the gradient border came from https://codepen.io/alphardex/pen/vYEY
 
 The w3chools website is a goto for all manner of things but specifically this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient and this https://www.w3schools.com/css/css_tooltip.asp which was used to creat the tooltips.
 
+Thanks to CSS-Tricks for their media query guide https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
 ## Further Development Ideas
 
