@@ -133,10 +133,47 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 
 ### Testing User Stories from User Experience (UX) Section
 
-####	Someone who has some ingredients Visitor Goals 
+>
+> Someone with some ingredients Visitor Goals
+>
 
-####	Someone who just wants to be surprised and inspired to make a cocktail Visitor Goals
+- As a person with some ingredients in my drinks cabinet i can search for a cocktail to make based on a specific search using one or two ingredients.
+    1. Upon loading the website the user is greeted by a fun an minimal interface. The itentions of the site are explained. Users are also presented with two options. One of which is "I've got some ingredients".
+    2. After clicking this button the user is presented with the option to enter one ot two ingredients and search for cocktails containing these ingredients using the "Shake it for me" button.
+    3. Once the search is complete the user is either presented with a selection of cocktails to navigate through using the "next cocktail" and "previous cocktail" buttons, or if no cocktails are returned, the option to search again using just one or other of the ingredients.
 
+- As a person with some ingredients in my drinks cabinet if i don't want to make the cocktail I see i would like to find another using the same criteria.
+    1. Once the user is presented with their cocktail selection they can navigate through the available cocktails using the Next Cocktail navigation button. All the cocktails returned with contain the ingredient(s) selected.
+
+- As a person with some ingredients in my drinks cabinet if I find a drink I like I would like to find out how to make the cocktail.
+    1. If the user see a drink they like whilst navigating through the returned selection they can click on the "instructions" button that contains the the tooltip "Show Instructions" in the top navigation section to view the cocktail's instructions.
+
+- As a person with some ingredients in my drinks cabinet if I find a drink I really like I would like to email the instructions to myself.
+    1. If the user really likes likes their selected cocktail following looking at the instructions they can use the "email" button to initialte sending the instructions to their email address.
+    2. The user is then presented with an input box to enter their email address. They can then click on the send button to send the instruction to their email address.
+
+- As a person with some ingredients in my drinks cabinet if i don't find anything I would like to refine my choice and search again.
+    1. If the user doesn't find anything with their search criteria they will reach the end of the selection and then be presented with the option to either search again with a different selection of ingredients or to search for a random selection of cocktail.
+    2. At any time the user can click on the "home" button in the navigation section to take them back to the start point of the website.
+
+>
+> Someone Who Just wants to be Surprised and Inspired to Make a Cocktail Visitor Goals
+>
+
+- Someone who just wants to be surprised and inspired to make a cocktail I would like to have a selection of cocktails to look at.
+    1. Upon loading the website the user is greeted by a fun an minimal interface. The itentions of the site are explained. Users are also presented with two options. One of which is "surprise me with something".
+    2. Once the search is complete the user is presented with a random selection of 10 cocktails to navigate through using the "next cocktail" and "previous cocktail" buttons.
+
+- Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I like I would like to find out how to make the cocktail.
+    1. If the user see a drink they like whilst navigating through the returned selection they can click on the "instructions" button that contains the the tooltip "Show Instructions" in the top navigation section to view the cocktail's instructions.
+
+- Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I really like I would like to email the instructions to myself.
+    1. If the user really likes likes their selected cocktail following looking at the instructions they can use the "email" button to initialte sending the instructions to their email address.
+    2. The user is then presented with an input box to enter their email address. They can then click on the send button to send the instruction to their email address.
+
+- Someone who just wants to be surprised and inspired to make a cocktail if I don't find something that entices me I would like to look at another selection of cocktails.
+    1. If the user doesn't find anything with their search criteria they will reach the end of the selection and then be presented with the option to either search again wfor some more random cocktail or to search using specific ingredients.
+    2. At any time the user can click on the "home" button in the navigation section to take them back to the start point of the website.
 
 Both HTML and CSS have been validated via
 
@@ -190,6 +227,8 @@ The code for the gradient border came from https://codepen.io/alphardex/pen/vYEY
 The w3chools website is a goto for all manner of things but specifically this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient and this https://www.w3schools.com/css/css_tooltip.asp which was used to creat the tooltips.
 
 Thanks to CSS-Tricks for their media query guide https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
+The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lifecycle of the project when updating the README file.
 
 ## Further Development Ideas
 
