@@ -366,7 +366,7 @@ textarea:focus, input:focus{
     opacity: 1;
   }
 
-@media all and (min-width: 767px) and (max-width: 1023px) {
+@media all and (min-width: 767px) and (max-width: 1024px) {
     .drinks-image {
         max-width: 60%;
     }
