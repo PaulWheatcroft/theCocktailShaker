@@ -187,9 +187,7 @@ The project was started using the The Code Institute's [Gitpod Full Template](ht
 
 The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp
 
-I used this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient.
-
-The following link was used to "fix" 100vh on mobile https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/
+The w3chools website is a goto for all manner of things but specifically this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient and this https://www.w3schools.com/css/css_tooltip.asp which was used to creat the tooltips.
 
 ## Further Development Ideas
 
