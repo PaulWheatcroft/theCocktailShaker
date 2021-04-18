@@ -21,9 +21,9 @@ The live site has been deployed via GitHub to https://paulwheatcroft.github.io/t
 
 As someone who has some ingredients in their drinks cabinet I would like to:
 1. Find a cocktail I can make with the ingredients I have available
-- The result needs to let me know all the ingredients I need to use
-- The result need to show me how to make the cocktail
-- The result needs to show me a picture of the cocktail
+    - The result needs to let me know all the ingredients I need to use
+    - The result need to show me how to make the cocktail
+    - The result needs to show me a picture of the cocktail
 2. If I'm not inspired by the first choice I would like to find another option using the same ingredients
 3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
 4. If I don't find any drink that inspire me I would like to start again
@@ -35,9 +35,9 @@ As someone who has some ingredients in their drinks cabinet I would like to:
 
 As someone who would like to be inspired by a cocktail choice without any prior preconceptions I would like to:
 1. Easily find a cocktail without having to make any choices
-- The result needs to let me know all the ingredients I need to use
-- The result need to show me how to make the cocktail
-- The result needs to show me a picture of the cocktail
+    - The result needs to let me know all the ingredients I need to use
+    - The result need to show me how to make the cocktail
+    - The result needs to show me a picture of the cocktail
 2. If I'm not inspired by the first choice I would like to find another option using the same ingredient choices
 3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
 4. If I don't find any drink that inspire me I would like to start again
@@ -212,8 +212,9 @@ I used a wide group of friends and family to test the user stories across the fo
 Functional testing was carried out against every element to ensure everything worked and was linked as expected before user tested was started. This was recorded in [functional-testing.xlsx](functional-testing.xlsx). 
 
 ## Bugs and issues
-The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
-The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development.
+- The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
+- Mistyped ingredients will still be searched for. This needs checking against the array list. This is not straight forward as there are a number of ingredients, such as Tia Maria, that do not appear in the returned list of ingredients from the CocktailDB API but are using in cocktails.
+- The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
 
 ## Deployment
 
