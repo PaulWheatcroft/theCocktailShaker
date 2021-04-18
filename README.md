@@ -210,12 +210,12 @@ I used a wide group of friends and family to test the user stories across the fo
 - iOS (iPhone 7, iPhoneX, iPhone SE)
     - Safari
 
-Functional testing was carried out against every element to ensure everything worked and was linked as expected before user tested was started. This was recorded in [functional-testing.xlsx](functional-testing.xlsx). 
+Functional testing has carried out, after major updates, against every element to ensure everything worked and was linked as expected. This is recorded in [functional-testing-theCocktailShaker.xlsx](functional-testing.xlsx). 
 
 ## Bugs and issues
 - The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
 - Mistyped ingredients will still be searched for. This needs checking against the array list.
-- Some ingredients don't return any cocktails such as Coconut Cream
+- Coconut Cream doesn't return any cocktails.
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
 
 ## Deployment

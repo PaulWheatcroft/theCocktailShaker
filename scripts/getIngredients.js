@@ -230,7 +230,6 @@ function loadCocktail() {
 }
 /* ----------- get how to make the cocktail */
 function getHow() {
-    let cocktailPositionInArray = document.getElementById('cocktail-position').textContent;
     let howToRequest = new XMLHttpRequest();
     howToRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailId}`, true);
     howToRequest.onload = function(){
