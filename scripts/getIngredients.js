@@ -2,7 +2,7 @@
 
 let ingredientRequest = new XMLHttpRequest();
 let ingredientList;
-ingredientRequest.open('GET', `https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`, true);
+ingredientRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list`, true);
 
 /* Get cocktails with the selected ingredients */
 ingredientRequest.onload = function(){

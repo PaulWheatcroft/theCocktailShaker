@@ -117,6 +117,7 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 ### Frameworks, Libraries & Programs Used
 
 - [JavaScript](https://www.javascript.com/): Vanilla JavaScript was used throughout the website to provide the interactivity of the site
+- [TheCocktailDB API](https://www.thecocktaildb.com/): All of the data provided on the site is retrieved from TheCocktailDB API. I'm a patreon and have access to advinced features
 - [Google Fonts](https://fonts.google.com/): Google fonts were used to import the 'Noto Sans', 'Noto Sans TC' and 'Monoton' font into the style.css file which is used on all pages throughout the project
 - [Font Awesome](https://fontawesome.com/): Font Awesome was used on all pages throughout the website for social media icons
 - [Emailjs](https://https://www.emailjs.com//): Emailjs provided the functionality to send emails
@@ -213,7 +214,7 @@ Functional testing was carried out against every element to ensure everything wo
 
 ## Bugs and issues
 - The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list is associated with.
-- Mistyped ingredients will still be searched for. This needs checking against the array list. This is not straight forward as there are a number of ingredients, such as Tia Maria, that do not appear in the returned list of ingredients from the CocktailDB API but are using in cocktails.
+- Mistyped ingredients will still be searched for. This needs checking against the array list.
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
 
 ## Deployment
