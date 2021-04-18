@@ -95,11 +95,10 @@ The email functionality was achieved by integrating Emailjs to the email.html fi
 
 <img src="images/readme-mockup.png" style="margin: 0;">
 
-Mocking up of the site was initially done on pen and paper and then brought to life using Figma. Figma wireframes for the site can be found here https://www.figma.com/file/K1AR2OIITD70scuCkTtzkj/the-Cocktail-Shaker?node-id=0%3A1
+Mocking up of the site was initially done on pen and paper and then brought to life using Figma. Figma wireframes for the site can be found here [Wireframes](https://www.figma.com/file/K1AR2OIITD70scuCkTtzkj/the-Cocktail-Shaker?node-id=0%3A1)
 
 During the wireframing process a third persona was removed. This persona didn't have any ingredients but did know which ingredients they wanted to use. The persona had too much crossover with the "Someone who has some ingredients" persona and including it caused the narrative of the appication to become confusing. Therefore the decision was taken to remove the persona. 
 
-[Releases - index.html]
 
 ## Design Choices During Development
 
@@ -230,13 +229,20 @@ The Project has been deployed via Github Pages. To do this:
 
 The project was started using the The Code Institute's [Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template).
 
-The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp
+The code for the gradient border came from [alphardex](https://codepen.io/alphardex) https://codepen.io/alphardex/pen/vYEYGzp
 
 The w3chools website is a goto for all manner of things but specifically this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient and this https://www.w3schools.com/css/css_tooltip.asp which was used to creat the tooltips.
 
-Thanks to CSS-Tricks for their media query guide https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+Thanks to CSS-Tricks for their media query guide [media-queries-for-standard-devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+
+The background graphics were modified from [FreeVectors.com](https://www.freevector.com/girls-with-drinks)
 
 The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lifecycle of the project when updating the README file.
 
 ## Further Development Ideas
-
+- Social media sharing of cocktail instructions
+- The reporting of missing ingredients
+- Ability to tick all the ingredients you have in the instruction and then create a shopping list for the ingredients you don't
+- Hook up ingredients to a shopping API
+- User account environment that allowed for sharing ratings on the cocktails
+- User account environment that allowed for adding new cocktails to the database
