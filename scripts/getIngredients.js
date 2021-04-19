@@ -23,12 +23,14 @@ function secondFilter() {
     ingredientSelection();
 }
 /* ----------- construct html of ingredients to li items */
+let ingredientsArray = [];
 function ingredientSelection() {
     let i = 0;
     let ingredientListItemsHtml = '';
     for (i; i<ingredientList.drinks.length; i++) {
         let ingredientName = ingredientList.drinks[i].strIngredient1;
-        ingredientListItemsHtml += `<li class="drinks-list ${inputId}-list">${ingredientName}</li>`;           
+        ingredientListItemsHtml += `<li class="drinks-list ${inputId}-list">${ingredientName}</li>`;
+        ingredientsArray.push(ingredientName);      
     }
     let ingredientListHtml = `<ul id="${inputId}-ingredient-list" class="ingredient-list">
     ${ingredientListItemsHtml}
@@ -75,16 +77,29 @@ let APIURL = '';
 let firstIngredient;
 let secondIngredient;
 /* ----------- Set the API URL based on which input or both inputs contain information */
+/* ----------- Catch any errors and display them to the user */
 function getIngredientsURL() {
+    document.getElementById('error-message').className = 'hidden-error-message animate__animated animate__fadeOut';
         firstIngredient = document.getElementById("first-selection").value;
         secondIngredient = document.getElementById("second-selection").value;
-
-        if (firstIngredient === '' && secondIngredient === '') {
+        if (firstIngredient === '') {
+            document.getElementById('error-message').innerHTML = `<p>The first ingredient cannot be blank</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
-        } else if (secondIngredient === '') {
+        } else if (ingredientsArray.includes(firstIngredient) === false && ingredientsArray.includes(secondIngredient) === false) {
+            document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are mispelt</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
+            return;
+        } else if (ingredientsArray.includes(firstIngredient) && secondIngredient === '') {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
-        } else if (firstIngredient === '' && secondIngredient !== '') {
-            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
+        } else if (ingredientsArray.includes(firstIngredient) && ingredientsArray.includes(secondIngredient) === false) {
+            document.getElementById('error-message').innerHTML = `<p>It looks like the second ingredient is mispelt</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
+            return;
+        } else if (ingredientsArray.includes(firstIngredient) === false && ingredientsArray.includes(secondIngredient)) {
+            document.getElementById('error-message').innerHTML = `<p>It looks like the first ingredient is mispelt</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';;
+            return;
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
         }    

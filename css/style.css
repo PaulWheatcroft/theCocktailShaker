@@ -79,8 +79,8 @@ textarea:focus, input:focus{
     font-size: 250%;
 }
 #information-container {
-    min-height: 70vh;
-    padding: 20px;
+    min-height: 75vh;
+    padding: 10px;
 }
 #information-container a {
     text-decoration: none;
@@ -178,7 +178,7 @@ textarea:focus, input:focus{
     box-shadow: 0px 0px 10px #02F4F4;
 }
 #show-me {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .buttons {
     width: 130px;
@@ -253,7 +253,18 @@ textarea:focus, input:focus{
 .no-more {
     padding-bottom: 20px;
 }
-
+#error-message {
+    background-color: #FFE500;
+    color: #2E2E2E;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+.hidden-error-message {
+    visibility: hidden;
+}
+.visible-error-message {
+    visibility: visible;
+}
 .ingredient-input {
     font-size: 16px;
     padding: 10px;
@@ -470,8 +481,4 @@ textarea:focus, input:focus{
         width: 20%;
     }
 }
-
-
-
-
 

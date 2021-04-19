@@ -221,11 +221,8 @@ Functional testing has carried out, after major updates, against every element t
 
 ## Bugs and issues
 - The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list it is associated with.
-- Mistyped ingredients will still be searched for. This needs checking against the array list.
 - Coconut Cream doesn't return any cocktails.
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
-
-- Not a bug with website but the W3C CSS Validator doesn't appear to like calc() though the CSS is valid. This is a known issue with the validator https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
 
 ## Deployment
 
