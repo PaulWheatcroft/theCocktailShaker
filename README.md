@@ -186,8 +186,10 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 Both HTML and CSS have been validated via
 
 - W3C [Validation](https://validator.w3.org/nu/)
-    - https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2F
-    
+    - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2F)
+    - [ingredients.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Fingredients.html)
+    - [random.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Frandom.html)
+    - [rmail.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Femail.html)
 
 Accessibility was checked at [www.webaccessibility.com] with 0 violations identified.
 
@@ -219,6 +221,8 @@ Functional testing has carried out, after major updates, against every element t
 - Mistyped ingredients will still be searched for. This needs checking against the array list.
 - Coconut Cream doesn't return any cocktails.
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
+
+- Not a bug with website but the W3C CSS Validator doesn't appear to like calc() though the CSS is valid. This is a known issue with the validator https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
 
 ## Deployment
 

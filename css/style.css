@@ -447,8 +447,8 @@ textarea:focus, input:focus{
 
 /* iPad Landscape */
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
     .drinks-image {
@@ -459,8 +459,8 @@ textarea:focus, input:focus{
     }
 }
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
     .drinks-image {
