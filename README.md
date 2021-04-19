@@ -259,3 +259,4 @@ The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lif
 - Hook up ingredients to a shopping API
 - User account environment that allowed for sharing ratings on the cocktails
 - User account environment that allowed for adding new cocktails to the database
+- Create my own alert box for incorrect email addresses

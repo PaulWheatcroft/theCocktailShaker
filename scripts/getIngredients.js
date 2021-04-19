@@ -1,4 +1,4 @@
-/* ----------- Get the JSON of ingredients from https://www.thecocktaildb.com/ */
+/* ----------- Get the JSON list of ingredients from https://www.thecocktaildb.com/ */
 
 let ingredientRequest = new XMLHttpRequest();
 let ingredientList;
@@ -74,7 +74,7 @@ let cocktailData = '';
 let APIURL = '';
 let firstIngredient;
 let secondIngredient;
-/* ----------- Set the API URL */
+/* ----------- Set the API URL based on which input or both inputs contain information */
 function getIngredientsURL() {
         firstIngredient = document.getElementById("first-selection").value;
         secondIngredient = document.getElementById("second-selection").value;
@@ -90,6 +90,7 @@ function getIngredientsURL() {
         }    
     callAPI(APIURL);    
 }
+/* ----------- If the API call is from random.html this is the URL it will use */
 function getRandomeURL() {
     APIURL = 'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php';
     callAPI(APIURL); 
@@ -110,11 +111,10 @@ function callAPI(APIURL) {
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">Shaking</h1>
     <h1 class="we-are-shaking-it animate__animated animate__headShake animate__repeat-3 3">It!!</h1>
     `;
-/* ----------- This timeout has been set as the results are returned too soon before the animation has completed */
     setTimeout(function(){
         document.getElementById("information-container").innerHTML = searchingHtml2;
         }, 500);
- /* ----------- now get all the cocktails in the selection */       
+ /* ----------- now get all the cocktails returned in the selection */       
     let request = new XMLHttpRequest();
     request.open('GET', `${APIURL}`, true);
     request.onload = function(){
@@ -141,7 +141,6 @@ function initiateCocktails() {
         <button id="second-search-again" class="buttons green-button">Search with <br> ${secondIngredient}</button>
         `;
         document.getElementById("information-container").innerHTML = noCocktailsHtml;
-
         document.getElementById('first-search-again').onclick = function() {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
             callAPI(APIURL);
@@ -167,18 +166,13 @@ function nextCocktail() {
 function loadCocktail() {
     document.getElementById("information-container").className = '';
     let cocktailNavButtons = '';
-
-/* ----------- Get the ID, name and the image of the cocktail */
+/* ----------- Get the ID, name and the image of the cocktail if available */
     if (drinkIndex < Object.keys(cocktailData.drinks).length) {
         cocktailId = cocktailData.drinks[drinkIndex].idDrink;
         cocktailName = cocktailData.drinks[drinkIndex].strDrink;
         cocktailImage = cocktailData.drinks[drinkIndex].strDrinkThumb;
-    }
-        
-
-    
+    }       
 /* ----------- Set the navigation buttons to disabled if applicable */
-
     if (drinkIndex === 0) {
         cocktailNavButtons = `
         <button id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></button>
@@ -223,12 +217,11 @@ function loadCocktail() {
     </div>        
     `;        
 /* ----------- Pass the HTML to the div information-container  */
-    /*document.getElementById("information-container").className = ''; */
     document.getElementById("information-container").innerHTML = cocktailHtml;
     let showHowCocktails = document.getElementById('show-how');
     showHowCocktails.addEventListener('click', getHow);
 }
-/* ----------- get how to make the cocktail */
+/* ----------- get how to make the cocktail from TheCocktailDB API  */
 function getHow() {
     let howToRequest = new XMLHttpRequest();
     howToRequest.open('GET', `https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailId}`, true);
@@ -288,7 +281,8 @@ function getHow() {
                     </div>
             </div>          
             `;                
-/* ----------- Pass the HTML to the div the-ingredient-data */
+/* ----------- Pass the HTML to the div the-ingredient-data and set text instructions  */
+/* ----------- to local variables so they are accessible from the email.html page */
             localStorage.setItem('cocktailName', cocktailName);
             localStorage.setItem('cocktailIngredients', ingredientsText);
             localStorage.setItem('cocktailInstructions', cocktailInstructions);
@@ -298,6 +292,7 @@ function getHow() {
     };
     howToRequest.send();
 }
+/* ----------- call getRandomeURL when random.html is loaded  */
 if (document.title === 'Random Cocktails - the Cocktail Shaker') {
     getRandomeURL();
 }
