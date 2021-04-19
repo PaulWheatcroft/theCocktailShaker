@@ -190,6 +190,9 @@ Both HTML and CSS have been validated via
     - [ingredients.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Fingredients.html)
     - [random.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Frandom.html)
     - [rmail.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Femail.html)
+    - [style.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+Both JavaScript files (getIngredients.js and email.js) have both been validated with no errors or warnings. Undefined variables have been validated as either called from HTML files or are from the external framework Emailjs.
 
 Accessibility was checked at [www.webaccessibility.com] with 0 violations identified.
 
