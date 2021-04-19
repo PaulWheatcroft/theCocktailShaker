@@ -102,7 +102,7 @@ During the wireframing process a third persona was removed. This persona didn't 
 
 ## Design Choices During Development
 
-The navigational elements have evolved through user testing. This included changing icons used and adding a home button.
+The navigational elements, when navigating through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight it's place. Also tooltips were added in response to accessibility concerns.
 
 The wireframe show 3 available inputs for ingredients the persona may have. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
 
@@ -186,6 +186,8 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 Both HTML and CSS have been validated via
 
 - W3C [Validation](https://validator.w3.org/nu/)
+    - https://validator.w3.org/nu/?doc=https%3A%2F%2Fpaulwheatcroft.github.io%2FtheCocktailShaker%2F
+    
 
 Accessibility was checked at [www.webaccessibility.com] with 0 violations identified.
 
@@ -244,6 +246,7 @@ The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lif
 
 ## Further Development Ideas
 - Social media sharing of cocktail instructions
+- Swiping through cocktails on mobile devices
 - Ability show non-alcoholic ingredients and cocktails
 - Ability to tick all the ingredients you have in the instruction and then create a shopping list for the ingredients you don't
 - Hook up ingredients to a shopping API
