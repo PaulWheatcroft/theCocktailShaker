@@ -26,8 +26,9 @@ function formSubmit() {
         <p>Bottoms up. xx</p>
         <button id="choose-again" class="buttons pink-button" ><a href="index.html">I fancy another go</a></button>
         `;
-        document.getElementById("information-container").innerHTML = sentHtml;
-        document.getElementById("information-container").className = 'enjoy animate__animated animate__fadeIn';
+        document.getElementById('information-container').className = 'animate__animated animate__fadeOut';
+        document.getElementById('information-container').innerHTML = sentHtml;
+        document.getElementById('information-container').className = 'enjoy animate__animated animate__fadeIn';
     },
     function(error) {
         document.getElementById('error-message').innerHTML = `<p>Please enter a valid email address</p>`;

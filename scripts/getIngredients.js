@@ -82,7 +82,6 @@ function getIngredientsURL() {
     document.getElementById('error-message').className = 'hidden-error-message animate__animated animate__fadeOut';
         firstIngredient = document.getElementById("first-selection").value;
         secondIngredient = document.getElementById("second-selection").value;
-
         if (firstIngredient === '') {
             document.getElementById('error-message').innerHTML = `<p>The first ingredient cannot be blank</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
