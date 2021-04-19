@@ -46,26 +46,26 @@ textarea:focus, input:focus{
 
 /* The code for the gradient border came from https://codepen.io/alphardex/pen/vYEYGzp */
 .gradient-border {
-    --border-width: 2px;
+    border-width: 2px;
     position: relative;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
     background: #2E2E2E;
-    border-radius: var(--border-width);
+    border-radius: 2px;
 }
 .gradient-border::after {
     position: absolute;
     content: "";
-    top: calc(-1 * var(--border-width));
-    left: calc(-1 * var(--border-width));
+    top: calc(-1 * 2px);
+    left: calc(-1 * 2px);
     z-index: -1;
-    width: calc(100% + var(--border-width) * 2);
-    height: calc(100% + var(--border-width) * 2);
+    width: calc(100% + 2px * 2);
+    height: calc(100% + 2px * 2);
     background: linear-gradient(60deg, #FF3093, #FF3093, #FFE500, #05FF00, #02F4F4, #02F4F4);
     background-size: 300% 300%;
     background-position: 0% 100%;
-    border-radius: calc(2 * var(--border-width));
+    border-radius: calc(2 * 2px);
     animation: moveGradient 10s alternate infinite;
 }
 @keyframes moveGradient {
