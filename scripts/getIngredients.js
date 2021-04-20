@@ -145,7 +145,7 @@ function callAPI(APIURL) {
 function initiateCocktails() {    
     if (cocktailData.drinks[drinkIndex].strDrink === undefined) {
         document.getElementById("information-container").className = 'did-not-find animate__animated animate__fadeIn';
-        if (secondIngredient === '') {
+        if (secondIngredient === '' || secondIngredient === firstIngredient) {
             let noCocktailsHtml = `
             <div id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></div>
             <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
@@ -175,7 +175,9 @@ function initiateCocktails() {
             callAPI(APIURL);
         };
         document.getElementById('second-search-again').onclick = function() {
-            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
+/* ----------- Move the second ingredient to the the first ingredient variable to simplify error checking */  
+            firstIngredient = secondIngredient;
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
             callAPI(APIURL);
         }; 
     } else {
