@@ -86,6 +86,10 @@ function getIngredientsURL() {
             document.getElementById('error-message').innerHTML = `<p>The first ingredient cannot be blank</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
+        } else if (ingredientsArray.includes(firstIngredient) === false && ingredientsArray.includes(secondIngredient) || secondIngredient === '') {
+            document.getElementById('error-message').innerHTML = `<p>It looks like the first ingredient is mispelt</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';;
+            return;
         } else if (ingredientsArray.includes(firstIngredient) === false && ingredientsArray.includes(secondIngredient) === false) {
             document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
@@ -95,10 +99,6 @@ function getIngredientsURL() {
         } else if (ingredientsArray.includes(firstIngredient) && ingredientsArray.includes(secondIngredient) === false) {
             document.getElementById('error-message').innerHTML = `<p>It looks like the second ingredient is mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
-            return;
-        } else if (ingredientsArray.includes(firstIngredient) === false && ingredientsArray.includes(secondIngredient)) {
-            document.getElementById('error-message').innerHTML = `<p>It looks like the first ingredient is mispelt</p>`;
-            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';;
             return;
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
