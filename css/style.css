@@ -101,7 +101,7 @@ textarea:focus, input:focus{
 }
 .did-not-find {
     background-image: url("../images/no-drinks.png");
-    background-size: auto 45%;
+    background-size: auto 35%;
     background-repeat: no-repeat;
     background-position: bottom left;
 }
@@ -145,7 +145,6 @@ textarea:focus, input:focus{
     max-width: 500px;
     margin: auto;
 }
-
 #nav-buttons {
     width: 100%;
 }
@@ -157,8 +156,7 @@ textarea:focus, input:focus{
 }
 #button-float-left {
     float: left;
-
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #FF3093;
     margin-top: 20px;
     color: #2E2E2E;
@@ -168,7 +166,6 @@ textarea:focus, input:focus{
 }
 #button-float-right {
     float: right;
-
     border-radius: 10px;
     background-color: #02F4F4;
     margin-top: 20px;
@@ -181,14 +178,23 @@ textarea:focus, input:focus{
     margin-top: 10px;
 }
 .buttons {
+    display: inline-block;
     width: 130px;
     height: 50px;
     border-radius: 5px;
     font-size: 14px;
     color: #2E2E2E;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: auto;
+    vertical-align: middle;
+    line-height: normal;
+}
+.buttons:hover {
+    cursor: pointer
+}
+.buttons-span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
 }
 .blue-button {
     background-color: #02F4F4;
@@ -209,6 +215,7 @@ textarea:focus, input:focus{
     box-shadow: 0px 0px 10px #FF3093;
 }
 .pointer {
+    display: inline-block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -253,6 +260,7 @@ textarea:focus, input:focus{
 .no-more {
     padding-bottom: 20px;
 }
+/* Styling of the error message */
 #error-message {
     background-color: #FFE500;
     color: #2E2E2E;
@@ -265,6 +273,7 @@ textarea:focus, input:focus{
 .visible-error-message {
     visibility: visible;
 }
+/* Styling of ingredient input */
 .ingredient-input {
     font-size: 16px;
     padding: 10px;
@@ -274,7 +283,6 @@ textarea:focus, input:focus{
     text-decoration: none;
     background-color: lightgray;
 }
-
 .ingredient-list {
     border-radius: 0 0 5px 5px;
     height: 90px;
@@ -284,7 +292,6 @@ textarea:focus, input:focus{
     background-color: #474747;
     margin-bottom: 20px;
 }
-
 .drinks-list {
     border-bottom: 1px #2E2E2E solid;
     padding-bottom: 4px;    
