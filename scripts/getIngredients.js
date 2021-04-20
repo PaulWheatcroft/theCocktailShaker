@@ -30,7 +30,7 @@ function ingredientSelection() {
     for (i; i<ingredientList.drinks.length; i++) {
         let ingredientName = ingredientList.drinks[i].strIngredient1;
         ingredientListItemsHtml += `<li class="drinks-list ${inputId}-list">${ingredientName}</li>`;
-        ingredientsArray.push(ingredientName);      
+        ingredientsArray.push(ingredientName.toLowerCase());
     }
     let ingredientListHtml = `<ul id="${inputId}-ingredient-list" class="ingredient-list">
     ${ingredientListItemsHtml}
@@ -303,7 +303,7 @@ function getHow() {
             <div id="nav-buttons">
             <nav id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
             <nav id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></nav>
-            <nav id="email-me" class="pointer pointer-information" aria-label="Email the Instructions"><a href="email.html" ><i class="fas fa-envelope tooltip"><span class="tooltiptext">Send Email</span></i></a></nav>
+            <nav id="email-me" class="pointer pointer-information"><a href="email.html" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></a></nav>
             <nav id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></nav>
             </div>
 
