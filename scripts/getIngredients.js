@@ -155,6 +155,9 @@ function initiateCocktails() {
             <div id="context-buttons">
             <div id="back-to-ingredients" class="buttons button-float-left blue-button">Search for another ingredient</div>
             <div id="random-search" class="buttons button-float-right green-button">Show me a random selection</div>
+            <div class="buttons button-float-left green-button"><a href="ingredients.html">Let me choose ingredients</a></div>
+            <div class="buttons button-float-right blue-button"><a href="random.html">Show me a random selection</a></div>
+
             </div>
             `;
             document.getElementById("information-container").innerHTML = noCocktailsHtml;
