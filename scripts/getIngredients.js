@@ -79,7 +79,6 @@ let secondIngredient;
 /* ----------- Set the API URL based on which input or both inputs contain information */
 /* ----------- Catch any errors and display them to the user */
 function getIngredientsURL() {
-    document.getElementById('error-message').className = 'hidden-error-message animate__animated animate__fadeOut';
         firstIngredient = document.getElementById("first-selection").value;
         secondIngredient = document.getElementById("second-selection").value;
         if (firstIngredient === '') {
@@ -145,29 +144,33 @@ function callAPI(APIURL) {
 function initiateCocktails() {    
     if (cocktailData.drinks[drinkIndex].strDrink === undefined) {
         document.getElementById("information-container").className = 'did-not-find animate__animated animate__fadeIn';
-        if (secondIngredient === '') {
+        if (secondIngredient === '' || secondIngredient === firstIngredient) {
             let noCocktailsHtml = `
-            <div id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></div>
-            <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
-            <div id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients" disabled><i class="fas fa-info"></i></div>
-            <div id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail" disabled><i class="fas fa-hand-point-right"></i></div>
+            <div id="click-back" class="pointer pointer-left pointer-disabled" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left"></i></div>
+            <div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></div>
+            <div id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients"><i class="fas fa-info"></i></div>
+            <div id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></div>
             <h1 class"no-more">I'm afraid I'm not sure what happened there</h1>
             <p>It seems like we don't actually have any cocktails that use ${firstIngredient}. Please accept my apology and I will try again. Let me know what you would like to do.</p>
-            <div id="back-to-ingredients" class="buttons blue-button">Search for another ingredient</div>
-            <div id="random-search" class="buttons green-button">Show me a random selection</div>
+            <div id="context-buttons">
+            <div id="back-to-ingredients" class="buttons button-float-left blue-button">Search for another ingredient</div>
+            <div id="random-search" class="buttons button-float-right green-button">Show me a random selection</div>
+            </div>
             `;
             document.getElementById("information-container").innerHTML = noCocktailsHtml;
             return;
         }
         let noCocktailsHtml = `
-        <div id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></div>
-        <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
-        <div id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients" disabled><i class="fas fa-info"></i></div>
-        <div id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail" disabled><i class="fas fa-hand-point-right"></i></div>
+        <div id="click-back" class="pointer pointer-left pointer-disabled" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left"></i></div>
+        <div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></div>
+        <div id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients"><i class="fas fa-info"></i></div>
+        <div id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></div>
         <h1 class"no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
-        <div id="first-search-again" class="buttons blue-button">Search with <br> ${firstIngredient}</div>
-        <div id="second-search-again" class="buttons green-button">Search with <br> ${secondIngredient}</div>
+        <div id="context-buttons">
+        <div id="first-search-again" class="buttons button-float-left blue-button">Search with <br> ${firstIngredient}</div>
+        <div id="second-search-again" class="buttons button-float-right green-button">Search with <br> ${secondIngredient}</div>
+        </div>
         `;
         document.getElementById("information-container").innerHTML = noCocktailsHtml;
         document.getElementById('first-search-again').onclick = function() {
@@ -175,7 +178,9 @@ function initiateCocktails() {
             callAPI(APIURL);
         };
         document.getElementById('second-search-again').onclick = function() {
-            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;  
+/* ----------- Move the second ingredient to the the first ingredient variable to simplify error checking */  
+            firstIngredient = secondIngredient;
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
             callAPI(APIURL);
         }; 
     } else {
@@ -204,7 +209,7 @@ function loadCocktail() {
 /* ----------- Set the navigation buttons to disabled if applicable */
     if (drinkIndex === 0) {
         cocktailNavButtons = `
-        <div id="click-back" class="pointer pointer-left pointer-disabled" onclick="previousCocktail()" aria-label="Previous Cocktail" disabled><i class="fas fa-hand-point-left"></i></div>
+        <div id="click-back" class="pointer pointer-left pointer-disabled" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left"></i></div>
         <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
         <div id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3" aria-label="Show Ingredients"><i class="fas fa-info tooltip"><span class="tooltiptext">Show Ingredients</span></i></div>
         <div id="click-next" class="pointer pointer-right" onclick="nextCocktail()" aria-label="Next Cocktail"><i class="fas fa-hand-point-right tooltip"><span class="tooltiptext">Next Cocktail</span></i></div>
@@ -213,14 +218,14 @@ function loadCocktail() {
         document.getElementById("information-container").className = 'random-no-more animate__animated animate__fadeIn';
         cocktailNavButtons = `
         <div id="click-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></div>
-        <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
-        <div id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients" disabled><i class="fas fa-info"></i></div>
-        <div id="click-next" class="pointer pointer-right pointer-disabled" onclick="nextCocktail()" aria-label="Next Cocktail" disabled><i class="fas fa-hand-point-right"></i></div>
+        <div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></div>
+        <div id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients"><i class="fas fa-info"></i></div>
+        <div id="click-next" class="pointer pointer-right pointer-disabled aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></div>
         <h1>We've got to the end of that little selection</h1>
         <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
-        <div class="button-container">
-        <div class="buttons blue-button"><a href="random.html">Show me a random selection</a></div>
-        <div class="buttons green-button"><a href="ingredients.html">Let me choose ingredients</a></div>
+        <div id="context-buttons">
+        <div class="buttons button-float-left blue-button"><a href="random.html">Show me a random selection</a></div>
+        <div class="buttons button-float-right green-button"><a href="ingredients.html">Let me choose ingredients</a></div>
         </div>
         `;
         document.getElementById("information-container").innerHTML = cocktailNavButtons;
@@ -228,7 +233,7 @@ function loadCocktail() {
     } else {
         cocktailNavButtons = `
         <div id="click-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></div>
-        <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
+        <div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></div>
         <div id="show-how" class="pointer pointer-information animate__animated  animate__headShake animate__delay-1s animate__repeat-3" aria-label="Show Ingredients"><i class="fas fa-info tooltip"><span class="tooltiptext">Show Ingredients</span></i></div>
         <div id="click-next" class="pointer pointer-right" onclick="nextCocktail()" aria-label="Next Cocktail"><i class="fas fa-hand-point-right tooltip"><span class="tooltiptext">Next Cocktail</span></i></div>
         `;
@@ -296,9 +301,9 @@ function getHow() {
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
             <div id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></div>
-            <a href="index.html"><div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></div></a>
+            <div id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></div>
             <div id="email-me" class="pointer pointer-information"><a href="email.html" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></a></div>
-            <div id="click-next" class="pointer pointer-right pointer-disabled" disabled><i class="fas fa-hand-point-right"></i></div>
+            <div id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></div>
             </div>
 
             <div id="select-cocktail"  class="animate__animated animate__fadeIn">

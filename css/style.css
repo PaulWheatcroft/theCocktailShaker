@@ -141,38 +141,20 @@ textarea:focus, input:focus{
 	margin-left: -31px;
 	margin-bottom: -31px;
 }
-#cocktail-selection-type {
+#context-buttons {
     max-width: 500px;
     margin: auto;
 }
 #nav-buttons {
     width: 100%;
 }
-.welcome-buttons {
-    width: 130px;
-    font-size: 14px;
-    padding: 5px 0 5px 0;
-    color: #2E2E2E;
-}
-#button-float-left {
-    float: left;
-    border-radius: 5px;
+.button-float-left {
+    float: left;    
     background-color: #FF3093;
-    margin-top: 20px;
-    color: #2E2E2E;
 }
-#button-float-left:hover {
-    box-shadow: 0px 0px 10px #FF3093;
-}
-#button-float-right {
+.button-float-right {
     float: right;
-    border-radius: 10px;
-    background-color: #02F4F4;
-    margin-top: 20px;
-    color: #2E2E2E;
-}
-#button-float-right:hover {
-    box-shadow: 0px 0px 10px #02F4F4;
+    background-color: #02F4F4;   
 }
 #show-me {
     margin-top: 10px;
@@ -180,13 +162,13 @@ textarea:focus, input:focus{
 .buttons {
     display: inline-block;
     width: 130px;
-    height: 50px;
     border-radius: 5px;
     font-size: 14px;
     color: #2E2E2E;
-    margin: auto;
-    vertical-align: middle;
-    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 5px 0 5px 0;
 }
 .buttons:hover {
     cursor: pointer
