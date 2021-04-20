@@ -366,9 +366,9 @@ textarea:focus, input:focus{
     border-style: solid;
     border-color: #f9f9f9 transparent transparent transparent;
 }  
-/* Show the tooltip text when you mouse over the tooltip container */
+/* Tooltip hidden when on mobile or tablet */
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 /* Specific media queries for ipad portrait */
@@ -405,7 +405,7 @@ textarea:focus, input:focus{
         font-size: 250%;
     }
     #information-container {
-    min-height: 69vh;
+        min-height: 69vh;
     }
     .drinks-image {
         max-width: 40%;
@@ -442,6 +442,11 @@ textarea:focus, input:focus{
 /* Media query for large screens */   
 }
 @media all and (min-width: 1025px) {
+/* Show the tooltip text when you mouse over the tooltip container. Desktop only */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
     #information-container {
         min-height: 70vh;
     }  
