@@ -141,34 +141,20 @@ textarea:focus, input:focus{
 	margin-left: -31px;
 	margin-bottom: -31px;
 }
-#cocktail-selection-type {
+#context-buttons {
     max-width: 500px;
     margin: auto;
 }
 #nav-buttons {
     width: 100%;
 }
-.welcome-buttons {
-    width: 130px;
-    font-size: 14px;
-    padding: 5px 0 5px 0;
-    color: #2E2E2E;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-#button-float-left {
+.button-float-left {
     float: left;    
     background-color: #FF3093;
 }
-#button-float-left:hover {
-    box-shadow: 0px 0px 10px #FF3093;
-}
-#button-float-right {
+.button-float-right {
     float: right;
     background-color: #02F4F4;   
-}
-#button-float-right:hover {
-    box-shadow: 0px 0px 10px #02F4F4;
 }
 #show-me {
     margin-top: 10px;

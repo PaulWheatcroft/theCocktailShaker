@@ -152,8 +152,10 @@ function initiateCocktails() {
             <div id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></div>
             <h1 class"no-more">I'm afraid I'm not sure what happened there</h1>
             <p>It seems like we don't actually have any cocktails that use ${firstIngredient}. Please accept my apology and I will try again. Let me know what you would like to do.</p>
-            <div id="back-to-ingredients" class="buttons blue-button">Search for another ingredient</div>
-            <div id="random-search" class="buttons green-button">Show me a random selection</div>
+            <div id="context-buttons">
+            <div id="back-to-ingredients" class="buttons button-float-left blue-button">Search for another ingredient</div>
+            <div id="random-search" class="buttons button-float-right green-button">Show me a random selection</div>
+            </div>
             `;
             document.getElementById("information-container").innerHTML = noCocktailsHtml;
             return;
@@ -165,8 +167,10 @@ function initiateCocktails() {
         <div id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></div>
         <h1 class"no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
-        <div id="first-search-again" class="buttons blue-button">Search with <br> ${firstIngredient}</div>
-        <div id="second-search-again" class="buttons green-button">Search with <br> ${secondIngredient}</div>
+        <div id="context-buttons">
+        <div id="first-search-again" class="buttons button-float-left blue-button">Search with <br> ${firstIngredient}</div>
+        <div id="second-search-again" class="buttons button-float-right green-button">Search with <br> ${secondIngredient}</div>
+        </div>
         `;
         document.getElementById("information-container").innerHTML = noCocktailsHtml;
         document.getElementById('first-search-again').onclick = function() {
@@ -219,9 +223,9 @@ function loadCocktail() {
         <div id="click-next" class="pointer pointer-right pointer-disabled aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></div>
         <h1>We've got to the end of that little selection</h1>
         <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
-        <div class="button-container">
-        <div class="buttons blue-button"><a href="random.html">Show me a random selection</a></div>
-        <div class="buttons green-button"><a href="ingredients.html">Let me choose ingredients</a></div>
+        <div id="context-buttons">
+        <div class="buttons button-float-left blue-button"><a href="random.html">Show me a random selection</a></div>
+        <div class="buttons button-float-right green-button"><a href="ingredients.html">Let me choose ingredients</a></div>
         </div>
         `;
         document.getElementById("information-container").innerHTML = cocktailNavButtons;
