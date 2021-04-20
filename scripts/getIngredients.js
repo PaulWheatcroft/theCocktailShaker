@@ -151,7 +151,7 @@ function initiateCocktails() {
             <nav id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></nav>
             <nav id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients"><i class="fas fa-info"></i></nav>
             <nav id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></nav>
-            <h1 class"no-more">I'm afraid I'm not sure what happened there</h1>
+            <h1 class="no-more">I'm afraid I'm not sure what happened there</h1>
             <p>It seems like we don't actually have any cocktails that use ${firstIngredient}. Please accept my apology and I will try again. Let me know what you would like to do.</p>
             <div id="context-buttons">
             <div class="buttons button-float-left green-button"><a href="ingredients.html">Let me choose ingredients</a></div>
@@ -166,7 +166,7 @@ function initiateCocktails() {
         <nav id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></nav>
         <nav id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients"><i class="fas fa-info"></i></nav>
         <nav id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></nav>
-        <h1 class"no-more">I couldn't find anything with both choices</h1>
+        <h1 class="no-more">I couldn't find anything with both choices</h1>
         <p>So how about I suggest something for either ${firstIngredient} or ${secondIngredient}?</p>
         <div id="context-buttons">
         <div id="first-search-again" class="buttons button-float-left blue-button">Search with <br> ${firstIngredient}</div>
@@ -221,7 +221,7 @@ function loadCocktail() {
         <nav id="click-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Previous Cocktail"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
         <nav id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></nav>
         <nav id="show-how" class="pointer pointer-information pointer-disabled" aria-label="Show Ingredients"><i class="fas fa-info"></i></nav>
-        <nav id="click-next" class="pointer pointer-right pointer-disabled aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></nav>
+        <nav id="click-next" class="pointer pointer-right pointer-disabled" aria-label="Next Cocktail"><i class="fas fa-hand-point-right"></i></nav>
         <h1>We've got to the end of that little selection</h1>
         <p>Didn't anything tickle your fancy? How about I show you some more? Perhaps you've got something in mind now?</p>
         <div id="context-buttons">
@@ -303,7 +303,7 @@ function getHow() {
             <div id="nav-buttons">
             <nav id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
             <nav id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></nav>
-            <nav id="email-me" class="pointer pointer-information"><a href="email.html" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></a></nav>
+            <nav id="email-me" class="pointer pointer-information" aria-label="Email the Instructions"><a href="email.html" ><i class="fas fa-envelope tooltip"><span class="tooltiptext">Send Email</span></i></a></nav>
             <nav id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></nav>
             </div>
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Cocktails - the Cocktail Shaker</title>
+        <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://kit.fontawesome.com/e5878dac08.js" crossorigin="anonymous"></script>
+        <meta name="theme-color" content="#242424">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#242424">
+        <style>   
+        @font-face{
+            font-family:"Marlowe Swirl W05 Regular";
+            src:url("fonts/5184329/8ebbef9b-71d3-45a9-9845-fd02f7a89365.woff2") format("woff2"),url("fonts/5184329/3c228295-821a-4edf-9cc3-71f29bfcbb98.woff") format("woff");
+            }        
+        </style> 
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><h1 id="the-Cocktail-Shaker-font"><span style="color: #05FF00;">the</span> <span style="color: #FFE500;">Cocktail</span> <span style="color: #02F4F4;">Shaker</span> </h1></a>
+        </header>
+        <main class="gradient-border">
+            <div id="error-message" class="hidden-error-message"><p>error message goes here</p></div>
+            <div id="information-container">
+
+
+                <div id="nav-buttons">
+                    <nav id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
+                    <nav id="home" class="pointer pointer-home" aria-label="Home"><a href="index.html"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></a></nav>
+                    <nav id="email-me" class="pointer pointer-information" aria-label="Email the Instructions"><a href="email.html" ><i class="fas fa-envelope tooltip"><span class="tooltiptext">Send Email</span></i></a></nav>
+                    <nav id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></nav>
+                    </div>
+        
+                    <div id="select-cocktail"  class="animate__animated animate__fadeIn">
+                        <img src="#" alt="${cocktailName}" class="drinks-image-how">
+                        <h1 class="h1">${cocktailName}</h1>        
+                        <ul>
+                            <li>${cocktailMeasurements[ingredientList]} ${cocktailIngredients[ingredientList]}</li>
+                            <li>${cocktailIngredients[ingredientList]}</li>
+                        </ul>
+                    <div id="instructions">
+                        <p>${cocktailInstructions}</p>
+                    </div>
+                </div>   
+
+
+
+
+            </div>
+
+
+
+        </main>
+
+    </body>
+</html>
