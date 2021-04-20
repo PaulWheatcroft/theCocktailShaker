@@ -26,6 +26,9 @@ h1 {
     font-family:"Marlowe Swirl W05 Regular";
     font-weight: 100;
 }
+p {
+    font-size: 12px;
+}
 ul {
     list-style-type: none;
     margin-top: 10px;
@@ -87,6 +90,7 @@ textarea:focus, input:focus{
     color: #2E2E2E;
     font-weight: 500;
 }
+/* Background graphics */
 .welcome {
     background-image: url("../images/welcome.png");
     background-size: auto 55%;
@@ -101,9 +105,9 @@ textarea:focus, input:focus{
 }
 .did-not-find {
     background-image: url("../images/no-drinks.png");
-    background-size: auto 35%;
+    background-size: auto 50%;
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: bottom;
 }
 .random-no-more {
     background-image: url("../images/random.png");
@@ -113,15 +117,12 @@ textarea:focus, input:focus{
 }
 .enjoy {
     background-image: url("../images/enjoy.png");
-    background-size: auto 45%;
+    background-size: auto 40%;
     background-repeat: no-repeat;
     background-position: bottom;
 }
-.welcome p {
-    font-size: 14px;
-}
-/* speech bubble by https://projects.verou.me/bubbly/ */
 
+/* speech bubble by https://projects.verou.me/bubbly/ */
 .speech-bubble {
 	position: relative;
 	background: #474747;
@@ -130,7 +131,6 @@ textarea:focus, input:focus{
     max-width: 500px;
     margin: auto;
 }
-
 .speech-bubble:after {
 	content: '';
 	position: absolute;
@@ -141,6 +141,7 @@ textarea:focus, input:focus{
 	margin-left: -31px;
 	margin-bottom: -31px;
 }
+/* Navigation and buttons */
 #context-buttons {
     max-width: 500px;
     margin: auto;
@@ -281,14 +282,15 @@ textarea:focus, input:focus{
 .drinks-list:hover {
     cursor: pointer;
 }
+/* Animation text */
 .we-are-shaking-it {
     color: #FF3093;
     text-shadow: 0 0 30px #FF3093;
     font-size: 500%;
 }
-
+/* Cocktail list and instructions */
 .drinks-image {
-    max-width: 85%;
+    max-width: 80%;
     height: auto;
     border: 1px solid #05FF00;
     border-radius: 50%;
@@ -329,7 +331,6 @@ textarea:focus, input:focus{
     display: none;
 }
 /* the code for the tooltips was taken from https://www.w3schools.com/css/css_tooltip.asp */
-
 /* Tooltip container */
 .tooltip {
     position: relative;
@@ -351,7 +352,6 @@ textarea:focus, input:focus{
     font-family: 'Noto Sans JP', sans-serif;
     opacity: 0;
     transition: opacity 1s;
-
 /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
@@ -371,10 +371,47 @@ textarea:focus, input:focus{
     visibility: visible;
     opacity: 1;
 }
-
-@media all and (min-width: 767px) and (max-width: 1024px) {
+/* Specific media queries for ipad portrait */
+@media all and (width: 768px) {
+    #the-Cocktail-Shaker-font {
+        font-size: 400%;
+    }
     .drinks-image {
-        max-width: 60%;
+        max-width: 65%;
+    }
+    .welcome {
+        background-size: auto 70%;
+    }
+    .did-not-find {
+        background-size: auto 70%;
+        background-position: bottom;
+    }
+    .random-no-more {
+        background-size: auto 70%;
+        background-position: bottom;
+    }
+    .send-email {
+        background-size: auto 70%;
+        background-position: bottom right;
+    }
+    .enjoy {
+        background-size: auto 70%;
+        background-position: bottom;
+    }
+}
+/* Media queries for medium size screens */
+@media all and (min-width: 769px) and (max-width: 1024px) {
+    #the-Cocktail-Shaker-font {
+        font-size: 250%;
+    }
+    #information-container {
+    min-height: 69vh;
+    }
+    .drinks-image {
+        max-width: 40%;
+    }
+    .drinks-image-how {
+        width: 20%;
     }
     #the-Cocktail-Shaker-font {
         font-size: 500%;
@@ -383,12 +420,12 @@ textarea:focus, input:focus{
         background-size: auto 70%;
     }
     .did-not-find {
-        background-size: auto 65%;
-        background-position: bottom center;
+        background-size: auto 70%;
+        background-position: bottom;
     }
     .random-no-more {
-        background-size: auto 60%;
-        background-position: bottom center;
+        background-size: auto 70%;
+        background-position: bottom;
     }
     .send-email {
         background-size: auto 70%;
@@ -401,7 +438,8 @@ textarea:focus, input:focus{
     #select-cocktail h1 {
         font-size: 300%;    
     }
-    
+
+/* Media query for large screens */   
 }
 @media all and (min-width: 1025px) {
     #information-container {
@@ -416,7 +454,7 @@ textarea:focus, input:focus{
     }
     .random-no-more {
         background-size: auto 65%;
-        background-position: bottom left;
+        background-position: bottom;
     }
     .send-email {
         background-size: auto 70%;
@@ -445,7 +483,7 @@ textarea:focus, input:focus{
     }
 }
 
-/* iPad Landscape */
+/* iPad Landscape 
 @media only screen 
   and (min-width: 768px) 
   and (max-width: 1024px) 
@@ -470,4 +508,5 @@ textarea:focus, input:focus{
         width: 20%;
     }
 }
+*/
 

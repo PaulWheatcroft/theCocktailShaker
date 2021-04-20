@@ -86,7 +86,7 @@ function getIngredientsURL() {
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
         } else if (ingredientsArray.includes(firstIngredient) && secondIngredient === '') {
-            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`; 
         } else if (ingredientsArray.includes(firstIngredient) === false && ingredientsArray.includes(secondIngredient) || secondIngredient === '') {
             document.getElementById('error-message').innerHTML = `<p>It looks like the first ingredient is mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
@@ -101,7 +101,8 @@ function getIngredientsURL() {
             return;
         } else {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient},${secondIngredient}`;  
-        }    
+        } 
+    document.getElementById('error-message').className = 'hidden-error-message animate__animated animate__fadeIn';   
     callAPI(APIURL);    
 }
 /* ----------- If the API call is from random.html this is the URL it will use */
@@ -111,7 +112,7 @@ function getRandomeURL() {
 }
 /* ----------- Get cocktails with the selected ingredients */
 function callAPI(APIURL) {
-    document.getElementById("information-container").className = '';
+    document.getElementById('information-container').className = '';
     let searchingHtml1 = `
     <h1 class="we-are-shaking-it animate__animated animate__fadeIn">We</h1>
     <h1 class="we-are-shaking-it animate__animated animate__fadeIn">Are</h1>
