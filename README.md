@@ -102,13 +102,13 @@ During the wireframing process a third persona was removed. This persona didn't 
 
 ## Design Choices During Development
 
-The navigational elements, when navigating through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight it's place. Also tooltips were added in response to accessibility concerns.
+The navigational elements, when navigating through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight it's place.
+
+Also tooltips were added to the navigation buttons, in desktop mode, in response to accessibility concerns. This doesn't work well For tablets and mobiles and is disabled but Aria-Label's are provided for screen readers.
 
 The wireframe show 3 available inputs for ingredients the persona may have. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
 
-The navigation buttons for moving through the cocktails have hover tooltips when in desktop mode. For tablet and mobile this is disabled but Aria-Label's are provided for screen readers.
-
-Unfortunately some ingredients don't return a cocktail. This is a fault with the API. This has been handled through the code and still keeps the user experience coherent.
+Unfortunately some ingredients don't return a cocktail. This was found during user testing and is a fault with the API. This has been handled through the code and still keeps the user experience coherent. The fix is documented in the code.
 
 ## Technologies
 
@@ -224,19 +224,24 @@ I used a wide group of friends and family to test the user stories across the fo
 
 Functional testing has carried out, after major updates, against every element to ensure everything worked and was linked as expected. This is recorded in [functional-testing-theCocktailShaker.xlsx](functional-testing.xlsx). 
 
-## Bugs and issues
+## Oustanding Bugs and issues
 - Some ingredients don't return any cocktails. I've had to engineer catching this issue to ensure it is handled well.
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
+- The email sent is not format well.
 
 ## Deployment
 
 The Project has been deployed via GitHub Pages. To do this:
 
-1.  Log in to GitHub and locate the GitHub Repository
+1.  Log in to GitHub and locate the GitHub Repository https://github.com/PaulWheatcroft/theCocktailShaker
 2.  At the top of the Repository locate the "Settings" Button on the menu.
 3.  Scroll down the Settings page until you locate the "GitHub Pages" Section.
 4.  Under "Source", click the dropdown called "None" and select "Master Branch". The page will automatically refresh.
 5.  Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
+
+Emailjs was used for the email functionality. The functionality is privded via their CDN link. The emailjs.sendForm function requires the account and template settings to be configured. Full documentation on the service can be found [HERE](https://www.emailjs.com/docs/) 
+
+Be my guest to fork away at this project. To do this follow the [Github - Fork a Repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) instructions.
 
 ## Acknowledgements
 
@@ -257,8 +262,8 @@ The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lif
 - Swiping through cocktails on mobile devices
 - Ability show non-alcoholic ingredients and cocktails
 - Ability to tick all the ingredients you have in the instruction and then create a shopping list for the ingredients you don't
+- The format of the email is poor and needs to be structured properly
 - Hook up ingredients to a shopping API
 - User account environment that allowed for sharing ratings on the cocktails
 - User account environment that allowed for adding new cocktails to the database
-- Create my own alert box for incorrect email addresses
 - Convert measures in to metric
