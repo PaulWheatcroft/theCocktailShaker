@@ -101,7 +101,11 @@ function getIngredientsURL() {
             document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
-        } else if (ingredientsArray.includes(firstIngredient.toUpperCase()) && ingredientsArray.includes(secondIngredient.toUpperCase()) === false) {
+        } else if (firstIngredient.toUpperCase() === secondIngredient.toUpperCase()) {
+            document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are the same</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
+            return;
+        }else if (ingredientsArray.includes(firstIngredient.toUpperCase()) && ingredientsArray.includes(secondIngredient.toUpperCase()) === false) {
             document.getElementById('error-message').innerHTML = `<p>It looks like the second ingredient is mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
@@ -181,13 +185,19 @@ function initiateCocktails() {
         `;
         document.getElementById("information-container").innerHTML = noCocktailsHtml;
         document.getElementById('first-search-again').onclick = function() {
-            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;
+/* ----------- Making the secondIngredient the same as the firstIngredient single ingredients that don't return cocktails */
+/* ----------- can be identified in the if statement at the top of the fuction (secondIngredient === firstIngredient) */ 
+/* ----------- This is a bug in the API */
+            secondIngredient = firstIngredient;
             callAPI(APIURL);
         };
         document.getElementById('second-search-again').onclick = function() {
-/* ----------- Move the second ingredient to the the first ingredient variable to simplify error checking */  
-            firstIngredient = secondIngredient;
-            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`;  
+            APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${secondIngredient}`;
+/* ----------- Making the firstIngredient the same as the secondIngredient single ingredients that don't return cocktails */
+/* ----------- can be identified in the if statement at the top of the fuction (secondIngredient === firstIngredient) */ 
+/* ----------- This is a bug in the API */ 
+            firstIngredient = secondIngredient
             callAPI(APIURL);
         }; 
     } else {
