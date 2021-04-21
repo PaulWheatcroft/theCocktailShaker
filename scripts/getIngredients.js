@@ -30,7 +30,7 @@ function ingredientSelection() {
     for (i; i<ingredientList.drinks.length; i++) {
         let ingredientName = ingredientList.drinks[i].strIngredient1;
         ingredientListItemsHtml += `<li class="drinks-list ${inputId}-list">${ingredientName}</li>`;
-        ingredientsArray.push(ingredientName.toUpperCase);
+        ingredientsArray.push(ingredientName.toUpperCase());
     }
     let ingredientListHtml = `<ul id="${inputId}-ingredient-list" class="ingredient-list">
     ${ingredientListItemsHtml}
@@ -91,21 +91,17 @@ function getIngredientsURL() {
             document.getElementById('error-message').innerHTML = `<p>The first ingredient cannot be blank</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
-        } else if (ingredientsArray.includes(firstIngredient) && secondIngredient === '') {
+        } else if (ingredientsArray.includes(firstIngredient.toUpperCase()) && secondIngredient === '') {
             APIURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${firstIngredient}`; 
-        } else if (ingredientsArray.includes(firstIngredient.toUpperCase) === false && ingredientsArray.includes(secondIngredient.toUpperCase) || secondIngredient.toUpperCase === '') {
+        } else if (ingredientsArray.includes(firstIngredient.toUpperCase()) === false && ingredientsArray.includes(secondIngredient.toUpperCase()) || secondIngredient === '') {
             document.getElementById('error-message').innerHTML = `<p>It looks like the first ingredient is mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
-        } else if (ingredientsArray.includes(firstIngredient.toUpperCase) === false && ingredientsArray.includes(secondIngredient.toUpperCase) === false) {
+        } else if (ingredientsArray.includes(firstIngredient.toUpperCase()) === false && ingredientsArray.includes(secondIngredient.toUpperCase()) === false) {
             document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
-        } else if (ingredientsArray.includes(firstIngredient.toUpperCase) === ingredientsArray.includes(secondIngredient.toUpperCase)) {
-            document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are the same</p>`;
-            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
-            return;
-        }else if (ingredientsArray.includes(firstIngredient.toUpperCase) && ingredientsArray.includes(secondIngredient.toUpperCase) === false) {
+        } else if (ingredientsArray.includes(firstIngredient.toUpperCase()) && ingredientsArray.includes(secondIngredient.toUpperCase()) === false) {
             document.getElementById('error-message').innerHTML = `<p>It looks like the second ingredient is mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
