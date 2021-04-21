@@ -95,7 +95,11 @@ function getIngredientsURL() {
             document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
-        } else if (ingredientsArray.includes(firstIngredient.toUpperCase) && ingredientsArray.includes(secondIngredient.toUpperCase) === false) {
+        } else if (ingredientsArray.includes(firstIngredient.toUpperCase) === ingredientsArray.includes(secondIngredient.toUpperCase)) {
+            document.getElementById('error-message').innerHTML = `<p>It looks like both ingredients are the same</p>`;
+            document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
+            return;
+        }else if (ingredientsArray.includes(firstIngredient.toUpperCase) && ingredientsArray.includes(secondIngredient.toUpperCase) === false) {
             document.getElementById('error-message').innerHTML = `<p>It looks like the second ingredient is mispelt</p>`;
             document.getElementById('error-message').className = 'visible-error-message animate__animated animate__fadeIn';
             return;
