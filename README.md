@@ -108,6 +108,8 @@ The wireframe show 3 available inputs for ingredients the persona may have. This
 
 The navigation buttons for moving through the cocktails have hover tooltips when in desktop mode. For tablet and mobile this is disabled but Aria-Label's are provided for screen readers.
 
+Unfortunately some ingredients don't return a cocktail. This is a fault with the API. This has been handled through the code and still keeps the user experience coherent.
+
 ## Technologies
 
 ### Languages Used
@@ -223,7 +225,6 @@ I used a wide group of friends and family to test the user stories across the fo
 Functional testing has carried out, after major updates, against every element to ensure everything worked and was linked as expected. This is recorded in [functional-testing-theCocktailShaker.xlsx](functional-testing.xlsx). 
 
 ## Bugs and issues
-- The ingredients lists will display the clicked ingredient in the input field that was last clicked. This should only update the specific input the list it is associated with.
 - Some ingredients don't return any cocktails. I've had to engineer catching this issue to ensure it is handled well.
 - The getHow function in getIngredients.js, whilst working perfectly fine, needs to be broken down in to smaller functions to simplify future development. At the moment is it too large.
 
