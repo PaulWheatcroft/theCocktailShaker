@@ -47,8 +47,14 @@ function listenIngredientList() {
         ingredientListItem[i].addEventListener('click', ingredientName);       
     }
     function ingredientName() {
-            theIngredient = this.innerText;                   
-            document.getElementById(`${inputId}-selection`).value = theIngredient;
+        if (this.parentNode.id === 'first-ingredient-list') {
+            theIngredient = this.innerText;
+            document.getElementById('first-selection').value = theIngredient;    
+        } else {
+
+            theIngredient = this.innerText;
+            document.getElementById('second-selection').value = theIngredient;       
+        }
     }
 }
 /* ----------- This function filters the list as text is entered */
