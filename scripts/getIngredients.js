@@ -197,7 +197,7 @@ function initiateCocktails() {
 /* ----------- Making the firstIngredient the same as the secondIngredient single ingredients that don't return cocktails */
 /* ----------- can be identified in the if statement at the top of the fuction (secondIngredient === firstIngredient) */ 
 /* ----------- This is a bug in the API */ 
-            firstIngredient = secondIngredient
+            firstIngredient = secondIngredient;
             callAPI(APIURL);
         }; 
     } else {
