@@ -223,7 +223,7 @@ Responsiveness was checked throughout using the Google dev tools and [www.respon
 
 A code review was posted in the Code Institute peer-code-review channel. The fedback was positive and also helped shape the UX with some good suggestions regarding usibility and text changes.
 
-I used a wide group of friends and family to test the user stories across the following operating systems and browsers. The feedback from this group helped shape both the UI and UX.
+I used a wide group of friends and family to test the user stories across the following operating systems and browsers. The feedback from this group helped shape both the UI and UX as outlined in the Design Choices During Development.
 
 - Windows (multiple computers)
     - Internet Explorer 11
