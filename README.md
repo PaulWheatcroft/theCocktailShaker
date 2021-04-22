@@ -276,6 +276,8 @@ The code for the gradient border came from [alphardex](https://codepen.io/alphar
 
 The w3chools website is a go to for all manner of things but was specifically useful for this tutorial https://www.w3schools.com/howto/howto_js_filter_lists.asp for creating the filter used on the text input boxes when selecting an ingredient and this https://www.w3schools.com/css/css_tooltip.asp which was used to create the tooltips.
 
+The speech bubble on the home page was made by https://projects.verou.me/bubbly/
+
 Thanks to CSS-Tricks for their media query guide [media-queries-for-standard-devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
 
 The background graphics were modified from [FreeVectors.com](https://www.freevector.com/girls-with-drinks)
