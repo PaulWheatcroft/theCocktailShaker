@@ -189,7 +189,7 @@ Unfortunately some ingredients don't return a cocktail. This was found during us
 <img src="images/tooltip.png" style="margin: 0;">
 
 - Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I like I would like to find out how to make the cocktail.
-    1. If the user see a drink they like whilst navigating through the returned selection they can click on the "instructions" button that contains the tooltip "Show Instructions" in the top navigation section to view the cocktail's instructions.
+    1. If the user see a drink they like whilst navigating through the returned selection they can click on the "instructions" button that, when in desktop view, contains the tooltip "Show Instructions" in the top navigation section to view the cocktail's instructions.
 
 - Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I really like I would like to email the instructions to myself.
     1. If the user really likes their selected cocktail following looking at the instructions they can use the "email" button to initiate sending the instructions to their email address.
