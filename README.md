@@ -14,7 +14,7 @@ The customer of this site isn’t someone with a strong opinion of what they wan
 
 2 sets of target personas have been identified:
 
-- Someone has some ingredients and wants to be inspired to make a cocktail
+- Someone that has some ingredients and wants to be inspired to make a cocktail
 - Someone just wants to be inspired by a cocktail choice
 
 ### Someone who has some ingredients
