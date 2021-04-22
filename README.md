@@ -10,6 +10,8 @@ The live site has been deployed via GitHub to https://paulwheatcroft.GitHub.io/t
 
 ## User Experience (UX)
 
+The customer of this site isn’t someone with a strong opinion of what they want, it’s for people who want to be inspired and surprised.
+
 2 sets of target personas have been identified:
 
 - Someone has some ingredients and wants to be inspired to make a cocktail
@@ -21,9 +23,9 @@ The live site has been deployed via GitHub to https://paulwheatcroft.GitHub.io/t
 
 As someone who has some ingredients in their drinks cabinet I would like to:
 1. Find a cocktail I can make with the ingredients I have available
-    - The result needs to let me know all the ingredients I need to use
-    - The result need to show me how to make the cocktail
-    - The result needs to show me a picture of the cocktail
+    - The results need to let me know all the ingredients I need to use
+    - The results need to show me how to make the cocktail
+    - The results need to show me a picture of the cocktail
 2. If I'm not inspired by the first choice I would like to find another option using the same ingredients
 3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
 4. If I don't find any drink that inspire me I would like to start again
@@ -52,15 +54,20 @@ Using the targeted personas, the following list of user stories have been identi
 - As a person with some ingredients in my drinks cabinet if I find a drink I like I would like to find out how to make the cocktail
 - As a person with some ingredients in my drinks cabinet if I find a drink I really like I would like to email the instructions to myself
 - As a person with some ingredients in my drinks cabinet if I don't find anything I would like to refine my choice and search again
-- Someone who just wants to be surprised and inspired to make a cocktail I would like to have a selection of cocktails to look at
-- Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I like I would like to find out how to make the cocktail
-- Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I really like I would like to email the instructions to myself
-- Someone who just wants to be surprised and inspired to make a cocktail if I don't find something that entices me I would like to look at another selection of cocktails
+- As someone who just wants to be surprised and inspired to make a cocktail I would like to have a selection of cocktails to look at
+- As someone who just wants to be surprised and inspired to make a cocktail if I find a drink I like I would like to find out how to make the cocktail
+- As someone who just wants to be surprised and inspired to make a cocktail if I find a drink I really like I would like to email the instructions to myself
+- As someone who just wants to be surprised and inspired to make a cocktail if I don't find something that entices me I would like to look at another selection of cocktails
 
 
 ## Design Choices
 
-The website needs to be a fun and engaging mobile first site with a striking colour pallet. And the overall feel was based on a hybrid on the 1920s and the 1980s.
+The website needs to be a fun and engaging mobile first site with a striking colour pallet. And the overall feel is based on a hybrid of the 1920s and the 1980s.
+
+Where possible the site should fit on to the screen be that mobile, tablet or desktop.
+
+The UX was designed to be more like an app than a traditional website and that it would take the user through an intuitive journey to finding a cocktail rather than being overly prescriptive with an overwhelming range of options and choices. 
+
 
 | Description | Hex Colour Value |
 | --- | ----------- |
@@ -72,13 +79,13 @@ The website needs to be a fun and engaging mobile first site with a striking col
 | Green | #05FF00 |
 | Blue | #02F4F4 |
 
-There we no suitable fonts for the main logo available on Google Fonts. Marlowe Swirl W05 Regular was purchased through Fonts.com and installed locally. This font was also used for primary headings.
+There were no suitable fonts for the main logo on Google Fonts. Marlowe Swirl W05 Regular was purchased through Fonts.com and installed locally. This font was also used for primary headings.
 
 Google Font Noto Sans JP was used as the standard text throughout the website.
 
 ## Structure
 
-The site was constructed primarily using vanilla JavaScript making use of template literals for updating a page as to not require HTML page refreshing when updating content.
+The site was constructed primarily using vanilla JavaScript making use of template literals for updating HTML pages as to not require HTML page refreshing when updating content.
 
 Whilst the focus is on a mobile first design the website needs to provide an optimal experience across all screen types.
 
@@ -95,18 +102,22 @@ The email functionality was achieved by integrating Emailjs to the email.html fi
 
 <img src="images/readme-mockup.png" style="margin: 0;">
 
+***
+
+<img src="images/paperframe.png" style="margin: 0;">
+
 Mocking up of the site was initially done on pen and paper and then brought to life using Figma. Figma wireframes for the site can be found here [Wireframes](https://www.figma.com/file/K1AR2OIITD70scuCkTtzkj/the-Cocktail-Shaker?node-id=0%3A1)
 
-During the wireframing process a third persona was removed. This persona didn't have any ingredients but did know which ingredients they wanted to use. The persona had too much crossover with the "Someone who has some ingredients" persona and including it caused the narrative of the application to become confusing. Therefore the decision was taken to remove the persona. 
+During the wireframing process a third persona was removed. This persona didn't have any ingredients but did know which ingredients they wanted to use. The persona had too much crossover with the "Someone who has some ingredients" persona and including it caused the narrative of the application to become confusing. The purpose of the site is to inspire people who want to be inspired and surprised. It's not for people who already have an idea of what they want. Therefore the decision was taken to remove the persona. 
 
 
 ## Design Choices During Development
 
-The navigational elements, when navigating through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight it's place.
+The navigational elements, when navigating through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight the importance.
 
-Also tooltips were added to the navigation buttons, in desktop mode, in response to accessibility concerns. This doesn't work well For tablets and mobiles and is disabled but Aria-Label's are provided for screen readers.
+Also tooltips were added to the navigation buttons, in desktop mode, in response to accessibility concerns. This doesn't work well For tablets and mobiles and is disabled but Aria-Labels are provided for screen readers.
 
-The wireframe show 3 available inputs for ingredients the persona may have. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
+The wireframe shows 3 available inputs for ingredients the persona may have. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
 
 Unfortunately some ingredients don't return a cocktail. This was found during user testing and is a fault with the API. This has been handled through the code and still keeps the user experience coherent. The fix is documented in the code.
 
@@ -182,6 +193,8 @@ Unfortunately some ingredients don't return a cocktail. This was found during us
 - Someone who just wants to be surprised and inspired to make a cocktail if I find a drink I really like I would like to email the instructions to myself.
     1. If the user really likes their selected cocktail following looking at the instructions they can use the "email" button to initiate sending the instructions to their email address.
     2. The user is then presented with an input box to enter their email address. They can then click on the send button to send the instruction to their email address.
+
+<img src="images/end.png" style="margin: 0;">
 
 - Someone who just wants to be surprised and inspired to make a cocktail if I don't find something that entices me I would like to look at another selection of cocktails.
     1. If the user doesn't find anything with their search criteria they will reach the end of the selection and then be presented with the option to either search again for some more random cocktail or to search using specific ingredients.
