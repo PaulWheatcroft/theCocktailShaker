@@ -28,7 +28,7 @@ As someone who has some ingredients in their drinks cabinet I would like to:
     - The results need to show me a picture of the cocktail
 2. If I'm not inspired by the first choice I would like to find another option using the same ingredients
 3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
-4. If I don't find any drink that inspire me I would like to start again
+4. If I don't find any drinks that inspire me I would like to start again
 
 
 ### Someone who just wants to be surprised and inspired to make a cocktail
@@ -37,11 +37,11 @@ As someone who has some ingredients in their drinks cabinet I would like to:
 
 As someone who would like to be inspired by a cocktail choice without any prior preconceptions I would like to:
 1. Easily find a cocktail without having to make any choices
-    - The result needs to let me know all the ingredients I need to use
-    - The result need to show me how to make the cocktail
-    - The result needs to show me a picture of the cocktail
-2. If I'm not inspired by the first choice I would like to find another option using the same ingredient choices
-3. If I like what I find I would like to email the full ingredients list including instructions of how to make the drink to an email address of my choice.
+    - The results need to let me know all the ingredients I need to use
+    - The results need to show me how to make the cocktail
+    - The results need to show me a picture of the cocktail
+2. If I'm not inspired by the first choice I would like to find another option from a selection of choices
+3. If I like what I find I would like to email the full ingredients list, including instructions of how to make the drink, to myself.
 4. If I don't find any drink that inspire me I would like to start again
 
 
@@ -50,7 +50,7 @@ As someone who would like to be inspired by a cocktail choice without any prior 
 Using the targeted personas, the following list of user stories have been identified to fulfil their needs.
 
 - As a person with some ingredients in my drinks cabinet I can search for a cocktail to make based on a specific search using one or two ingredients
-- As a person with some ingredients in my drinks cabinet if I don't want to make the cocktail I see I would like to find another using the same criteria
+- As a person with some ingredients in my drinks cabinet if I don't want to make the cocktail I see first, via an image, I would like to find another using the same criteria
 - As a person with some ingredients in my drinks cabinet if I find a drink I like I would like to find out how to make the cocktail
 - As a person with some ingredients in my drinks cabinet if I find a drink I really like I would like to email the instructions to myself
 - As a person with some ingredients in my drinks cabinet if I don't find anything I would like to refine my choice and search again
@@ -87,7 +87,7 @@ Google Font Noto Sans JP was used as the standard text throughout the website.
 
 The site was constructed primarily using vanilla JavaScript making use of template literals for updating HTML pages as to not require HTML page refreshing when updating content.
 
-Whilst the focus is on a mobile first design the website needs to provide an optimal experience across all screen types.
+Whilst the focus is on a mobile first design the website needs to provide an optimal experience across all screen types. By keeping the app simple and primarily fitting to a screen size resizing up to tablet and mobile was made simple. Specific iPad media queries were used to ensure the landscape experience was as good as it could be.
 
 The site consists of the following HTML pages
 
@@ -95,6 +95,7 @@ The site consists of the following HTML pages
 2. ingredients.html
 3. random.html
 4. email.html
+5. 404.html
 
 The email functionality was achieved by integrating Emailjs to the email.html file
 
@@ -108,16 +109,16 @@ The email functionality was achieved by integrating Emailjs to the email.html fi
 
 Mocking up of the site was initially done on pen and paper and then brought to life using Figma. Figma wireframes for the site can be found here [Wireframes](https://www.figma.com/file/K1AR2OIITD70scuCkTtzkj/the-Cocktail-Shaker?node-id=0%3A1)
 
-During the wireframing process a third persona was removed. This persona didn't have any ingredients but did know which ingredients they wanted to use. The persona had too much crossover with the "Someone who has some ingredients" persona and including it caused the narrative of the application to become confusing. The purpose of the site is to inspire people who want to be inspired and surprised. It's not for people who already have an idea of what they want. Therefore the decision was taken to remove the persona. 
+During the wireframing process a third persona was removed. This persona didn't have any ingredients but did know which ingredients they wanted to use. However, they had too much crossover with the "Someone who has some ingredients" persona and including it caused the narrative of the application to become confusing. The purpose of the site is to inspire and surprise people rather than for people who already have an idea of what they want. Therefore, the decision was taken to remove the persona. 
 
 
 ## Design Choices During Development
 
-The navigational elements, when navigating through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight the importance.
+The navigational elements, when progressing through a list of cocktails, evolved following user testing. This included changing icons used and adding a home button. The information button now has a "wiggle" animation to highlight the importance.
 
-Also tooltips were added to the navigation buttons, in desktop mode, in response to accessibility concerns. This doesn't work well For tablets and mobiles and is disabled but Aria-Labels are provided for screen readers.
+Tooltips were added to the navigation buttons, in desktop mode, in response to accessibility concerns. This doesn't work well For tablets and mobiles and is disabled but Aria-Labels are provided for screen readers.
 
-The wireframe shows 3 available inputs for ingredients the persona may have. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
+The wireframe shows 3 available inputs for ingredients. This was not difficult to build however testing the API showed that 3 ingredients more often than not resulted in no returned cocktails. Therefore a decision was taken to reduce the number of inputs to 2.
 
 Unfortunately some ingredients don't return a cocktail. This was found during user testing and is a fault with the API. This has been handled through the code and still keeps the user experience coherent. The fix is documented in the code.
 
