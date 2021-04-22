@@ -319,7 +319,7 @@ function getHow() {
             <div id="nav-buttons">
             <nav id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
             <a href="index.html"><nav id="home" class="pointer pointer-home" aria-label="Home"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></nav></a>
-            <nav id="email-me" class="pointer pointer-information"><a href="email.html" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></a></nav>
+            <a href="email.html" ><nav id="email-me" class="pointer pointer-information" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></nav></a>
             <nav id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></nav>
             </div>
 
