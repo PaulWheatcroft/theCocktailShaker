@@ -24,7 +24,7 @@ function formSubmit() {
         <h1>Enjoy!</h1>
         <p>That has been sent to you, you may need to check your junk folder. I hope you enjoy making it. And I do hope you enjoy drinking it twice as much!</p>
         <p>Bottoms up. xx</p>
-        <div id="choose-again" class="buttons pink-button" ><a href="index.html">I fancy another go</a></div>
+        <a href="index.html" id="choose-again" class="buttons pink-button">I fancy another go</a>
         `;
         document.getElementById('information-container').className = 'animate__animated animate__fadeOut';
         document.getElementById('information-container').innerHTML = sentHtml;
