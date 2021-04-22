@@ -258,13 +258,13 @@ function loadCocktail() {
 /* ----------- Construct the HTML to view output */
     cocktailHtml = `
     <div id="nav-buttons">
-    ${cocktailNavButtons}
+        ${cocktailNavButtons}
     </div>         
     <div id="select-cocktail" class="animate__animated animate__fadeIn">    
-    <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
-    <h1 class="h1 cocktail-title">${cocktailName}</h1>
-    <h2 id="cocktail-id">${cocktailId}</h2>
-    <h2 id="cocktail-position">${drinkIndex}</h2>
+        <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image">
+        <h1 class="h1 cocktail-title">${cocktailName}</h1>
+        <h2 id="cocktail-id">${cocktailId}</h2>
+        <h2 id="cocktail-position">${drinkIndex}</h2>
     </div>        
     `;        
 /* ----------- Pass the HTML to the div information-container  */
@@ -317,19 +317,19 @@ function getHow() {
 /* ----------- Construct the HTML to view how to make the cocktail */
             let cocktailToMakeHtml = `
             <div id="nav-buttons">
-            <nav id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
-            <a href="index.html"><nav id="home" class="pointer pointer-home" aria-label="Home"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></nav></a>
-            <a href="email.html" ><nav id="email-me" class="pointer pointer-information" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></nav></a>
-            <nav id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></nav>
+                <nav id="go-back" class="pointer pointer-left" onclick="previousCocktail()" aria-label="Back to Cocktails"><i class="fas fa-hand-point-left tooltip"><span class="tooltiptext">Previous Cocktail</span></i></nav>
+                <a href="index.html"><nav id="home" class="pointer pointer-home" aria-label="Home"><i class="fas fa-home tooltip"><span class="tooltiptext">Home</span></i></nav></a>
+                <a href="email.html" ><nav id="email-me" class="pointer pointer-information" aria-label="Email the Instructions"><i class="fas fa-envelope tooltip"><span class="tooltiptext">Email</span></i></nav></a>
+                <nav id="click-next" class="pointer pointer-right pointer-disabled"><i class="fas fa-hand-point-right"></i></nav>
             </div>
 
             <div id="select-cocktail"  class="animate__animated animate__fadeIn">
                 <img src="${cocktailImage}" alt="${cocktailName}" class="drinks-image-how">
                 <h1 class="h1">${cocktailName}</h1>        
                 <ul>${ingredientsHtml}</ul>
-                    <div id="instructions">
+                <div id="instructions">
                     <p>${cocktailInstructions}</p>
-                    </div>
+                </div>
             </div>          
             `;                
 /* ----------- Pass the HTML to the div the-ingredient-data and set text instructions  */
