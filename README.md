@@ -241,7 +241,7 @@ I used a wide group of friends and family to test the user stories across the fo
 - iOS (iPhone 7, iPhoneX, iPhone SE)
     - Safari
 
-Functional testing has been carried out throughout the build process, usually after major updates, against every element to ensure everything worked and was linked as expected. This is recorded in [functional-testing-theCocktailShaker.xlsx](functional-testing.xlsx). 
+Functional testing has been carried out throughout the build process, usually after major updates, against every element to ensure everything worked and was linked as expected. This is recorded in [functional-testing-theCocktailShaker.xlsx](functional-testing-theCocktailShaker.xlsx). 
 
 ## Oustanding Bugs and issues
 - Some ingredients don't return any cocktails. I've had to engineer catching this issue to ensure it is handled well.
