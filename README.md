@@ -285,10 +285,10 @@ The https://www.markdownguide.org/cheat-sheet/ was referenced throughout the lif
 ## Further Development Ideas
 - Social media sharing of cocktail instructions and images of cocktails made
 - Swiping through cocktails on mobile devices
-- Ability show non-alcoholic ingredients and cocktails
-- Ability to tick all the ingredients you have in the instruction and then create a shopping list for the ingredients you don't
+- Ability show just non-alcoholic ingredients and cocktails
+- Ability to tick all the ingredients you have in the instructions and then create a shopping list for the ingredients you don't have
 - The format of the email is poor and needs to be structured properly
 - Hook up ingredients to a shopping API
-- User account environment that allowed for sharing ratings on the cocktails
-- User account environment that allowed for adding new cocktails to the database
+- User account environment that allows for sharing ratings on the cocktails
+- User account environment that allows for adding new cocktails to the database
 - Convert measures in to metric
